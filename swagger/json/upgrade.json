@@ -1,0 +1,1 @@
+{"apiVersion":"v1","swaggerVersion":"1.2","basePath":"https://any_cvm_ip:9440/PrismGateway/services/rest/v1","resourcePath":"/upgrade","produces":["application/json"],"consumes":["application/json"],"apis":[],"models":{}}
