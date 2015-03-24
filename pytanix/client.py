@@ -5,6 +5,7 @@ from __future__ import print_function
 import sys
 import requests
 import json
+from pprint import pprint
 
 ''' A lightweight Python library for the Nutanix API
 '''
@@ -61,18 +62,19 @@ class Nutanix(object):
             print()
             print(method, r.url)
             if payload:
-                print('DATA', json.dumps(payload))
+                print('DATA')
+                pprint(payload)
 
         try:
             r.raise_for_status()
         except:
             raise NutanixException(r.status_code,
-                -1, u'%s:\n %s' % (r.url, r.json()['error']['message']))
+                -1, u'%s:\n %s' % (r.url, r.json()['message']))
         if len(r.text) > 0:
             results = r.json()
             if self.trace:
-                print('RESP', results)
-                print()
+                print('RESP:')
+                pprint(results)
             return results
         else:
             return None
@@ -112,8 +114,35 @@ class Nutanix(object):
     def _warn(self, msg):
         print('warning:' + msg, file=sys.stderr)
 
-    def alerts(self):
-        return self._get('alerts')
+    def alerts(self, **kwargs):
+        return self._get('alerts', kwargs)
+
+    def alerts_configuration(self, **kwargs):
+        return self._get('alerts/configuration', kwargs)
+
+    def alerts_hardware(self, **kwargs):
+        return self._get('alerts/hardware', kwargs)
+
+    def alerts_metadata(self, **kwargs):
+        return self._get('alerts/metadata', kwargs)
+
+    def alerts_storage(self, **kwargs):
+        return self._get('alerts/storage', kwargs)
+
+    def auth_config(self, **kwargs):
+        return self._get('authconfig', kwargs)
+
+    def auth_types(self, **kwargs):
+        return self._get('authconfig/auth_types', kwargs)
+
+    def client_auth(self, **kwargs):
+        return self._get('authconfig/client_auth', kwargs)
+
+    def auth_directories(self, **kwargs):
+        return self._get('authconfig/directories', kwargs)
+
+    def auth_directories(self, name, **kwargs):
+        return self._get('authconfig/directories/{0}'.format(name), kwargs)
 
 
 
