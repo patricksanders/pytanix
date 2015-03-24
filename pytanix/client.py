@@ -21,12 +21,23 @@ class NutanixException(Exception):
 
 class Nutanix(object):
     '''
+    Example usage:
+        
+        import pytanix
+        nu = pytanix.Nutanix()
+        alerts = nu.alerts()
+        print(alerts)
     '''
 
     trace = True # Enable tracing?
 
     def __init__(self, ip, auth=None, requests_session=True):
-        '''
+        '''Create a Nutanix REST API object.
+        Parameters:
+        ip -- A Nutanix cluster or CVM IP address
+        auth -- An authorization token (optional)
+        requests_session -- A Requests session object of a truthy value to create one.
+            A falsy value disables sessions.
         '''
         # TODO: let user set base IP
         self.ip = ip
@@ -99,50 +110,254 @@ class Nutanix(object):
             kwargs.update(args)
         return self._internal_call('PUT', url, payload, kwargs)
 
-    def next(self, result):
-        if result['next']:
-            return self._get(result['next'])
-        else:
-            return None
-
-    def previous(self, result):
-        if result['previous']:
-            return self._get(result['previous'])
-        else:
-            return None
-
     def _warn(self, msg):
         print('warning:' + msg, file=sys.stderr)
 
-    def alerts(self, **kwargs):
+    ############################################################
+    # Alerts
+    ############################################################
+    def get_alerts(self, **kwargs):
+        '''returns a list of alerts
+            
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        entityType -- Entity type
+        entityIds -- Entity ids
+        '''
         return self._get('alerts', kwargs)
 
-    def alerts_configuration(self, **kwargs):
+    def acknowledge_alerts(self, **kwargs):
+        '''acknowledge alerts using a filter criteria
+            
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        severity -- Alert severities
+        entityType -- Entity type
+        entityTypeIds -- Entity type ids
+        count -- Maximum number of alerts
+        '''
+        return self._post('alerts/acknowledge', **kwargs)
+
+    def get_alerts_configuration(self, **kwargs):
+        '''get the configuration that is used to send alert emails
+        '''
         return self._get('alerts/configuration', kwargs)
 
-    def alerts_hardware(self, **kwargs):
+    def update_alerts_configuration(self, payload=None, **kwargs):
+        '''update the configuration that is used to send alert emails
+
+        Parameters:
+        payload -- json object of new alert configuration
+        '''
+        return self._put('alerts/configuration', kwargs)
+
+    def get_hardware_alerts(self, **kwargs):
+        '''get the list of hardware alerts generated in the cluster
+            
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        entityType -- Entity type
+        entityIds -- Entity ids
+        '''
         return self._get('alerts/hardware', kwargs)
 
-    def alerts_metadata(self, **kwargs):
+    def get_alerts_metadata(self, **kwargs):
+        '''get the list of alerts metadata generated in the cluster
+            
+        Keyword arguments:
+        ids -- Alert UUIDs
+        excludeDisabled -- Exclude disabled alerts
+        '''
         return self._get('alerts/metadata', kwargs)
 
-    def alerts_storage(self, **kwargs):
+    def update_alerts_metadata(self, payload, **kwargs):
+        '''get the list of alerts metadata generated in the cluster
+
+        Parameters:
+        payload -- json object of new alert metadata
+        '''
+        return self._put('alerts/metadata', kwargs)
+
+    def get_alerts_metadata(self, alertTypeUuid, **kwargs):
+        '''get the list of alerts metadata generated in the cluster
+
+        Parameters:
+        alertTypeUuid -- Alert type UUID of the Alert metadata
+        '''
+        return self._get('alerts/metadata/{0}'.format(alertTypeUuid), kwargs)
+
+    def resolve_alerts(self, **kwargs):
+        '''resolve alerts using a filter criteria
+            
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        severity -- Alert severities
+        entityType -- Entity type
+        entityTypeIds -- Entity type ids
+        count -- Maximum number of alerts
+        '''
+        return self._post('alerts/resolve', **kwargs)
+
+    def get_storage_alerts(self, **kwargs):
+        '''get the list of storage alerts generated in the cluster
+            
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        entityType -- Entity type
+        entityIds -- Entity ids
+        '''
         return self._get('alerts/storage', kwargs)
 
-    def auth_config(self, **kwargs):
+    def acknowledge_alert(self, id, **kwargs):
+        '''acknowledge alert by id
+            
+        Parameters:
+        id -- Alert id
+        '''
+        return self._post('alerts/{0}/acknowledge'.format(id), **kwargs)
+
+    def resolve_alert(self, id, **kwargs):
+        '''resolve alert by id
+            
+        Parameters:
+        id -- Alert id
+        '''
+        return self._post('alerts/{0}/resolve'.format(id), **kwargs)
+
+    ############################################################
+    # Authentication
+    ############################################################
+    def authconfig(self, **kwargs):
         return self._get('authconfig', kwargs)
 
-    def auth_types(self, **kwargs):
+    def authconfig_auth_types(self, **kwargs):
         return self._get('authconfig/auth_types', kwargs)
 
-    def client_auth(self, **kwargs):
+    def authconfig_client_auth(self, **kwargs):
         return self._get('authconfig/client_auth', kwargs)
 
-    def auth_directories(self, **kwargs):
+    def authconfig_directories(self, **kwargs):
         return self._get('authconfig/directories', kwargs)
 
-    def auth_directories(self, name, **kwargs):
+    def authconfig_directories(self, name, **kwargs):
         return self._get('authconfig/directories/{0}'.format(name), kwargs)
 
+    ############################################################
+    # Certificates
+    ############################################################
 
+    ############################################################
+    # Cloud
+    ############################################################
+
+    ############################################################
+    # Cluster
+    ############################################################
+
+    ############################################################
+    # Clusters
+    ############################################################
+
+    ############################################################
+    # Containers
+    ############################################################
+
+    ############################################################
+    # Disks
+    ############################################################
+
+    ############################################################
+    # Encryption
+    ############################################################
+
+    ############################################################
+    # Events
+    ############################################################
+
+    ############################################################
+    # Health Checks
+    ############################################################
+
+    ############################################################
+    # Hosts
+    ############################################################
+
+    ############################################################
+    # HTTP Proxies
+    ############################################################
+
+    ############################################################
+    # Key Management Servers
+    ############################################################
+
+    ############################################################
+    # License
+    ############################################################
+
+    ############################################################
+    # Protection Domains
+    ############################################################
+
+    ############################################################
+    # Pulse
+    ############################################################
+
+    ############################################################
+    # Remote Sites
+    ############################################################
+
+    ############################################################
+    # SMB Server
+    ############################################################
+
+    ############################################################
+    # SNMP
+    ############################################################
+
+    ############################################################
+    # Storage Pools
+    ############################################################
+
+    ############################################################
+    # Upgrade
+    ############################################################
+
+    ############################################################
+    # vDisks
+    ############################################################
+
+    ############################################################
+    # Virtual Disks
+    ############################################################
+
+    ############################################################
+    # VMs
+    ############################################################
+
+    ############################################################
+    # vStores
+    ############################################################
 
