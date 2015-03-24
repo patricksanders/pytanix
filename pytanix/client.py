@@ -185,7 +185,7 @@ class Nutanix(object):
         '''
         return self._get('alerts/metadata', kwargs)
 
-    def update_alerts_metadata(self, payload, **kwargs):
+    def update_alerts_metadata(self, payload=None, **kwargs):
         '''get the list of alerts metadata generated in the cluster
 
         Parameters:
@@ -250,20 +250,59 @@ class Nutanix(object):
     ############################################################
     # Authentication
     ############################################################
-    def authconfig(self, **kwargs):
+    def get_auth_config(self, **kwargs):
+        '''get auth configuration
+        '''
         return self._get('authconfig', kwargs)
 
-    def authconfig_auth_types(self, **kwargs):
+    def update_auth_config(self, payload=None, **kwargs):
+        '''update auth configuration
+
+        Keyword arguments:
+        payload -- json of updated auth config
+        '''
+        return self._put('authconfig', kwargs)
+
+    def delete_auth_config(self, **kwargs):
+        '''delete auth configuration
+        '''
+        return self._delete('authconfig', kwargs)
+
+    def add_auth_types(self, payload=None, **kwargs):
+        '''add authentication types
+
+        Keyword arguments:
+        payload -- json array of auth types
+        '''
+        return self._post('authconfig/add_auth_types', kwargs)
+
+    def update_auth_types(self, payload=None, **kwargs):
+        '''add authentication types
+
+        Keyword arguments:
+        payload -- json array of auth types
+        '''
+        return self._put('authconfig/auth_types', kwargs)
+
+    def get_auth_types(self, **kwargs):
+        '''get authentication types
+        '''
         return self._get('authconfig/auth_types', kwargs)
 
-    def authconfig_client_auth(self, **kwargs):
-        return self._get('authconfig/client_auth', kwargs)
+    def set_client_auth_status(self, enable, **kwargs):
+        '''enable or disable client authentication
 
-    def authconfig_directories(self, **kwargs):
-        return self._get('authconfig/directories', kwargs)
+        Parameters:
+        enable -- boolean for enabling or disabling client auth
+        '''
+        payload = json.loads("{'value': %s}" % (enable))
+        print(payload)
+        return self._post('authconfig/client_auth/', kwargs, payload=payload)
 
-    def authconfig_directories(self, name, **kwargs):
-        return self._get('authconfig/directories/{0}'.format(name), kwargs)
+    def get_client_auth_status(self, **kwargs):
+        '''get authentication types
+        '''
+        return self._get('authconfig/client_auth/', kwargs)
 
     ############################################################
     # Certificates
