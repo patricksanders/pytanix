@@ -753,6 +753,160 @@ class Nutanix(object):
     ############################################################
     # Containers
     ############################################################
+    def get_containers(self, **kwargs):
+        '''get the list of containers
+
+        Keyword arguments:
+        count -- number of containers to retrieve
+        filterCriteria -- filter criteria
+        sortCriteria -- sort criteria
+        searchString -- search string
+        page -- page number
+        projection -- projections on the attributes
+        '''
+        return self._get('containers/', kwargs)
+
+    def add_container(self, payload):
+        '''add a container to the cluster
+
+        Parameters:
+        payload -- json container configuration
+        '''
+        return self._post('container/', payload=payload)
+
+    def update_container(self, payload):
+        '''update a container's configuration
+
+        Parameters:
+        payload -- json container configuration
+        '''
+        return self._put('container/', payload=payload)
+
+    def get_container_alerts(self, **kwargs):
+        '''get the list of alerts generated on any container
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        '''
+        return self._get('containers/alerts', kwargs)
+
+    def get_datastores(self):
+        '''get the list of NFS datastores mounted using containers in the cluster
+        '''
+        return self._get('containers/datastores')
+
+    def add_datastore(self, payload):
+        '''add an NFS datastore
+
+        Paramaters:
+        payload -- json datastore configuration
+        '''
+        return self._post('containers/datastores/add_datastore', payload=payload)
+
+    def remove_datastore(self, payload):
+        '''remove an NFS datastore
+
+        Parameters:
+        payload -- json removal request
+        '''
+        return self._post('containers/datastores/remove_datastore', payload=payload)
+
+    def get_container_events(self, **kwargs):
+        '''get the list of events generated on any container
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('containers/events', kwargs)
+
+    def delete_container(self, id, **kwargs):
+        '''delete a container with the specified ID from the cluster
+
+        Parameters:
+        id -- ID of the container
+
+        Keyword arguments:
+        ignoreSmallFiles -- ignore small files
+        ignoreVDisks -- ignore all vdisks
+        '''
+        return self._delete('containers/{0}'.format(id), kwargs)
+
+    def get_container(self, id, **kwargs):
+        '''get a container with the specified ID
+
+        Parameters:
+        id -- id of the container
+
+        Keyword arguments:
+        projection -- projections on the attributes
+        '''
+        return self._get('containers/{0}'.format(id), kwargs)
+
+    def get_container_alerts(self, id, **kwargs):
+        '''get the list of alerts generated on any container
+
+        Parameters:
+        id -- id of the container
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        '''
+        return self._get('containers/{0}/alerts'.format(id), kwargs)
+
+    def get_container_events(self, id, **kwargs):
+        '''get the list of events generated on any container
+
+        Parameters:
+        id -- id of the container
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('containers/{0}/events'.format(id), kwargs)
+
+    def get_container_stats(self, id, **kwargs):
+        '''get the stats for a specified container
+
+        Parameters:
+        id -- id of the container
+
+        Keyword arguments:
+        metrics (required) -- List of metrics
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        intervalInSecs -- Sampling interval of stats
+        '''
+        return self._get('containers/{0}/stats/'.format(id), kwargs)
+
+    def get_container_vdisks(self, id):
+        '''get the list of vDisks of the specified container
+
+        Parameters:
+        id -- id of the container
+        '''
+        return self._get('containers/{0}/vdisks'.format(id))
 
     ############################################################
     # Disks
