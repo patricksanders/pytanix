@@ -1345,6 +1345,71 @@ class Nutanix(object):
     ############################################################
     # License
     ############################################################
+    def get_license(self):
+        '''get current license file from the cluster
+        '''
+        return self._get('license/')
+
+    def add_license(self, license_file):
+        '''apply license file to the cluster
+
+        Parameters:
+        license_file -- license file
+        '''
+        #TODO: handle license file upload
+        pass
+
+    def get_license_alerts(self, **kwargs):
+        '''get the list of alerts generated for any license
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        entityType -- Entity type
+        entityIds -- Entity ids
+        '''
+        return self._get('license/alerts/', kwargs)
+
+    def get_license_allowances(self):
+        '''show allowances for all features
+        '''
+        return self._get('license/allowances')
+
+    def get_license_feature(self, feature_name):
+        '''show allowances for a particular feature
+
+        Parameters:
+        feature_name -- name of the feature
+        '''
+        return self._get('license/allowances/{0}'.format(feature_name))
+
+    def get_cluster_license_info(self):
+        '''get cluster license info
+        '''
+        return self._get('license/cluster_info')
+
+    def get_csf(self):
+        '''get cluster summary file
+        '''
+        return self._get('license/cluster_summary_file')
+
+    def get_license_events(self, **kwargs):
+        '''get the list of events generated for any license
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('license/events', kwargs)
 
     ############################################################
     # Protection Domains
