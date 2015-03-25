@@ -1077,6 +1077,62 @@ class Nutanix(object):
     ############################################################
     # Events
     ############################################################
+    def get_events(self, **kwargs):
+        '''get the list of events generated in the cluster
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('events/', kwargs)
+
+    def acknowledge_events(self, **kwargs):
+        '''acknowledge events using a filter criteria
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        severity -- Severity
+        entityType -- Entity type
+        entityTypeIds -- Entity type IDs
+        count -- Maximum number of events
+        '''
+        return self._post('events/acknowledge', kwargs)
+
+    def get_hardware_events(self, **kwargs):
+        '''get the list of hardware events generated in the cluster
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('events/hardware', kwargs)
+
+    def get_storage_events(self, **kwargs):
+        '''get the list of storage events generated in the cluster
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('events/storage', kwargs)
+
+    def acknowledge_event(self, id):
+        '''acknowledge event with the specified ID
+
+        Parameters:
+        id -- Event ID
+        '''
+        return self._put('events/{0}/acknowledge'.format(id))
 
     ############################################################
     # Health Checks
