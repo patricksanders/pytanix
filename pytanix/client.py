@@ -1033,6 +1033,47 @@ class Nutanix(object):
     # Encryption
     ############################################################
 
+    def get_encryption_status(self):
+        '''get encryption status of the cluster
+        '''
+        return self._get('encryption/')
+
+    def set_encryption(self, enable):
+        '''enable or disable encryption on the cluster
+
+        Parameters:
+        enable -- enable encryption
+        '''
+        payload = {"value": enable}
+        return self._post('encryption/enable', payload=payload)
+
+    def get_cert_test_results(self, **kwargs):
+        '''get recent certificate test results
+
+        Keyword arguments:
+        hostIds -- list of host IDs
+        kmsServerNames -- list of key management server names
+        '''
+        return self._get('encryption/recent_certificate_test_results', kwargs)
+
+    def rekey_disks(self, **kwargs):
+        '''set new password for encryption capable disks
+
+        Keyword arguments:
+        array -- list of disk ids on which rekey needs to be performed
+        '''
+        return self._post('encryption/rekey', kwargs)
+
+    def test_encryption(self, node_ids, kms_names):
+        '''test encryption configuration of the cluster
+
+        Parameters:
+        node_ids -- list of node IDs
+        kms_names -- list of key management server names
+        '''
+        payload = {"serverList": kms_names, "nodeIdList": node_ids}
+        return self._post('encryption/test', payload=payload)
+
     ############################################################
     # Events
     ############################################################
