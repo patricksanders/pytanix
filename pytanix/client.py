@@ -1305,6 +1305,42 @@ class Nutanix(object):
     ############################################################
     # Key Management Servers
     ############################################################
+    def get_kms(self):
+        '''get all key management servers from cluster
+        '''
+        return self._get('key_management_servers/')
+
+    def add_kms(self, payload):
+        '''add key management server to the cluster
+
+        Parameters:
+        payload -- json key management server configuration
+        '''
+        return self._post('key_management_servers/', payload=payload)
+
+    def update_kms(self, payload):
+        '''update the key management server configuration
+
+        Parameters:
+        payload -- json key management server configuration
+        '''
+        return self._put('key_management_server/', payload=payload)
+
+    def get_kms(self, name):
+        '''get key management server with the specified name
+
+        Parameters:
+        name -- key management server name
+        '''
+        return self._get('key_management_server/{0}'.format(name))
+
+    def delete_kms(self, name):
+        '''delete key management server with the specified name
+
+        Parameters:
+        name -- key management server name
+        '''
+        return self._delete('key_management_server/{0}'.format(name))
 
     ############################################################
     # License
