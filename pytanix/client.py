@@ -445,6 +445,209 @@ class Nutanix(object):
     ############################################################
     # Cluster
     ############################################################
+    def get_cluster(self):
+        '''get cluster details
+        '''
+        return self._get('/cluster/')
+
+    def update_cluster(self, payload):
+        '''update cluster details
+
+        Parameters:
+        payload -- cluster detail json
+        '''
+        return self._put('/cluster/', payload=payload)
+
+    def cluster_domain(self, payload):
+        '''join/unjoin the storage cluster to/from a Windows AD domain
+
+        Parameters:
+        payload -- information pertaining to the Windows AD domain
+        '''
+        return self._put('cluster/cluster_domain', payload=payload)
+
+    def get_cluster_nameservers(self):
+        '''get the list of nameservers configured on the cluster
+        '''
+        return self._get('cluster/name_servers')
+
+    def add_cluster_nameserver(self, server):
+        '''add a nameserver to the cluster
+
+        Parameters:
+        server -- address of nameserver
+        '''
+        payload = {"value": server}
+        return self._post('cluster/name_servers', payload=payload)
+
+    def delete_cluster_nameserver(self, server):
+        '''delete a nameserver with the specified name
+        
+        Parameters:
+        server -- name of nameserver to delete
+        '''
+        return self._delete('cluster/name_servers/{0}'.format(server))
+
+    def get_nfs_whitelist(self):
+        '''get the NFS subnet whitelist on the cluster
+        '''
+        return self._get('cluster/nfs_whitelist')
+
+    def add_nfs_whitelist(self, entry):
+        '''add an address to the NFS subnet whitelist
+
+        Parameters:
+        entry -- value to add to NFS whitelist
+        '''
+        payload = {"value": entry}
+        return self._post('cluster/nfs_whitelist', payload=payload)
+
+    def delete_nfs_whitelist(self, name):
+        '''delete an address from the NFS subnet whitelist
+        
+        Parameters:
+        name -- NFS whitelist entry to delete
+        '''
+        return self._delete('cluster/nfs_whitelist/{0}'.format(name))
+
+    def get_ntp_servers(self):
+        '''get the list of NTP servers for the cluster
+        '''
+        return self._get('cluster/ntp_servers')
+
+    def add_ntp_server(self, server):
+        '''add NTP server to the cluster
+
+        Parameters:
+        server -- NTP server to add to the cluster
+        '''
+        payload = {"value": server}
+        return self._post('cluster/ntp_servers', payload=payload)
+
+    def delete_ntp_server(self, server):
+        '''remove NTP server from the cluster
+
+        Parameters:
+        server -- NTP server to be removed from the cluster
+        '''
+        return self._delete('cluster/ntp_servers/{0}'.format(server))
+
+    def get_public_keys(self):
+        '''get cluster's public keys
+        '''
+        return self._get('cluster/public_keys/')
+
+    def add_public_key(self, name, key):
+        '''add a public key to the cluster
+
+        Parameters:
+        name -- name for the public key
+        key -- key to be added
+        '''
+        payload = {"name": name, "key": key}
+        return self._post('cluster/public_keys/', payload=payload)
+
+    def delete_public_key(self, name):
+        '''delete a public key from the cluster
+
+        Parameters:
+        name -- name of the key to be deleted
+        '''
+        return self._delete('cluster/public_keys/{0}'.format(name))
+
+    def get_public_key(self, name):
+        '''get a public key by name
+
+        Parameters:
+        name -- name of public key
+        '''
+        return self._get('cluster/public_keys/{0}'.format(name))
+
+    def get_rackable_units(self):
+        '''get a list of rackable units configured on the cluster
+        '''
+        return self._get('cluster/rackable_units')
+
+    def get_rackable_unit(self, id):
+        '''get a rackable unit with the specified ID
+        
+        Parameters:
+        id -- ID of a rackable unit
+        '''
+        return self._get('cluster/rackable_units/{0}'.format(id))
+
+    def delete_rackable_unit(self, id):
+        '''delete a rackable unit with the specified ID
+        
+        Parameters:
+        id -- ID of a rackable unit
+        '''
+        return self._delete('cluster/rackable_units/{0}'.format(id))
+
+    def get_remote_support_status(self):
+        '''get the status of remote support settings on the cluster
+        '''
+        return self._get('cluster/remote_support')
+        
+    def update_remote_support(self, payload):
+        '''update the remote support settings on the cluster
+
+        Parameters:
+        payload -- a timed bool instance
+        '''
+        return self._put('cluster/remote_support', payload=payload)
+
+    def search(self, **kwargs):
+        '''perform a spotlight search on the cluster
+
+        Keyword Arguments:
+        searchString (required) -- search string
+        entityTypes -- entity types
+        fieldNames -- field names
+        '''
+        return self._get('cluster/search/', kwargs)
+
+    def send_email(self, payload):
+        '''send an email using the smtp server configuration
+
+        Parameters:
+        payload -- json email instance
+        '''
+        return self._post('cluster/send_email', payload=payload)
+
+    def get_smtp_config(self):
+        '''get the SMTP server configuration
+        '''
+        return self._get('cluster/smtp')
+
+    def update_smtp_config(self, payload):
+        '''update the cluster SMTP server configuration
+
+        Parameters:
+        payload -- json SMTP server configuration
+        '''
+        return self._put('/cluster/smtp', payload=payload)
+
+    def delete_smtp_config(self):
+        '''delete the cluster's SMTP server configuration
+        '''
+        return self._delete('/cluster/smtp')
+
+    def get_smtp_security_modes(self):
+        '''get the list of supported security modes for the SMTP server
+        '''
+        return self._get('cluster/smtp/security_modes')
+
+    def get_cluster_stats(self, **kwargs):
+        '''get the list of cluster stats
+
+        Keyword Arguments:
+        metrics (required) -- list of metrics
+        startTimeInUsecs (required) -- start time in microseconds
+        endTimeInUsecs (required) -- end time in microseconds
+        intervalInSecs (required) -- sampling interval of stats
+        '''
+        return self._get('cluster/stats/', kwargs)
 
     ############################################################
     # Clusters
