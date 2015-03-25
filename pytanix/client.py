@@ -1137,6 +1137,26 @@ class Nutanix(object):
     ############################################################
     # Health Checks
     ############################################################
+    def get_health_checks(self):
+        '''get the list of health checks configured in the cluster
+        '''
+        return self._get('health_checks/')
+
+    def update_health_checks(self, payload):
+        '''update health check details
+
+        Parameters:
+        payload -- json health check instance
+        '''
+        return self._put('health_checks/', payload=payload)
+
+    def get_health_check(self, id):
+        '''get the health check with the specified ID
+
+        Parameters:
+        id -- ID of the health check
+        '''
+        return self._get('health_checks/{0}'.format(id))
 
     ############################################################
     # Hosts
