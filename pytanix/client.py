@@ -144,20 +144,20 @@ class Nutanix(object):
         entityTypeIds -- Entity type ids
         count -- Maximum number of alerts
         '''
-        return self._post('alerts/acknowledge', **kwargs)
+        return self._post('alerts/acknowledge', kwargs)
 
-    def get_alerts_configuration(self, **kwargs):
+    def get_alerts_configuration(self):
         '''get the configuration that is used to send alert emails
         '''
-        return self._get('alerts/configuration', kwargs)
+        return self._get('alerts/configuration')
 
-    def update_alerts_configuration(self, payload=None, **kwargs):
+    def update_alerts_configuration(self, payload):
         '''update the configuration that is used to send alert emails
 
         Parameters:
         payload -- json object of new alert configuration
         '''
-        return self._put('alerts/configuration', kwargs)
+        return self._put('alerts/configuration', payload=payload)
 
     def get_hardware_alerts(self, **kwargs):
         '''get the list of hardware alerts generated in the cluster
@@ -185,21 +185,21 @@ class Nutanix(object):
         '''
         return self._get('alerts/metadata', kwargs)
 
-    def update_alerts_metadata(self, payload=None, **kwargs):
+    def update_alerts_metadata(self, payload):
         '''get the list of alerts metadata generated in the cluster
 
         Parameters:
         payload -- json object of new alert metadata
         '''
-        return self._put('alerts/metadata', kwargs)
+        return self._put('alerts/metadata', payload=payload)
 
-    def get_alerts_metadata(self, alertTypeUuid, **kwargs):
+    def get_alerts_metadata(self, alertTypeUuid):
         '''get the list of alerts metadata generated in the cluster
 
         Parameters:
         alertTypeUuid -- Alert type UUID of the Alert metadata
         '''
-        return self._get('alerts/metadata/{0}'.format(alertTypeUuid), kwargs)
+        return self._get('alerts/metadata/{0}'.format(alertTypeUuid))
 
     def resolve_alerts(self, **kwargs):
         '''resolve alerts using a filter criteria
@@ -212,7 +212,7 @@ class Nutanix(object):
         entityTypeIds -- Entity type ids
         count -- Maximum number of alerts
         '''
-        return self._post('alerts/resolve', **kwargs)
+        return self._post('alerts/resolve', kwargs)
 
     def get_storage_alerts(self, **kwargs):
         '''get the list of storage alerts generated in the cluster
@@ -231,78 +231,138 @@ class Nutanix(object):
         '''
         return self._get('alerts/storage', kwargs)
 
-    def acknowledge_alert(self, id, **kwargs):
+    def acknowledge_alert(self, id):
         '''acknowledge alert by id
             
         Parameters:
         id -- Alert id
         '''
-        return self._post('alerts/{0}/acknowledge'.format(id), **kwargs)
+        return self._post('alerts/{0}/acknowledge'.format(id))
 
-    def resolve_alert(self, id, **kwargs):
+    def resolve_alert(self, id):
         '''resolve alert by id
             
         Parameters:
         id -- Alert id
         '''
-        return self._post('alerts/{0}/resolve'.format(id), **kwargs)
+        return self._post('alerts/{0}/resolve'.format(id))
 
     ############################################################
     # Authentication
     ############################################################
-    def get_auth_config(self, **kwargs):
+    def get_auth_config(self):
         '''get auth configuration
         '''
-        return self._get('authconfig', kwargs)
+        return self._get('authconfig')
 
-    def update_auth_config(self, payload=None, **kwargs):
+    def update_auth_config(self, payload):
         '''update auth configuration
 
-        Keyword arguments:
+        Parameters:
         payload -- json of updated auth config
         '''
-        return self._put('authconfig', kwargs)
+        return self._put('authconfig', payload=payload)
 
-    def delete_auth_config(self, **kwargs):
+    def delete_auth_config(self):
         '''delete auth configuration
         '''
-        return self._delete('authconfig', kwargs)
+        return self._delete('authconfig')
 
-    def add_auth_types(self, payload=None, **kwargs):
+    def add_auth_types(self, payload):
         '''add authentication types
 
-        Keyword arguments:
+        Parameters:
         payload -- json array of auth types
         '''
-        return self._post('authconfig/add_auth_types', kwargs)
+        return self._post('authconfig/add_auth_types', payload=payload)
 
-    def update_auth_types(self, payload=None, **kwargs):
+    def update_auth_types(self, payload):
         '''add authentication types
 
-        Keyword arguments:
+        Parameters:
         payload -- json array of auth types
         '''
-        return self._put('authconfig/auth_types', kwargs)
+        return self._put('authconfig/auth_types', payload=payload)
 
-    def get_auth_types(self, **kwargs):
+    def get_auth_types(self):
         '''get authentication types
         '''
-        return self._get('authconfig/auth_types', kwargs)
+        return self._get('authconfig/auth_types')
 
-    def set_client_auth_status(self, enable, **kwargs):
+    def set_client_auth_status(self, enable):
         '''enable or disable client authentication
 
         Parameters:
         enable -- boolean for enabling or disabling client auth
         '''
-        payload = json.loads("{'value': %s}" % (enable))
-        print(payload)
-        return self._post('authconfig/client_auth/', kwargs, payload=payload)
+        payload = {"value": enable}
+        return self._post('authconfig/client_auth/', payload=payload)
 
-    def get_client_auth_status(self, **kwargs):
+    def get_client_auth_status(self):
         '''get authentication types
         '''
-        return self._get('authconfig/client_auth/', kwargs)
+        return self._get('authconfig/client_auth/')
+
+    def delete_client_auth(self, name):
+        '''delete client chain certificate on the cluster
+
+        Parameters:
+        name -- name of the certificate
+        '''
+        return self._delete('authconfig/client_auth/{0}'.format(name))
+
+    def add_auth_directory(self, payload):
+        '''add directory config to the cluster
+
+        Parameters:
+        payload -- json auth directory config
+        '''
+        return self._post('authconfig/directories/', payload=payload)
+
+    def edit_auth_directory(self, payload):
+        '''edit the specified directory config
+
+        Parameters:
+        payload -- json auth directory config
+        '''
+        return self._put('authconfig/directories/', payload=payload)
+
+    def get_auth_directories(self):
+        '''get the list of directories configured in the cluster
+        '''
+        return self._get('authconfig/directories/')
+
+    def test_auth_connection(self, payload):
+        '''test LDAP directory connection status
+
+        Parameters:
+        payload -- json containing user, pass, and AD name
+        '''
+        return self._post('authconfig/directories/connection_status', payload=payload)
+
+    def get_auth_directory(self, name):
+        '''get directory with the specified name
+        
+        Parameters:
+        name -- name of directory
+        '''
+        return self._get('authconfig/directories/{0}'.format(name))
+
+    def delete_auth_directory(self, name):
+        '''delete directory with the specified name
+        
+        Parameters:
+        name -- name of directory
+        '''
+        return self._delete('authconfig/directories/{0}'.format(name))
+
+    def remove_auth_types(self, payload):
+        '''remove auth types from the existing auth types
+
+        Parameters:
+        payload -- json containing user, pass, and AD name
+        '''
+        return self._post('authconfig/remove_auth_types', payload=payload)
 
     ############################################################
     # Certificates
