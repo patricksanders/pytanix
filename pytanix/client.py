@@ -1161,10 +1161,146 @@ class Nutanix(object):
     ############################################################
     # Hosts
     ############################################################
+    def get_hosts(self, **kwargs):
+        '''get the list of physical hosts configured in the cluster
+
+        Keyword arguments:
+        count -- number of physical hosts to retrieve
+        filterCriteria -- filter criteria
+        sortCriteria -- sort criteria
+        searchString -- search string
+        page -- page number
+        projection -- projections on the attributes
+        '''
+        return self._get('hosts/', kwargs)
+
+    def get_host_alerts(self, **kwargs):
+        '''get the list of alerts generated on any host
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        '''
+        return self._get('hosts/alerts', kwargs)
+
+    def get_host_events(self, **kwargs):
+        '''get the list of events generated on any host
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('hosts/events', kwargs)
+
+    def get_host_health_check(self, **kwargs):
+        '''get the health check summary for the hosts
+
+        Keyword arguments:
+        filterCriteria -- filter criteria
+        detailedSummary -- detailed summary
+        '''
+        return self._get('hosts/health_check_summary', kwargs)
+
+    def get_host_alerts(self, svm_id, **kwargs):
+        '''get the list of alerts generated on any host
+
+        Parameters:
+        svm_id -- service VM ID
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        '''
+        return self._get('hosts/{0}/alerts'.format(svm_id), kwargs)
+
+    def get_disk_events(self, svm_id, **kwargs):
+        '''get the list of events generated on any host
+
+        Parameters:
+        svm_id -- service VM ID
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('hosts/{0}/events'.format(svm_id), kwargs)
+
+    def get_host_stats(self, svm_id, **kwargs):
+        '''get the stats for a specified host
+
+        Parameters:
+        svm_id -- service VM ID
+
+        Keyword arguments:
+        metrics (required) -- List of metrics
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        intervalInSecs -- Sampling interval of stats
+        '''
+        return self._get('hosts/{0}/stats/'.format(svm_id), kwargs)
 
     ############################################################
     # HTTP Proxies
     ############################################################
+    def get_http_proxies(self):
+        '''get the list of HTTP proxies configured in the cluster
+        '''
+        return self._get('http_proxies/')
+
+    def add_http_proxy(self, address, username=None, password=None):
+        '''add an HTTP proxy to the cluster
+
+        Parameters:
+        address -- proxy address
+        username -- proxy username
+        password -- proxy password
+        '''
+        payload = {"address": address,
+                   "username": username,
+                   "password": password}
+        self._post('http_proxies/', payload=payload)
+
+    def update_http_proxy(self, payload):
+        '''update an HTTP proxy
+
+        Parameters:
+        payload -- json HTTP proxy configuration
+        '''
+        return self._put('http_proxies/', payload=payload)
+
+    def get_http_proxy(self, name):
+        '''get an HTTP proxy with the specified name
+
+        Parameters:
+        name -- name of an HTTP proxy
+        '''
+        return self._get('http_proxies/{0}'.format(name))
+
+    def delete_http_proxy(self, name):
+        '''delete an HTTP proxy with the specified name
+
+        Parameters:
+        name -- name of an HTTP proxy
+        '''
+        return self._delete('http_proxies/{0}'.format(name))
 
     ############################################################
     # Key Management Servers
