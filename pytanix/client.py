@@ -652,6 +652,103 @@ class Nutanix(object):
     ############################################################
     # Clusters
     ############################################################
+    def get_clusters(self, **kwargs):
+        '''get the list of clusters
+
+        Keyword arguments:
+        count -- number of clusters to retrieve
+        filterCriteria -- filter criteria
+        sortCriteria -- sort criteria
+        searchString -- search string
+        page -- page number
+        projection -- projections on the attributes
+        '''
+        return self._get('clusters/', kwargs)
+
+    def get_cluster_alerts(self, **kwargs):
+        '''get the list of alerts generated on any cluster
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        '''
+        return self._get('clusters/alerts')
+
+    def get_clusters_events(self, **kwargs):
+        '''get the list of events generated on any cluster
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('clusters/events', kwargs)
+
+    def get_cluster_by_id(self, id, **kwargs):
+        '''get a cluster
+        
+        Parameters:
+        id -- id of the cluster
+
+        Keyword arguments:
+        projection -- projections on the attributes
+        '''
+        return self._get('clusters/{id}'.format(id), kwargs)
+
+    def get_cluster_alerts(self, id, **kwargs):
+        '''get the list of alerts generated on a specified cluster
+
+        Parameters:
+        id -- id of the cluster
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        '''
+        return self._get('clusters/{id}/alerts'.format(id), kwargs)
+
+    def get_cluster_events(self, id, **kwargs):
+        '''get the list of events generated on a specified cluster
+
+        Parameters:
+        id -- id of the cluster
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('clusters/{id}/events'.format(id), kwargs)
+        
+    def get_cluster_stats(self, id, **kwargs):
+        '''get the stats for a specified cluster
+
+        Parameters:
+        id -- id of the cluster
+
+        Keyword arguments:
+        metrics (required) -- list of metrics
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        intervalInSecs -- sampling interval of stats
+        '''
+        return self._get('clusters/{id}/stats'.format(id), kwargs)
 
     ############################################################
     # Containers
