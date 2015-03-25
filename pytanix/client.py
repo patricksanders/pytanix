@@ -29,7 +29,8 @@ class Nutanix(object):
         print(alerts)
     '''
 
-    trace = True # Enable tracing?
+    trace = False
+    verify_ssl = True
 
     def __init__(self, ip, auth=None, requests_session=True):
         '''Create a Nutanix REST API object.
@@ -57,17 +58,23 @@ class Nutanix(object):
             return {}
 
     def _internal_call(self, method, url, payload, params):
+        # put params in args
         args = dict(params=params)
         if not url.startswith('http'):
             url = self.prefix + url
+
+        # set headers
         headers = self._auth_headers()
         headers['Content-Type'] = 'application/json'
-        print(headers)
+        if self.trace:
+            print('HEADERS')
+            pprint(headers)
 
+        # add payload to args
         if payload:
             args['data'] = json.dumps(payload)
 
-        r = self._session.request(method, url, headers=headers, verify=False, **args)
+        r = self._session.request(method, url, headers=headers, verify=self.verify_ssl, **args)
 
         if self.trace:
             print()
@@ -84,7 +91,7 @@ class Nutanix(object):
         if len(r.text) > 0:
             results = r.json()
             if self.trace:
-                print('RESP:')
+                print('RESP')
                 pprint(results)
             return results
         else:
@@ -367,6 +374,69 @@ class Nutanix(object):
     ############################################################
     # Certificates
     ############################################################
+    def get_ca_certs(self):
+        '''get all CA certificates from cluster
+        '''
+        return self._get('certificates/ca_certificates/')
+
+    def add_ca_cert(self, name, cert):
+        '''add trusted CA certificate to the cluster
+        '''
+        #TODO: Handle this. (need to accept cert file)
+        pass
+
+    def delete_ca_cert(self, name):
+        '''delete a CA certificate from the cluster
+
+        Parameters:
+        name -- Certificate Authority name
+        '''
+        return self._delete('certificates/ca_certificates/{0}'.format(name))
+
+    def update_cert_info(self, payload):
+        '''update the certification information
+
+        Parameters:
+        payload -- json certification information
+        '''
+        return self._put('certificates/certification_information', payload=payload)
+
+    def get_cert_info(self):
+        '''get certificate signing information
+        '''
+        return self._get('certificates/certification_information/')
+
+    def get_node_csr(self, **kwargs):
+        '''download csr for node with given ip
+
+        Keyword Arguments:
+        nodeIp -- IP address of node
+        '''
+        return self._get('certificates/csr_for_discovered_node', kwargs)
+
+    def get_cluster_csrs(self, **kwargs):
+        '''download csr files from cluster
+
+        Keyword Arguments:
+        nodeIdList -- list of node IDs
+        '''
+        return self._get('certificates/csrs', kwargs)
+
+    def delete_svm_cert(self, **kwargs):
+        '''delete an svm certificate from cluster
+
+        Keyword Arguments:
+        nodeId -- id of the node on which the cert is installed
+        serverName -- key management server for which cert is installed
+        '''
+        return self._delete('certificate/svm_certificate/', kwargs)
+    
+    def add_svm_cert(self, kms_name, cert):
+        '''add certificate to the cluster
+        '''
+        #TODO: Handle this. (need to accept cert file)
+        #TODO: Also handle multi-cert upload
+        pass
 
     ############################################################
     # Cloud
