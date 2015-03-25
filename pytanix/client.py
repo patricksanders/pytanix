@@ -911,6 +911,123 @@ class Nutanix(object):
     ############################################################
     # Disks
     ############################################################
+    def get_disks(self, **kwargs):
+        '''get the list of disks configured in the cluster
+
+        Keyword arguments:
+        count -- number of disks to retrieve
+        filterCriteria -- filter criteria
+        sortCriteria -- sort criteria
+        searchString -- search string
+        page -- page number
+        projection -- projections on the attributes
+        '''
+        return self.get('disks/', kwargs)
+
+    def get_disk_alerts(self, **kwargs):
+        '''get the list of alerts generated on any disk
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        '''
+        return self._get('disks/alerts', kwargs)
+
+    def get_disk_events(self, **kwargs):
+        '''get the list of events generated on any disk
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('disks/events', kwargs)
+
+    def get_disk_health_check(self, **kwargs):
+        '''get the health check summary for the disks
+
+        Keyword arguments:
+        filterCriteria -- filter criteria
+        detailedSummary -- detailed summary
+        '''
+        return self._get('disks/health_check_summary', kwargs)
+
+    def get_disk(self, id, **kwargs):
+        '''get a disk with the specified id
+
+        Parameters:
+        id -- ID of the disk
+
+        Keyword arguments:
+        projection -- projections on the attributes
+        '''
+        return self._get('disks/{0}'.format(id), kwargs)
+
+    def delete_disk(self, id, **kwargs):
+        '''mark specified disk for removal
+
+        Parameters:
+        id -- ID of the disk
+
+        Keyword arguments:
+        force -- force the operation (ignores all system validations)
+        '''
+        return self._delete('disks/{0}'.format(id), kwargs)
+
+    def get_disk_alerts(self, id, **kwargs):
+        '''get the list of alerts generated on any disk
+
+        Parameters:
+        id -- id of the disk
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        '''
+        return self._get('disks/{0}/alerts'.format(id), kwargs)
+
+    def get_disk_events(self, id, **kwargs):
+        '''get the list of events generated on any disk
+
+        Parameters:
+        id -- id of the disk
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('disks/{0}/events'.format(id), kwargs)
+
+    def get_disk_stats(self, id, **kwargs):
+        '''get the stats for a specified disk
+
+        Parameters:
+        id -- id of the disk
+
+        Keyword arguments:
+        metrics (required) -- List of metrics
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        intervalInSecs -- Sampling interval of stats
+        '''
+        return self._get('disks/{0}/stats/'.format(id), kwargs)
 
     ############################################################
     # Encryption
