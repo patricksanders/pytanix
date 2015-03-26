@@ -1923,6 +1923,188 @@ class Nutanix(object):
     ############################################################
     # Remote Sites
     ############################################################
+    def get_remote_sites(self, **kwargs):
+        '''get the list of remote sites configured in the cluster
+        
+        Keyword arguments:
+        names -- remote site names
+        metroCompatible -- remote site stretchable
+        fullDetails -- remote cluster full detail
+        includeDeleted -- include deleted
+        projection -- projections on the attributes
+        '''
+        return self._get('remote_sites/', kwargs)
+
+    def add_remote_site(self, payload):
+        '''add a remote site
+
+        Parameters:
+        payload -- json remote site configuration
+        '''
+        return self._post('remote_sites/', payload=payload)
+
+    def update_remote_site(self, payload):
+        '''update a remote site
+
+        Parameters:
+        payload -- json remote site configuration
+        '''
+        return self._put('remote_sites/', payload=payload)
+
+    def get_remote_sites_alerts(self, **kwargs):
+        '''get the list of alerts generated on any remote site
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        entityType -- Entity type
+        entityIds -- Entity ids
+        '''
+        return self._get('remote_sites/alerts', kwargs)
+
+    def get_remote_sites_snapshots(self, **kwargs):
+        '''get the list of all snapshots created in remote sites
+
+        Keyword arguments:
+        count -- maximum number of DR snapshots to retrieve
+        filterCriteria -- filter criteria
+        sortCriteria -- sort criteria
+        fullDetails -- whether to include consistency group/VM details
+        '''
+        return self._get('remote_sites/dr_snapshots', kwargs)
+
+    def get_remote_sites_events(self, **kwargs):
+        '''get the list of events generated on any remote site
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('remote_sites/events', kwargs)
+
+    def get_remote_sites_health(self, **kwargs):
+        '''get the health check summary for the remote sites
+
+        Keyword arguments:
+        filterCriteria -- filter criteria
+        detailedSummary -- detailed summary
+        '''
+        return self._get('remote_sites/health_check_summary', kwargs)
+
+    def get_pending_remote_replications(self, **kwargs):
+        '''get all pending replications on the cluster
+
+        Keyword arguments:
+        protectionDomainNames -- protection domain names
+        remoteSiteNames -- remote site names
+        '''
+        return self._get('remote_sites/pending_replications/', kwargs)
+
+    def get_remote_site(self, name, **kwargs):
+        '''get a remote site with the specified name
+
+        Parameters:
+        name -- name of the remote site
+
+        Keyword arguments:
+        projection -- projections on the attributes
+        '''
+        return self._get('remote_sites/{0}'.format(name), kwargs)
+
+    def delete_remote_site(self, name):
+        '''delete a remote site with the specified name from the cluster
+
+        Parameters:
+        name -- name of the remote site
+        '''
+        return self._delete('remote_sites/{0}'.format(name))
+
+    def get_remote_site_alerts(self, name, **kwargs):
+        '''get the list of alerts generated on a specified remote site
+
+        Parameters:
+        name -- name of the remote site
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        entityType -- Entity type
+        entityIds -- Entity ids
+        '''
+        return self._get('remote_sites/{0}/alerts'.format(name), kwargs)
+
+    def get_remote_site_snapshots(self, name, **kwargs):
+        '''get the list of snapshots created in a particular remote site
+
+        Parameters:
+        name -- name of the remote site
+
+        Keyword arguments:
+        count -- maximum number of DR snapshots to retrieve
+        filterCriteria -- filter criteria
+        sortCriteria -- sort criteria
+        fullDetails -- whether to include consistency group/VM details
+        '''
+        return self._get('remote_sites/{0}/dr_snapshots/'.format(name), kwargs)
+
+    def get_remote_site_events(self, name, **kwargs):
+        '''get the list of events generated on a specified remote site
+
+        Parameters:
+        name -- name of the remote site
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('remote_sites/{0}/events'.format(name), kwargs)
+
+    def get_pending_remote_replications(self, name, **kwargs):
+        '''get all pending replications on the cluster
+
+        Parameters:
+        name -- name of the remote site
+
+        Keyword arguments:
+        protectionDomainNames -- protection domain names
+        remoteSiteNames -- remote site names
+        '''
+        return self._get('remote_sites/{0}/pending_replications/'.format(name), kwargs)
+
+    def get_remote_site_stats(self, name, **kwargs):
+        '''get the stats for a specified remote site
+        If start time and end time are included in the query string,
+        then historical stats are retrieved. Otherwise, the latest
+        stats are retrieved.
+
+        Parameters:
+        name -- name of the remote site
+
+        Keyword Arguments:
+        metrics (required) -- list of metrics
+        startTimeInUsecs -- start time in microseconds
+        endTimeInUsecs -- end time in microseconds
+        intervalInSecs -- sampling interval of stats
+        '''
+        return self._get('remote_stats/{0}/stats/'.format(name), kwargs)
 
     ############################################################
     # SMB Server
