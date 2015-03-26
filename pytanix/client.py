@@ -1414,6 +1414,506 @@ class Nutanix(object):
     ############################################################
     # Protection Domains
     ############################################################
+    def get_protection_domains(self, **kwargs):
+        '''get the list of protection domains configured in the cluster
+
+        Keyword arguments:
+        names -- protection domain names
+        metroAvail -- metro availability protection domain
+        vStoreName -- vStore name
+        remoteSiteName -- remote site name
+        includeDeleted -- include deleted
+        projection -- projections on the attributes
+        '''
+        return self._get('protection_domains/', kwargs)
+
+    def add_protection_domain(self, payload):
+        '''add a protection domain to be used for disaster recovery and backups
+
+        Parameters:
+        payload -- json protection domain configuration
+        '''
+        return self._post('protection_domains/', payload=payload)
+
+    def get_protection_domain_alerts(self, **kwargs):
+        '''get the list of alerts generated on any protection domain
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        entityType -- Entity type
+        entityIds -- Entity ids
+        '''
+        return self._get('protection_domains/alerts', kwargs)
+
+    def get_consistency_groups(self, **kwargs):
+        '''get the list of consistency groups in the cluster
+
+        Keyword arguments:
+        protectionDomains -- protection domain names
+        consistencyGroups -- consistency group names
+        includeDeleted -- include deleted
+        '''
+        return self._get('protection_domains/consistency_groups/', kwargs)
+
+    def get_dr_snapshots(self, **kwargs):
+        '''get the list of snapshots created in protection domains
+
+        Keyword arguments:
+        count -- number of DR snapshots to retrieve
+        filterCriteria -- filter criteria
+        sortCriteria -- sort criteria
+        fullDetails -- whether to include CG/VM details
+        '''
+        return self._get('consistency_groups/dr_snapshots/', kwargs)
+
+    def get_protection_domain_events(self, **kwargs):
+        '''get the list of events generated on any protection domain
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('protection_domain/events', kwargs)
+
+    def get_protection_domain_health(self, **kwargs):
+        '''get the health check summary for the protection domain
+
+        Keyword arguments:
+        filterCriteria -- filter criteria
+        detailedSummary -- detailed summary
+        '''
+        return self._get('protection_domains/health_check_summary', kwargs)
+
+    def get_oob_schedules(self, **kwargs):
+        '''get the list of out-of-band schedules in protection domains configured in the cluster
+
+        Keyword arguments:
+        protectionDomainNames -- names of protection domains
+        '''
+        return self._get('protectoin_domains/oob_schedules/', kwargs)
+
+    def get_pending_actions(self, **kwargs):
+        '''get the list of pending actions in the cluster
+
+        Keyword arguments:
+        protectionDomainNames -- names of protection domains
+        '''
+        return self._get('protection_domains/pending_actions/', kwargs)
+
+    def get_pending_replications(self, **kwargs):
+        '''get the list of pending replications in the cluster
+
+        Keyword arguments:
+        protectionDomainNames -- protection domain names
+        remoteSiteNames -- remote site names
+        '''
+        return self._get('protection_domains/pending_replications/', kwargs)
+
+    def get_replications(self, **kwargs):
+        '''get the list of replications in the cluster
+
+        Keyword arguments:
+        protectionDomainNames -- protection domain names
+        remoteSiteNames -- remote site names
+        '''
+        return self._get('protection_domains/replications/', kwargs)
+
+    def get_protection_domain_status(self):
+        '''get the data protection status for all protection domains
+        '''
+        return self._get('protection_domains/status')
+
+    def get_unprotected_vms(self, **kwargs):
+        '''get list of unprotected VMs in a cluster that can participate in Nutanix native backup and DR
+
+        Keyword arguments:
+        hostIds -- host IDs
+        vmNames -- VM names
+        containerNames -- container names
+        '''
+        return self._get('protection_domains/unprotected_vms/', kwargs)
+
+    def get_protection_domain(self, name, **kwargs):
+        '''get a protection domain with the specified name
+
+        Parameters:
+        name -- name of the protection domain
+
+        Keyword arguments:
+        metroAvail -- whether to include only metro availability related protection domains
+        vStoreName -- vStore name
+        remoteSiteName -- remote site name
+        projection -- projections on the attributes
+        '''
+        return self._get('protection_domains/{0}'.format(name), kwargs)
+
+    def delete_protection_domain(self, name, **kwargs):
+        '''mark a protection domain for removal
+        Protection domain will be removed from the cluster when all outstanding
+        operations on it are cancelled
+
+        Parameters:
+        name -- name of the protection domain
+
+        Keyword arguments:
+        skipRemoteCheck -- skip checking remote protection domain
+        '''
+        return self._delete('protection_domains/{0}'.format(name), kwargs)
+
+    def activate_protection_domain(self, name):
+        '''activate a protection domain with the specified name
+
+        Parameters:
+        name -- name of the protection domain
+        '''
+        return self._post('protection_domains/{0}/activate'.format(name))
+
+    def get_protection_domain_alerts(self, name, **kwargs):
+        '''get the list of alerts generated on a specified protection domain
+
+        Parameters:
+        name -- name of the protection domain
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of alerts
+        resolved -- Alerts which have been resolved
+        acknowledged -- Alerts which have been acknowledged
+        severity -- Alert severities
+        alertTypeUuid -- Alert type ids
+        page -- Page number
+        entityType -- Entity type
+        entityIds -- Entity ids
+        '''
+        return self._get('protection_domains/{0}/alerts'.format(name), kwargs)
+
+    def get_consistency_groups(self, name):
+        '''get list of consistency groups in a specified protection domain
+
+        Parameters:
+        name -- name of the protection domain
+        '''
+        return self._get('protection_domains/{0}/consistency_groups/'.format(name))
+
+    def deactivate_protection_domain(self, name):
+        '''deactivate a protection domain with the specified name
+        
+        Parameters:
+        name -- name of the protection domain
+        '''
+        return self._post('protection_domains/{0}/deactivate'.format(name))
+
+    def get_dr_snapshots(self, name, **kwargs):
+        '''get the list of snapshots created in a specified protection domain
+
+        Parameters:
+        name -- name of the protection domain
+
+        Keyword arguments:
+        count -- number of DR snapshots to retrieve
+        filterCriteria -- filter criteria
+        sortCriteria -- sort criteria
+        fullDetails -- whether to include CG/VM details
+        '''
+        return self._get('protection_domains/{0}/dr_snapshots/'.format(name), kwargs)
+
+    def get_protection_domain_events(self, name, **kwargs):
+        '''get the list of events generated on a specified protection domain
+
+        Parameters:
+        name -- name of the protection domain
+
+        Keyword arguments:
+        startTimeInUsecs -- Start time in microseconds
+        endTimeInUsecs -- End time in microseconds
+        count -- Maximum number of events
+        acknowledged -- Events which have been acknowledged
+        page -- Page number
+        '''
+        return self._get('protection_domain/{0}/events'.format(name), kwargs)
+
+    def migrate_protection_domain(self, name):
+        '''mark the specified protection domain as inactive and failover to the given remote site
+
+        Parameters:
+        name -- name of the protection domain
+        '''
+        return self._post('protection_domains/{0}/migrate'.format(name))
+
+    def add_oob_schedule(self, name, payload):
+        '''add an out of band snapshot schedule in the specified protection domain
+
+        Parameters:
+        name -- name of the protection domain
+        payload -- json out of band snapshot schedule configuration
+        '''
+        return self._post('protection_domains/{0}/oob_schedules'.format(name), kwargs)
+
+    def get_oob_schedules(self, name):
+        '''get the list of out of band schedules in the specified protection domain
+
+        Parameters:
+        name -- name of the protection domain
+        '''
+        return self._get('protection_domains/{0}/oob_schedules'.format(name))
+
+    def delete_oob_schedule(self, pd_name, shedule_id):
+        '''delete an out of band schedule
+
+        Parameters:
+        pd_name -- name of the protection domain
+        schedule_id -- ID of the out of band schedule
+        '''
+        return self._delete('protection_domains/{0}/oob_schedules/{1}'.format(pd_name, schedule_id))
+
+    def get_pending_actions(self, name):
+        '''get list of pending actions in the specified protection domain
+
+        Parameters:
+        name -- name of the protection domain
+        '''
+        return self._get('protection_domains/{0}/pending_actions/'.format(name))
+
+    def get_pending_replications(self, name, **kwargs):
+        '''get list of pending replications in the specified protection domain
+
+        Parameters:
+        name -- name of the protection domain
+
+        Keyword arguments:
+        remoteSiteNames -- names of remote sites
+        '''
+        return self._get('protection_domains/{0}/pending_replications'.format(name), kwargs)
+
+    def protect_vms(self, name, payload):
+        '''add VMs to a protection domain to enable backup and disaster recovery
+
+        Parameters:
+        name -- name of the protection domain
+        payload -- json vm protection configuration
+        '''
+        return self._post('protection_domains/{0}/protect_vms'.format(name), payload=payload)
+
+    def get_replications(self, name):
+        '''get list of replications in a protection domain
+
+        Parameters:
+        name -- name of protection domain
+        '''
+        return self._get('protection_domains/{0}/replications/'.format(name))
+
+    def restore_entities(self, name, payload):
+        '''rollback VMs and/or NFS files in a protection domain to a given snapshot
+
+        Parameters:
+        name -- name of the protection domain
+        payload -- json restore configuration
+        '''
+        return self._post('protection_domains/{0}/restore_entities'.format(name), payload=payload)
+
+    def rollback(self, pd_name, snapshot_id):
+        '''rollback the specified protection domain to a given snapshot
+
+        Parameters:
+        pd_name -- name of the protection domain
+        snapshot_id -- ID of the snapshot
+        '''
+        payload = {"value": snapshot_id}
+        return self._post('protection_domains/{0}/rollback'.format(name), payload=payload)
+
+    def add_snapshot_schedule(self, name, payload):
+        '''add a snapshot schedule to the specified protection domain
+
+        Parameters:
+        name -- name of the protection domains
+        payload -- json snapshot schedule configuration
+        '''
+        return self._post('protection_domains/{0}/schedules'.format(name), payload=payload)
+
+    def get_snapshot_schedules(self, name):
+        '''retrieve all snapshot schedules from the specified protection domain
+        '''
+        return self._get('protection_domains/{0}/schedules'.format(name))
+
+    def get_protection_domain_stats(self, name, **kwargs):
+        '''get the status for a specified protection domain
+        If start time and end time are included in the query string,
+        then historical stats are retrieved. Otherwise, the latest
+        stats are retrieved.
+
+        Parameters:
+        name -- name of the protection domain
+
+        Keyword Arguments:
+        metrics (required) -- list of metrics
+        startTimeInUsecs -- start time in microseconds
+        endTimeInUsecs -- end time in microseconds
+        intervalInSecs -- sampling interval of stats
+        '''
+        return self._get('protection_domains/{0}/stats/'.format(name), kwargs)
+
+    def unprotect_vms(self, name, **kwargs):
+        '''remove VMs from a protection domain
+
+        Parameters:
+        name -- name of the protection domain
+
+        Keyword arguments:
+        array (required) -- list of VMs
+        '''
+        return self._post('protection_domains/{0}/unprotect_vms'.format(name), kwargs)
+
+    def update_replication_timeout(self, name, payload):
+        '''update metro availability timeout for a specific protection domain
+
+        Parameters:
+        name -- name of the protection domain
+        payload -- json replication timeout configuration
+        '''
+        return self._put('protection_domains/{0}/break_replication_timeout'.format(name), payload=payload)
+
+    def demote_protection_domain(self, name, **kwargs):
+        '''demotes to standby metro availability role for a specified protection domain
+
+        Parameters:
+        name -- name of the protection domain
+
+        Keyword arguments:
+        skipRemoteCheck -- skip checking remote protection domain
+        '''
+        return self._post('protection_domains/{0}/demote'.format(name), kwargs)
+
+    def disable_metro_availability(self, name, **kwargs):
+        '''disable metro availability for a specified protection domain
+
+        Parameters:
+        name -- name of the protection domain
+
+        Keyword arguments:
+        skipRemoteCheck -- skip checking remote protection domain
+        '''
+        return self._post('protection_domains/{0}/metro_avail_disable'.format(name), kwargs)
+
+    def enable_metro_availability(self, name, payload, **kwargs):
+        '''enable metro availability for a specific protection domain based on vStore and remote site
+
+        Parameters:
+        name -- name of the protection domain
+        payload -- vStore and remote site configuration
+
+        Keyword arguments:
+        reEnable -- re-enable operation
+        skipRemoteCheck -- skip checking remote protection domain
+        force -- skip checking remote container emptiness
+        '''
+        return self._post('protection_domains/{0}/metro_avail_enable'.format(name), kwargs, payload=payload)
+
+    def promote_protection_domain(self, name, **kwargs):
+        '''promotes to active metro availability role for a specified protection domain
+
+        Parameters:
+        name -- name of the protection domain
+
+        Keyword arguments:
+        skipRemoteCheck -- skip checking remote protection domain
+        '''
+        return self._post('protection_domains/{0}/promote'.format(name), kwargs)
+
+    def delete_snapshot_schedules(self, name):
+        '''remove all snapshot schedules from the specified protection domain
+
+        Parameters:
+        name -- name of the protection domain
+        '''
+        return self._delete('protection_domains/{0}/schedules'.format(name))
+
+    def delete_snapshot_schedule(self, pd_name, schedule_id):
+        '''remove a snapshot schedule from the specified protection domain
+
+        Parameters:
+        pd_name -- name of the protection domain
+        schedule-id -- ID of the snapshot schedule
+        '''
+        return self._delete('protection_domains/{0}/schedules/{1}'.format(pd_name, schedule_id))
+
+    def update_snapshot_schedule(self, pd_name, schedule_id, payload):
+        '''replace a snapshot schedule from the specified protection domain
+
+        Parameters:
+        pd_name -- name of the protection domain
+        schedule-id -- ID of the snapshot schedule
+        payload -- json snapshot schedule configuration
+        '''
+        return self._put('protection_domains/{0}/schedules/{1}'.format(pd_name, schedule_id), payload=payload)
+
+    def set_retention_policies(self, pd_name, schedule_id, payload):
+        '''set retention policies of specified snapshot schedule from the specified protection domain
+
+        Parameters:
+        pd_name -- name of the protection domain
+        schedule-id -- ID of the snapshot schedule
+        payload -- json snapshot schedule configuration
+        '''
+        return self._post('protection_domains/{0}/schedules/{1}/retention_policies'.format(pd_name, schedule_id), payload=payload)
+
+    def clear_retention_policies(self, pd_name, schedule_id):
+        '''clear retention policies of specified snapshot schedule from the specified protection domain
+
+        Parameters:
+        pd_name -- name of the protection domain
+        schedule-id -- ID of the snapshot schedule
+        '''
+        return self._delete('protection_domains/{0}/schedules/{1}/retention_policies'.format(pd_name, schedule_id))
+
+    def delete_snapshot(self, pd_name, snapshot_id):
+        '''delete a snapshot of a protection domain
+
+        Parameters:
+        pd_name -- name of the protection domain
+        snapshot_id -- ID of the snapshot
+        '''
+        return self._delete('protection_domains/{0}/dr_snapshots/{1}'.format(pd_name, snapshot_id))
+
+    def retain_snapshot(self, pd_name, snapshot_id, retention_time):
+        '''retain a snapshot of a protection domain
+
+        Parameters:
+        pd_name -- name of the protection domain
+        snapshot_id -- ID of the snapshot
+        retention_time -- retention time in microseconds
+        '''
+        payload = {"value": retention_time}
+        return self._post('protection_domains/{0}/dr_snapshots/{1}'.format(pd_name, snapshot_id), payload=payload)
+
+    def update_replication_status(self, pd_name, replication_id, payload):
+        '''update the state of the replication in a protection domain
+
+        Parameters:
+        pd_name -- name of the protection domain
+        replication_id -- ID of the replication
+        payload -- json of updated replication status (pause, resume, abort)
+        '''
+        return self._put('protection_domains/{0}/replications/{1}'.format(pd_name, replication_id), payload=payload)
+
+    def abort_replication(self, pd_name, replication_id):
+        '''abort a replication in a protection domain
+
+        Parameters:
+        pd_name -- name of the protection domain
+        replication_id -- ID of the replication
+        '''
+        return self._delete('protection_domains/{0}/replications/{1}'.format(pd_name, replication_id))
 
     ############################################################
     # Pulse
