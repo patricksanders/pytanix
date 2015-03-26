@@ -15,7 +15,9 @@ creds = user + ':' + password
 auth = base64.b64encode(creds)
 
 nutanix = pytanix.Nutanix(ip, auth=auth)
-#nutanix.get_client_auth_status()
-nutanix.set_client_auth_status(False)
-#nutanix.get_client_auth_status()
+nutanix.trace = True
+nutanix.verify_ssl = False
+#nutanix.add_ntp_server("10.10.46.1")
+nutanix.get_ntp_servers()
+nutanix.get_ntp_servers()
 
