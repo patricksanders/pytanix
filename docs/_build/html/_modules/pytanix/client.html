@@ -77,7 +77,7 @@
 <span class="sd">    Example usage::</span>
 <span class="sd">        </span>
 <span class="sd">        import pytanix</span>
-<span class="sd">        nu = pytanix.Nutanix()</span>
+<span class="sd">        nu = pytanix.Nutanix(&#39;1.2.3.4&#39;)</span>
 <span class="sd">        alerts = nu.alerts()</span>
 <span class="sd">        print(alerts)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -184,16 +184,27 @@
         <span class="sd">&#39;&#39;&#39;returns a list of alerts</span>
 <span class="sd">            </span>
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
-<span class="sd">            entityType: Entity type</span>
-<span class="sd">            entityIds: Entity ids</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
+<span class="sd">        :param entityType:</span>
+<span class="sd">            Entity type</span>
+<span class="sd">        :param entityIds:</span>
+<span class="sd">            Entity ids</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;alerts&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -201,12 +212,19 @@
         <span class="sd">&#39;&#39;&#39;acknowledge alerts using a filter criteria</span>
 <span class="sd">            </span>
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            entityType: Entity type</span>
-<span class="sd">            entityTypeIds: Entity type ids</span>
-<span class="sd">            count: Maximum number of alerts</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param entityType:</span>
+<span class="sd">            Entity type</span>
+<span class="sd">        :param entityTypeIds:</span>
+<span class="sd">            Entity type ids</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;alerts/acknowledge&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -227,16 +245,27 @@
         <span class="sd">&#39;&#39;&#39;get the list of hardware alerts generated in the cluster</span>
 <span class="sd">            </span>
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
-<span class="sd">            entityType: Entity type</span>
-<span class="sd">            entityIds: Entity ids</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
+<span class="sd">        :param entityType:</span>
+<span class="sd">            Entity type</span>
+<span class="sd">        :param entityIds:</span>
+<span class="sd">            Entity ids</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;alerts/hardware&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -244,8 +273,11 @@
         <span class="sd">&#39;&#39;&#39;get the list of alerts metadata generated in the cluster</span>
 <span class="sd">            </span>
 <span class="sd">        Kwargs:</span>
-<span class="sd">            ids: Alert UUIDs</span>
-<span class="sd">            excludeDisabled: Exclude disabled alerts</span>
+
+<span class="sd">        :param ids:</span>
+<span class="sd">            Alert UUIDs</span>
+<span class="sd">        :param excludeDisabled:</span>
+<span class="sd">            Exclude disabled alerts</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;alerts/metadata&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -269,12 +301,19 @@
         <span class="sd">&#39;&#39;&#39;resolve alerts using a filter criteria</span>
 <span class="sd">            </span>
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            entityType: Entity type</span>
-<span class="sd">            entityTypeIds: Entity type ids</span>
-<span class="sd">            count: Maximum number of alerts</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param entityType:</span>
+<span class="sd">            Entity type</span>
+<span class="sd">        :param entityTypeIds:</span>
+<span class="sd">            Entity type ids</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;alerts/resolve&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -282,16 +321,27 @@
         <span class="sd">&#39;&#39;&#39;get the list of storage alerts generated in the cluster</span>
 <span class="sd">            </span>
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
-<span class="sd">            entityType: Entity type</span>
-<span class="sd">            entityIds: Entity ids</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
+<span class="sd">        :param entityType:</span>
+<span class="sd">            Entity type</span>
+<span class="sd">        :param entityIds:</span>
+<span class="sd">            Entity ids</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;alerts/storage&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -467,7 +517,9 @@
         <span class="sd">&#39;&#39;&#39;download csr for node with given ip</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            nodeIp: IP address of node</span>
+
+<span class="sd">        :param nodeIp:</span>
+<span class="sd">            IP address of node</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;certificates/csr_for_discovered_node&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -475,7 +527,9 @@
         <span class="sd">&#39;&#39;&#39;download csr files from cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            nodeIdList: list of node IDs</span>
+
+<span class="sd">        :param nodeIdList:</span>
+<span class="sd">            list of node IDs</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;certificates/csrs&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -483,8 +537,11 @@
         <span class="sd">&#39;&#39;&#39;delete an svm certificate from cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            nodeId: id of the node on which the cert is installed</span>
-<span class="sd">            serverName: key management server for which cert is installed</span>
+
+<span class="sd">        :param nodeId:</span>
+<span class="sd">            id of the node on which the cert is installed</span>
+<span class="sd">        :param serverName:</span>
+<span class="sd">            key management server for which cert is installed</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;certificate/svm_certificate/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
     </div>
@@ -659,9 +716,12 @@
         <span class="sd">&#39;&#39;&#39;perform a spotlight search on the cluster</span>
 
 <span class="sd">        Kwargs:</span>
+
 <span class="sd">            searchString (str): search string</span>
-<span class="sd">            entityTypes: entity types</span>
-<span class="sd">            fieldNames: field names</span>
+<span class="sd">        :param entityTypes:</span>
+<span class="sd">            entity types</span>
+<span class="sd">        :param fieldNames:</span>
+<span class="sd">            field names</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;cluster/search/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -700,10 +760,15 @@
         <span class="sd">&#39;&#39;&#39;get the list of cluster stats</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            metrics (required): list of metrics</span>
-<span class="sd">            startTimeInUsecs (required): start time in microseconds</span>
-<span class="sd">            endTimeInUsecs (required): end time in microseconds</span>
-<span class="sd">            intervalInSecs (required): sampling interval of stats</span>
+
+<span class="sd">        :param metrics:</span>
+<span class="sd">            (required) list of metrics</span>
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            (required) start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            (required) end time in microseconds</span>
+<span class="sd">        :param intervalInSecs:</span>
+<span class="sd">            (required) sampling interval of stats</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;cluster/stats/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -714,12 +779,19 @@
         <span class="sd">&#39;&#39;&#39;get the list of clusters</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            count: number of clusters to retrieve</span>
-<span class="sd">            filterCriteria: filter criteria</span>
-<span class="sd">            sortCriteria: sort criteria</span>
-<span class="sd">            searchString: search string</span>
-<span class="sd">            page: page number</span>
-<span class="sd">            projection: projections on the attributes</span>
+
+<span class="sd">        :param count:</span>
+<span class="sd">            number of clusters to retrieve</span>
+<span class="sd">        :param filterCriteria:</span>
+<span class="sd">            filter criteria</span>
+<span class="sd">        :param sortCriteria:</span>
+<span class="sd">            sort criteria</span>
+<span class="sd">        :param searchString:</span>
+<span class="sd">            search string</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            page number</span>
+<span class="sd">        :param projection:</span>
+<span class="sd">            projections on the attributes</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;clusters/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -727,14 +799,23 @@
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated on any cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;clusters/alerts&#39;</span><span class="p">)</span>
 
@@ -742,11 +823,17 @@
         <span class="sd">&#39;&#39;&#39;get the list of events generated on any cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;clusters/events&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -757,7 +844,9 @@
 <span class="sd">            id of the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            projection: projections on the attributes</span>
+
+<span class="sd">        :param projection:</span>
+<span class="sd">            projections on the attributes</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;clusters/{id}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -768,14 +857,23 @@
 <span class="sd">            id of the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;clusters/{id}/alerts&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -786,11 +884,17 @@
 <span class="sd">            id of the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;clusters/{id}/events&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
         </div>
@@ -801,10 +905,15 @@
 <span class="sd">            id of the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            metrics (required): list of metrics</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            intervalInSecs: sampling interval of stats</span>
+
+<span class="sd">        :param metrics:</span>
+<span class="sd">            (required) list of metrics</span>
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param intervalInSecs:</span>
+<span class="sd">            sampling interval of stats</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;clusters/{id}/stats&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -815,12 +924,19 @@
         <span class="sd">&#39;&#39;&#39;get the list of containers</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            count: number of containers to retrieve</span>
-<span class="sd">            filterCriteria: filter criteria</span>
-<span class="sd">            sortCriteria: sort criteria</span>
-<span class="sd">            searchString: search string</span>
-<span class="sd">            page: page number</span>
-<span class="sd">            projection: projections on the attributes</span>
+
+<span class="sd">        :param count:</span>
+<span class="sd">            number of containers to retrieve</span>
+<span class="sd">        :param filterCriteria:</span>
+<span class="sd">            filter criteria</span>
+<span class="sd">        :param sortCriteria:</span>
+<span class="sd">            sort criteria</span>
+<span class="sd">        :param searchString:</span>
+<span class="sd">            search string</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            page number</span>
+<span class="sd">        :param projection:</span>
+<span class="sd">            projections on the attributes</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;containers/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -844,14 +960,23 @@
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated on any container</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;containers/alerts&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -880,11 +1005,17 @@
         <span class="sd">&#39;&#39;&#39;get the list of events generated on any container</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;containers/events&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -895,8 +1026,11 @@
 <span class="sd">            ID of the container</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            ignoreSmallFiles: ignore small files</span>
-<span class="sd">            ignoreVDisks: ignore all vdisks</span>
+
+<span class="sd">        :param ignoreSmallFiles:</span>
+<span class="sd">            ignore small files</span>
+<span class="sd">        :param ignoreVDisks:</span>
+<span class="sd">            ignore all vdisks</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;containers/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -907,7 +1041,9 @@
 <span class="sd">            id of the container</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            projection: projections on the attributes</span>
+
+<span class="sd">        :param projection:</span>
+<span class="sd">            projections on the attributes</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;containers/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -918,14 +1054,23 @@
 <span class="sd">            id of the container</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;containers/{0}/alerts&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -936,11 +1081,17 @@
 <span class="sd">            id of the container</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;containers/{0}/events&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -951,10 +1102,15 @@
 <span class="sd">            id of the container</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            metrics (required): List of metrics</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            intervalInSecs: Sampling interval of stats</span>
+
+<span class="sd">        :param metrics:</span>
+<span class="sd">            (required) List of metrics</span>
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param intervalInSecs:</span>
+<span class="sd">            Sampling interval of stats</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;containers/{0}/stats/&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -973,12 +1129,19 @@
         <span class="sd">&#39;&#39;&#39;get the list of disks configured in the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            count: number of disks to retrieve</span>
-<span class="sd">            filterCriteria: filter criteria</span>
-<span class="sd">            sortCriteria: sort criteria</span>
-<span class="sd">            searchString: search string</span>
-<span class="sd">            page: page number</span>
-<span class="sd">            projection: projections on the attributes</span>
+
+<span class="sd">        :param count:</span>
+<span class="sd">            number of disks to retrieve</span>
+<span class="sd">        :param filterCriteria:</span>
+<span class="sd">            filter criteria</span>
+<span class="sd">        :param sortCriteria:</span>
+<span class="sd">            sort criteria</span>
+<span class="sd">        :param searchString:</span>
+<span class="sd">            search string</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            page number</span>
+<span class="sd">        :param projection:</span>
+<span class="sd">            projections on the attributes</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;disks/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -986,14 +1149,23 @@
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated on any disk</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;disks/alerts&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1001,11 +1173,17 @@
         <span class="sd">&#39;&#39;&#39;get the list of events generated on any disk</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;disks/events&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1013,8 +1191,11 @@
         <span class="sd">&#39;&#39;&#39;get the health check summary for the disks</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            filterCriteria: filter criteria</span>
-<span class="sd">            detailedSummary: detailed summary</span>
+
+<span class="sd">        :param filterCriteria:</span>
+<span class="sd">            filter criteria</span>
+<span class="sd">        :param detailedSummary:</span>
+<span class="sd">            detailed summary</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;disks/health_check_summary&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1025,7 +1206,9 @@
 <span class="sd">            ID of the disk</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            projection: projections on the attributes</span>
+
+<span class="sd">        :param projection:</span>
+<span class="sd">            projections on the attributes</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;disks/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1036,7 +1219,9 @@
 <span class="sd">            ID of the disk</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            force: force the operation (ignores all system validations)</span>
+
+<span class="sd">        :param force:</span>
+<span class="sd">            force the operation (ignores all system validations)</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;disks/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1047,14 +1232,23 @@
 <span class="sd">            id of the disk</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;disks/{0}/alerts&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1065,11 +1259,17 @@
 <span class="sd">            id of the disk</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;disks/{0}/events&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1080,10 +1280,15 @@
 <span class="sd">            id of the disk</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            metrics (required): List of metrics</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            intervalInSecs: Sampling interval of stats</span>
+
+<span class="sd">        :param metrics:</span>
+<span class="sd">            (required) List of metrics</span>
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param intervalInSecs:</span>
+<span class="sd">            Sampling interval of stats</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;disks/{0}/stats/&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1109,8 +1314,11 @@
         <span class="sd">&#39;&#39;&#39;get recent certificate test results</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            hostIds: list of host IDs</span>
-<span class="sd">            kmsServerNames: list of key management server names</span>
+
+<span class="sd">        :param hostIds:</span>
+<span class="sd">            list of host IDs</span>
+<span class="sd">        :param kmsServerNames:</span>
+<span class="sd">            list of key management server names</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;encryption/recent_certificate_test_results&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1118,7 +1326,9 @@
         <span class="sd">&#39;&#39;&#39;set new password for encryption capable disks</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            array: list of disk ids on which rekey needs to be performed</span>
+
+<span class="sd">        :param array:</span>
+<span class="sd">            list of disk ids on which rekey needs to be performed</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;encryption/rekey&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1140,11 +1350,17 @@
         <span class="sd">&#39;&#39;&#39;get the list of events generated in the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;events/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1152,12 +1368,19 @@
         <span class="sd">&#39;&#39;&#39;acknowledge events using a filter criteria</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            severity: Severity</span>
-<span class="sd">            entityType: Entity type</span>
-<span class="sd">            entityTypeIds: Entity type IDs</span>
-<span class="sd">            count: Maximum number of events</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Severity</span>
+<span class="sd">        :param entityType:</span>
+<span class="sd">            Entity type</span>
+<span class="sd">        :param entityTypeIds:</span>
+<span class="sd">            Entity type IDs</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;events/acknowledge&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1165,11 +1388,17 @@
         <span class="sd">&#39;&#39;&#39;get the list of hardware events generated in the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;events/hardware&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1177,11 +1406,17 @@
         <span class="sd">&#39;&#39;&#39;get the list of storage events generated in the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;events/storage&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1224,12 +1459,19 @@
         <span class="sd">&#39;&#39;&#39;get the list of physical hosts configured in the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            count: number of physical hosts to retrieve</span>
-<span class="sd">            filterCriteria: filter criteria</span>
-<span class="sd">            sortCriteria: sort criteria</span>
-<span class="sd">            searchString: search string</span>
-<span class="sd">            page: page number</span>
-<span class="sd">            projection: projections on the attributes</span>
+
+<span class="sd">        :param count:</span>
+<span class="sd">            number of physical hosts to retrieve</span>
+<span class="sd">        :param filterCriteria:</span>
+<span class="sd">            filter criteria</span>
+<span class="sd">        :param sortCriteria:</span>
+<span class="sd">            sort criteria</span>
+<span class="sd">        :param searchString:</span>
+<span class="sd">            search string</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            page number</span>
+<span class="sd">        :param projection:</span>
+<span class="sd">            projections on the attributes</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;hosts/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1237,14 +1479,23 @@
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated on any host</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;hosts/alerts&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1252,11 +1503,17 @@
         <span class="sd">&#39;&#39;&#39;get the list of events generated on any host</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;hosts/events&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1264,8 +1521,11 @@
         <span class="sd">&#39;&#39;&#39;get the health check summary for the hosts</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            filterCriteria: filter criteria</span>
-<span class="sd">            detailedSummary: detailed summary</span>
+
+<span class="sd">        :param filterCriteria:</span>
+<span class="sd">            filter criteria</span>
+<span class="sd">        :param detailedSummary:</span>
+<span class="sd">            detailed summary</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;hosts/health_check_summary&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1276,14 +1536,23 @@
 <span class="sd">            service VM ID</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;hosts/{0}/alerts&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">svm_id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1294,11 +1563,17 @@
 <span class="sd">            service VM ID</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;hosts/{0}/events&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">svm_id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1309,10 +1584,15 @@
 <span class="sd">            service VM ID</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            metrics (required): List of metrics</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            intervalInSecs: Sampling interval of stats</span>
+
+<span class="sd">        :param metrics:</span>
+<span class="sd">            (required) List of metrics</span>
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param intervalInSecs:</span>
+<span class="sd">            Sampling interval of stats</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;hosts/{0}/stats/&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">svm_id</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1424,16 +1704,27 @@
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated for any license</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
-<span class="sd">            entityType: Entity type</span>
-<span class="sd">            entityIds: Entity ids</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
+<span class="sd">        :param entityType:</span>
+<span class="sd">            Entity type</span>
+<span class="sd">        :param entityIds:</span>
+<span class="sd">            Entity ids</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;license/alerts/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1464,11 +1755,17 @@
         <span class="sd">&#39;&#39;&#39;get the list of events generated for any license</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;license/events&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1479,12 +1776,19 @@
         <span class="sd">&#39;&#39;&#39;get the list of protection domains configured in the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            names: protection domain names</span>
-<span class="sd">            metroAvail: metro availability protection domain</span>
-<span class="sd">            vStoreName: vStore name</span>
-<span class="sd">            remoteSiteName: remote site name</span>
-<span class="sd">            includeDeleted: include deleted</span>
-<span class="sd">            projection: projections on the attributes</span>
+
+<span class="sd">        :param names:</span>
+<span class="sd">            protection domain names</span>
+<span class="sd">        :param metroAvail:</span>
+<span class="sd">            metro availability protection domain</span>
+<span class="sd">        :param vStoreName:</span>
+<span class="sd">            vStore name</span>
+<span class="sd">        :param remoteSiteName:</span>
+<span class="sd">            remote site name</span>
+<span class="sd">        :param includeDeleted:</span>
+<span class="sd">            include deleted</span>
+<span class="sd">        :param projection:</span>
+<span class="sd">            projections on the attributes</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1500,16 +1804,27 @@
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated on any protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
-<span class="sd">            entityType: Entity type</span>
-<span class="sd">            entityIds: Entity ids</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
+<span class="sd">        :param entityType:</span>
+<span class="sd">            Entity type</span>
+<span class="sd">        :param entityIds:</span>
+<span class="sd">            Entity ids</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/alerts&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1517,9 +1832,13 @@
         <span class="sd">&#39;&#39;&#39;get the list of consistency groups in the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            protectionDomains: protection domain names</span>
-<span class="sd">            consistencyGroups: consistency group names</span>
-<span class="sd">            includeDeleted: include deleted</span>
+
+<span class="sd">        :param protectionDomains:</span>
+<span class="sd">            protection domain names</span>
+<span class="sd">        :param consistencyGroups:</span>
+<span class="sd">            consistency group names</span>
+<span class="sd">        :param includeDeleted:</span>
+<span class="sd">            include deleted</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/consistency_groups/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1527,10 +1846,15 @@
         <span class="sd">&#39;&#39;&#39;get the list of snapshots created in protection domains</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            count: number of DR snapshots to retrieve</span>
-<span class="sd">            filterCriteria: filter criteria</span>
-<span class="sd">            sortCriteria: sort criteria</span>
-<span class="sd">            fullDetails: whether to include CG/VM details</span>
+
+<span class="sd">        :param count:</span>
+<span class="sd">            number of DR snapshots to retrieve</span>
+<span class="sd">        :param filterCriteria:</span>
+<span class="sd">            filter criteria</span>
+<span class="sd">        :param sortCriteria:</span>
+<span class="sd">            sort criteria</span>
+<span class="sd">        :param fullDetails:</span>
+<span class="sd">            whether to include CG/VM details</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;consistency_groups/dr_snapshots/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1538,11 +1862,17 @@
         <span class="sd">&#39;&#39;&#39;get the list of events generated on any protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domain/events&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1550,8 +1880,11 @@
         <span class="sd">&#39;&#39;&#39;get the health check summary for the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            filterCriteria: filter criteria</span>
-<span class="sd">            detailedSummary: detailed summary</span>
+
+<span class="sd">        :param filterCriteria:</span>
+<span class="sd">            filter criteria</span>
+<span class="sd">        :param detailedSummary:</span>
+<span class="sd">            detailed summary</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/health_check_summary&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1559,7 +1892,9 @@
         <span class="sd">&#39;&#39;&#39;get the list of out-of-band schedules in protection domains configured in the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            protectionDomainNames: names of protection domains</span>
+
+<span class="sd">        :param protectionDomainNames:</span>
+<span class="sd">            names of protection domains</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protectoin_domains/oob_schedules/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1567,7 +1902,9 @@
         <span class="sd">&#39;&#39;&#39;get the list of pending actions in the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            protectionDomainNames: names of protection domains</span>
+
+<span class="sd">        :param protectionDomainNames:</span>
+<span class="sd">            names of protection domains</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/pending_actions/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1575,8 +1912,11 @@
         <span class="sd">&#39;&#39;&#39;get the list of pending replications in the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            protectionDomainNames: protection domain names</span>
-<span class="sd">            remoteSiteNames: remote site names</span>
+
+<span class="sd">        :param protectionDomainNames:</span>
+<span class="sd">            protection domain names</span>
+<span class="sd">        :param remoteSiteNames:</span>
+<span class="sd">            remote site names</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/pending_replications/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1584,8 +1924,11 @@
         <span class="sd">&#39;&#39;&#39;get the list of replications in the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            protectionDomainNames: protection domain names</span>
-<span class="sd">            remoteSiteNames: remote site names</span>
+
+<span class="sd">        :param protectionDomainNames:</span>
+<span class="sd">            protection domain names</span>
+<span class="sd">        :param remoteSiteNames:</span>
+<span class="sd">            remote site names</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/replications/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -1598,9 +1941,13 @@
         <span class="sd">&#39;&#39;&#39;get list of unprotected VMs in a cluster that can participate in Nutanix native backup and DR</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            hostIds: host IDs</span>
-<span class="sd">            vmNames: VM names</span>
-<span class="sd">            containerNames: container names</span>
+
+<span class="sd">        :param hostIds:</span>
+<span class="sd">            host IDs</span>
+<span class="sd">        :param vmNames:</span>
+<span class="sd">            VM names</span>
+<span class="sd">        :param containerNames:</span>
+<span class="sd">            container names</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/unprotected_vms/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1611,10 +1958,15 @@
 <span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            metroAvail: whether to include only metro availability related protection domains</span>
-<span class="sd">            vStoreName: vStore name</span>
-<span class="sd">            remoteSiteName: remote site name</span>
-<span class="sd">            projection: projections on the attributes</span>
+
+<span class="sd">        :param metroAvail:</span>
+<span class="sd">            whether to include only metro availability related protection domains</span>
+<span class="sd">        :param vStoreName:</span>
+<span class="sd">            vStore name</span>
+<span class="sd">        :param remoteSiteName:</span>
+<span class="sd">            remote site name</span>
+<span class="sd">        :param projection:</span>
+<span class="sd">            projections on the attributes</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1627,7 +1979,9 @@
 <span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            skipRemoteCheck: skip checking remote protection domain</span>
+
+<span class="sd">        :param skipRemoteCheck:</span>
+<span class="sd">            skip checking remote protection domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1646,16 +2000,27 @@
 <span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
-<span class="sd">            entityType: Entity type</span>
-<span class="sd">            entityIds: Entity ids</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
+<span class="sd">        :param entityType:</span>
+<span class="sd">            Entity type</span>
+<span class="sd">        :param entityIds:</span>
+<span class="sd">            Entity ids</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/alerts&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1682,10 +2047,15 @@
 <span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            count: number of DR snapshots to retrieve</span>
-<span class="sd">            filterCriteria: filter criteria</span>
-<span class="sd">            sortCriteria: sort criteria</span>
-<span class="sd">            fullDetails: whether to include CG/VM details</span>
+
+<span class="sd">        :param count:</span>
+<span class="sd">            number of DR snapshots to retrieve</span>
+<span class="sd">        :param filterCriteria:</span>
+<span class="sd">            filter criteria</span>
+<span class="sd">        :param sortCriteria:</span>
+<span class="sd">            sort criteria</span>
+<span class="sd">        :param fullDetails:</span>
+<span class="sd">            whether to include CG/VM details</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/dr_snapshots/&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1696,11 +2066,17 @@
 <span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domain/{0}/events&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1755,7 +2131,9 @@
 <span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            remoteSiteNames: names of remote sites</span>
+
+<span class="sd">        :param remoteSiteNames:</span>
+<span class="sd">            names of remote sites</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/pending_replications&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1823,10 +2201,15 @@
 <span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            metrics (required): list of metrics</span>
-<span class="sd">            startTimeInUsecs: start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: end time in microseconds</span>
-<span class="sd">            intervalInSecs: sampling interval of stats</span>
+
+<span class="sd">        :param metrics:</span>
+<span class="sd">            (required) list of metrics</span>
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            end time in microseconds</span>
+<span class="sd">        :param intervalInSecs:</span>
+<span class="sd">            sampling interval of stats</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/stats/&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1837,14 +2220,17 @@
 <span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            array (required): list of VMs</span>
+
+<span class="sd">        :param array:</span>
+<span class="sd">            (required) list of VMs</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/unprotect_vms&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.update_replication_timeout"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_replication_timeout">[docs]</a>    <span class="k">def</span> <span class="nf">update_replication_timeout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update metro availability timeout for a specific protection domain</span>
 
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 <span class="sd">        :param payload:</span>
 <span class="sd">            json replication timeout configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
@@ -1857,7 +2243,9 @@
 <span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            skipRemoteCheck: skip checking remote protection domain</span>
+
+<span class="sd">        :param skipRemoteCheck:</span>
+<span class="sd">            skip checking remote protection domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/demote&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1868,7 +2256,9 @@
 <span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            skipRemoteCheck: skip checking remote protection domain</span>
+
+<span class="sd">        :param skipRemoteCheck:</span>
+<span class="sd">            skip checking remote protection domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/metro_avail_disable&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -1881,9 +2271,13 @@
 <span class="sd">            vStore and remote site configuration</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            reEnable: re-enable operation</span>
-<span class="sd">            skipRemoteCheck: skip checking remote protection domain</span>
-<span class="sd">            force: skip checking remote container emptiness</span>
+
+<span class="sd">        :param reEnable:</span>
+<span class="sd">            re-enable operation</span>
+<span class="sd">        :param skipRemoteCheck:</span>
+<span class="sd">            skip checking remote protection domain</span>
+<span class="sd">        :param force:</span>
+<span class="sd">            skip checking remote container emptiness</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/metro_avail_enable&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -1894,7 +2288,9 @@
 <span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            skipRemoteCheck: skip checking remote protection domain</span>
+
+<span class="sd">        :param skipRemoteCheck:</span>
+<span class="sd">            skip checking remote protection domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/promote&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -2009,11 +2405,17 @@
         <span class="sd">&#39;&#39;&#39;get the list of remote sites configured in the cluster</span>
 <span class="sd">        </span>
 <span class="sd">        Kwargs:</span>
-<span class="sd">            names: remote site names</span>
-<span class="sd">            metroCompatible: remote site stretchable</span>
-<span class="sd">            fullDetails: remote cluster full detail</span>
-<span class="sd">            includeDeleted: include deleted</span>
-<span class="sd">            projection: projections on the attributes</span>
+
+<span class="sd">        :param names:</span>
+<span class="sd">            remote site names</span>
+<span class="sd">        :param metroCompatible:</span>
+<span class="sd">            remote site stretchable</span>
+<span class="sd">        :param fullDetails:</span>
+<span class="sd">            remote cluster full detail</span>
+<span class="sd">        :param includeDeleted:</span>
+<span class="sd">            include deleted</span>
+<span class="sd">        :param projection:</span>
+<span class="sd">            projections on the attributes</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;remote_sites/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -2037,16 +2439,27 @@
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated on any remote site</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
-<span class="sd">            entityType: Entity type</span>
-<span class="sd">            entityIds: Entity ids</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
+<span class="sd">        :param entityType:</span>
+<span class="sd">            Entity type</span>
+<span class="sd">        :param entityIds:</span>
+<span class="sd">            Entity ids</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;remote_sites/alerts&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -2054,10 +2467,15 @@
         <span class="sd">&#39;&#39;&#39;get the list of all snapshots created in remote sites</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            count: maximum number of DR snapshots to retrieve</span>
-<span class="sd">            filterCriteria: filter criteria</span>
-<span class="sd">            sortCriteria: sort criteria</span>
-<span class="sd">            fullDetails: whether to include consistency group/VM details</span>
+
+<span class="sd">        :param count:</span>
+<span class="sd">            maximum number of DR snapshots to retrieve</span>
+<span class="sd">        :param filterCriteria:</span>
+<span class="sd">            filter criteria</span>
+<span class="sd">        :param sortCriteria:</span>
+<span class="sd">            sort criteria</span>
+<span class="sd">        :param fullDetails:</span>
+<span class="sd">            whether to include consistency group/VM details</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;remote_sites/dr_snapshots&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -2065,11 +2483,17 @@
         <span class="sd">&#39;&#39;&#39;get the list of events generated on any remote site</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;remote_sites/events&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -2077,8 +2501,11 @@
         <span class="sd">&#39;&#39;&#39;get the health check summary for the remote sites</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            filterCriteria: filter criteria</span>
-<span class="sd">            detailedSummary: detailed summary</span>
+
+<span class="sd">        :param filterCriteria:</span>
+<span class="sd">            filter criteria</span>
+<span class="sd">        :param detailedSummary:</span>
+<span class="sd">            detailed summary</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;remote_sites/health_check_summary&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -2086,8 +2513,11 @@
         <span class="sd">&#39;&#39;&#39;get all pending replications on the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            protectionDomainNames: protection domain names</span>
-<span class="sd">            remoteSiteNames: remote site names</span>
+
+<span class="sd">        :param protectionDomainNames:</span>
+<span class="sd">            protection domain names</span>
+<span class="sd">        :param remoteSiteNames:</span>
+<span class="sd">            remote site names</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;remote_sites/pending_replications/&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
@@ -2098,7 +2528,9 @@
 <span class="sd">            name of the remote site</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            projection: projections on the attributes</span>
+
+<span class="sd">        :param projection:</span>
+<span class="sd">            projections on the attributes</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;remote_sites/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -2117,16 +2549,27 @@
 <span class="sd">            name of the remote site</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of alerts</span>
-<span class="sd">            resolved: Alerts which have been resolved</span>
-<span class="sd">            acknowledged: Alerts which have been acknowledged</span>
-<span class="sd">            severity: Alert severities</span>
-<span class="sd">            alertTypeUuid: Alert type ids</span>
-<span class="sd">            page: Page number</span>
-<span class="sd">            entityType: Entity type</span>
-<span class="sd">            entityIds: Entity ids</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of alerts</span>
+<span class="sd">        :param resolved:</span>
+<span class="sd">            Alerts which have been resolved</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Alerts which have been acknowledged</span>
+<span class="sd">        :param severity:</span>
+<span class="sd">            Alert severities</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type ids</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
+<span class="sd">        :param entityType:</span>
+<span class="sd">            Entity type</span>
+<span class="sd">        :param entityIds:</span>
+<span class="sd">            Entity ids</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;remote_sites/{0}/alerts&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -2137,10 +2580,15 @@
 <span class="sd">            name of the remote site</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            count: maximum number of DR snapshots to retrieve</span>
-<span class="sd">            filterCriteria: filter criteria</span>
-<span class="sd">            sortCriteria: sort criteria</span>
-<span class="sd">            fullDetails: whether to include consistency group/VM details</span>
+
+<span class="sd">        :param count:</span>
+<span class="sd">            maximum number of DR snapshots to retrieve</span>
+<span class="sd">        :param filterCriteria:</span>
+<span class="sd">            filter criteria</span>
+<span class="sd">        :param sortCriteria:</span>
+<span class="sd">            sort criteria</span>
+<span class="sd">        :param fullDetails:</span>
+<span class="sd">            whether to include consistency group/VM details</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;remote_sites/{0}/dr_snapshots/&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -2151,11 +2599,17 @@
 <span class="sd">            name of the remote site</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            startTimeInUsecs: Start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: End time in microseconds</span>
-<span class="sd">            count: Maximum number of events</span>
-<span class="sd">            acknowledged: Events which have been acknowledged</span>
-<span class="sd">            page: Page number</span>
+
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            Start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            End time in microseconds</span>
+<span class="sd">        :param count:</span>
+<span class="sd">            Maximum number of events</span>
+<span class="sd">        :param acknowledged:</span>
+<span class="sd">            Events which have been acknowledged</span>
+<span class="sd">        :param page:</span>
+<span class="sd">            Page number</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;remote_sites/{0}/events&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -2166,8 +2620,11 @@
 <span class="sd">            name of the remote site</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            protectionDomainNames: protection domain names</span>
-<span class="sd">            remoteSiteNames: remote site names</span>
+
+<span class="sd">        :param protectionDomainNames:</span>
+<span class="sd">            protection domain names</span>
+<span class="sd">        :param remoteSiteNames:</span>
+<span class="sd">            remote site names</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;remote_sites/{0}/pending_replications/&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
@@ -2181,10 +2638,15 @@
 <span class="sd">            name of the remote site</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            metrics (required): list of metrics</span>
-<span class="sd">            startTimeInUsecs: start time in microseconds</span>
-<span class="sd">            endTimeInUsecs: end time in microseconds</span>
-<span class="sd">            intervalInSecs: sampling interval of stats</span>
+
+<span class="sd">        :param metrics:</span>
+<span class="sd">            (required) list of metrics</span>
+<span class="sd">        :param startTimeInUsecs:</span>
+<span class="sd">            start time in microseconds</span>
+<span class="sd">        :param endTimeInUsecs:</span>
+<span class="sd">            end time in microseconds</span>
+<span class="sd">        :param intervalInSecs:</span>
+<span class="sd">            sampling interval of stats</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;remote_stats/{0}/stats/&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 

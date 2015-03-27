@@ -74,7 +74,7 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Example usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">pytanix</span>
-<span class="n">nu</span> <span class="o">=</span> <span class="n">pytanix</span><span class="o">.</span><span class="n">Nutanix</span><span class="p">()</span>
+<span class="n">nu</span> <span class="o">=</span> <span class="n">pytanix</span><span class="o">.</span><span class="n">Nutanix</span><span class="p">(</span><span class="s">&#39;1.2.3.4&#39;</span><span class="p">)</span>
 <span class="n">alerts</span> <span class="o">=</span> <span class="n">nu</span><span class="o">.</span><span class="n">alerts</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">alerts</span><span class="p">)</span>
 </pre></div>
@@ -115,15 +115,23 @@
 <dt id="pytanix.client.Nutanix.acknowledge_alerts">
 <code class="descname">acknowledge_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.acknowledge_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.acknowledge_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>acknowledge alerts using a filter criteria</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-severity: Alert severities
-entityType: Entity type
-entityTypeIds: Entity type ids
-count: Maximum number of alerts</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>entityType</strong> &#8211; Entity type</li>
+<li><strong>entityTypeIds</strong> &#8211; Entity type ids</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -144,15 +152,23 @@ count: Maximum number of alerts</dd>
 <dt id="pytanix.client.Nutanix.acknowledge_events">
 <code class="descname">acknowledge_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.acknowledge_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.acknowledge_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>acknowledge events using a filter criteria</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-severity: Severity
-entityType: Entity type
-entityTypeIds: Entity type IDs
-count: Maximum number of events</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>severity</strong> &#8211; Severity</li>
+<li><strong>entityType</strong> &#8211; Entity type</li>
+<li><strong>entityTypeIds</strong> &#8211; Entity type IDs</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -528,11 +544,19 @@ count: Maximum number of events</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>ignoreSmallFiles: ignore small files
-ignoreVDisks: ignore all vdisks</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ignoreSmallFiles</strong> &#8211; ignore small files</li>
+<li><strong>ignoreVDisks</strong> &#8211; ignore all vdisks</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -547,10 +571,15 @@ ignoreVDisks: ignore all vdisks</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>force: force the operation (ignores all system validations)</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>force</strong> &#8211; force the operation (ignores all system validations)</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -641,10 +670,15 @@ operations on it are cancelled</p>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>skipRemoteCheck: skip checking remote protection domain</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>skipRemoteCheck</strong> &#8211; skip checking remote protection domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -749,11 +783,19 @@ operations on it are cancelled</p>
 <dt id="pytanix.client.Nutanix.delete_svm_cert">
 <code class="descname">delete_svm_cert</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.delete_svm_cert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_svm_cert" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete an svm certificate from cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>nodeId: id of the node on which the cert is installed
-serverName: key management server for which cert is installed</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodeId</strong> &#8211; id of the node on which the cert is installed</li>
+<li><strong>serverName</strong> &#8211; key management server for which cert is installed</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -768,10 +810,15 @@ serverName: key management server for which cert is installed</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>skipRemoteCheck: skip checking remote protection domain</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>skipRemoteCheck</strong> &#8211; skip checking remote protection domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -786,10 +833,15 @@ serverName: key management server for which cert is installed</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>skipRemoteCheck: skip checking remote protection domain</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>skipRemoteCheck</strong> &#8211; skip checking remote protection domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -822,31 +874,47 @@ serverName: key management server for which cert is installed</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>reEnable: re-enable operation
-skipRemoteCheck: skip checking remote protection domain
-force: skip checking remote container emptiness</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>reEnable</strong> &#8211; re-enable operation</li>
+<li><strong>skipRemoteCheck</strong> &#8211; skip checking remote protection domain</li>
+<li><strong>force</strong> &#8211; skip checking remote container emptiness</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_alerts">
 <code class="descname">get_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a list of alerts</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of alerts
-resolved: Alerts which have been resolved
-acknowledged: Alerts which have been acknowledged
-severity: Alert severities
-alertTypeUuid: Alert type ids
-page: Page number
-entityType: Entity type
-entityIds: Entity ids</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+<li><strong>resolved</strong> &#8211; Alerts which have been resolved</li>
+<li><strong>acknowledged</strong> &#8211; Alerts which have been acknowledged</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>alertTypeUuid</strong> &#8211; Alert type ids</li>
+<li><strong>page</strong> &#8211; Page number</li>
+<li><strong>entityType</strong> &#8211; Entity type</li>
+<li><strong>entityIds</strong> &#8211; Entity ids</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -917,11 +985,19 @@ entityIds: Entity ids</dd>
 <dt id="pytanix.client.Nutanix.get_cert_test_results">
 <code class="descname">get_cert_test_results</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_cert_test_results"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cert_test_results" title="Permalink to this definition">¶</a></dt>
 <dd><p>get recent certificate test results</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>hostIds: list of host IDs
-kmsServerNames: list of key management server names</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>hostIds</strong> &#8211; list of host IDs</li>
+<li><strong>kmsServerNames</strong> &#8211; list of key management server names</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -948,17 +1024,25 @@ kmsServerNames: list of key management server names</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of alerts
-resolved: Alerts which have been resolved
-acknowledged: Alerts which have been acknowledged
-severity: Alert severities
-alertTypeUuid: Alert type ids
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+<li><strong>resolved</strong> &#8211; Alerts which have been resolved</li>
+<li><strong>acknowledged</strong> &#8211; Alerts which have been acknowledged</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>alertTypeUuid</strong> &#8211; Alert type ids</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -973,20 +1057,30 @@ page: Page number</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>projection: projections on the attributes</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>projection</strong> &#8211; projections on the attributes</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_cluster_csrs">
 <code class="descname">get_cluster_csrs</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_cluster_csrs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster_csrs" title="Permalink to this definition">¶</a></dt>
 <dd><p>download csr files from cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>nodeIdList: list of node IDs</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodeIdList</strong> &#8211; list of node IDs</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1001,14 +1095,22 @@ page: Page number</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of events
-acknowledged: Events which have been acknowledged
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+<li><strong>acknowledged</strong> &#8211; Events which have been acknowledged</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1035,42 +1137,66 @@ page: Page number</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>metrics (required): list of metrics
-startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-intervalInSecs: sampling interval of stats</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>metrics</strong> &#8211; (required) list of metrics</li>
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>intervalInSecs</strong> &#8211; sampling interval of stats</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_clusters">
 <code class="descname">get_clusters</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_clusters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_clusters" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of clusters</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>count: number of clusters to retrieve
-filterCriteria: filter criteria
-sortCriteria: sort criteria
-searchString: search string
-page: page number
-projection: projections on the attributes</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; number of clusters to retrieve</li>
+<li><strong>filterCriteria</strong> &#8211; filter criteria</li>
+<li><strong>sortCriteria</strong> &#8211; sort criteria</li>
+<li><strong>searchString</strong> &#8211; search string</li>
+<li><strong>page</strong> &#8211; page number</li>
+<li><strong>projection</strong> &#8211; projections on the attributes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_clusters_events">
 <code class="descname">get_clusters_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_clusters_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_clusters_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of events generated on any cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of events
-acknowledged: Events which have been acknowledged
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+<li><strong>acknowledged</strong> &#8211; Events which have been acknowledged</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1099,10 +1225,15 @@ page: Page number</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>projection: projections on the attributes</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>projection</strong> &#8211; projections on the attributes</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1117,17 +1248,25 @@ page: Page number</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of alerts
-resolved: Alerts which have been resolved
-acknowledged: Alerts which have been acknowledged
-severity: Alert severities
-alertTypeUuid: Alert type ids
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+<li><strong>resolved</strong> &#8211; Alerts which have been resolved</li>
+<li><strong>acknowledged</strong> &#8211; Alerts which have been acknowledged</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>alertTypeUuid</strong> &#8211; Alert type ids</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1142,14 +1281,22 @@ page: Page number</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of events
-acknowledged: Events which have been acknowledged
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+<li><strong>acknowledged</strong> &#8211; Events which have been acknowledged</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1164,13 +1311,21 @@ page: Page number</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>metrics (required): List of metrics
-startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-intervalInSecs: Sampling interval of stats</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>metrics</strong> &#8211; (required) List of metrics</li>
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>intervalInSecs</strong> &#8211; Sampling interval of stats</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1191,15 +1346,23 @@ intervalInSecs: Sampling interval of stats</dd>
 <dt id="pytanix.client.Nutanix.get_containers">
 <code class="descname">get_containers</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_containers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_containers" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of containers</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>count: number of containers to retrieve
-filterCriteria: filter criteria
-sortCriteria: sort criteria
-searchString: search string
-page: page number
-projection: projections on the attributes</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; number of containers to retrieve</li>
+<li><strong>filterCriteria</strong> &#8211; filter criteria</li>
+<li><strong>sortCriteria</strong> &#8211; sort criteria</li>
+<li><strong>searchString</strong> &#8211; search string</li>
+<li><strong>page</strong> &#8211; page number</li>
+<li><strong>projection</strong> &#8211; projections on the attributes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1226,10 +1389,15 @@ projection: projections on the attributes</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>projection: projections on the attributes</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>projection</strong> &#8211; projections on the attributes</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1244,17 +1412,25 @@ projection: projections on the attributes</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of alerts
-resolved: Alerts which have been resolved
-acknowledged: Alerts which have been acknowledged
-severity: Alert severities
-alertTypeUuid: Alert type ids
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+<li><strong>resolved</strong> &#8211; Alerts which have been resolved</li>
+<li><strong>acknowledged</strong> &#8211; Alerts which have been acknowledged</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>alertTypeUuid</strong> &#8211; Alert type ids</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1269,25 +1445,41 @@ page: Page number</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of events
-acknowledged: Events which have been acknowledged
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+<li><strong>acknowledged</strong> &#8211; Events which have been acknowledged</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_disk_health_check">
 <code class="descname">get_disk_health_check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_disk_health_check"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_disk_health_check" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the health check summary for the disks</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>filterCriteria: filter criteria
-detailedSummary: detailed summary</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filterCriteria</strong> &#8211; filter criteria</li>
+<li><strong>detailedSummary</strong> &#8211; detailed summary</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1302,28 +1494,44 @@ detailedSummary: detailed summary</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>metrics (required): List of metrics
-startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-intervalInSecs: Sampling interval of stats</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>metrics</strong> &#8211; (required) List of metrics</li>
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>intervalInSecs</strong> &#8211; Sampling interval of stats</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_disks">
 <code class="descname">get_disks</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_disks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_disks" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of disks configured in the cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>count: number of disks to retrieve
-filterCriteria: filter criteria
-sortCriteria: sort criteria
-searchString: search string
-page: page number
-projection: projections on the attributes</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; number of disks to retrieve</li>
+<li><strong>filterCriteria</strong> &#8211; filter criteria</li>
+<li><strong>sortCriteria</strong> &#8211; sort criteria</li>
+<li><strong>searchString</strong> &#8211; search string</li>
+<li><strong>page</strong> &#8211; page number</li>
+<li><strong>projection</strong> &#8211; projections on the attributes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1338,13 +1546,21 @@ projection: projections on the attributes</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>count: number of DR snapshots to retrieve
-filterCriteria: filter criteria
-sortCriteria: sort criteria
-fullDetails: whether to include CG/VM details</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; number of DR snapshots to retrieve</li>
+<li><strong>filterCriteria</strong> &#8211; filter criteria</li>
+<li><strong>sortCriteria</strong> &#8211; sort criteria</li>
+<li><strong>fullDetails</strong> &#8211; whether to include CG/VM details</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1357,47 +1573,71 @@ fullDetails: whether to include CG/VM details</dd>
 <dt id="pytanix.client.Nutanix.get_events">
 <code class="descname">get_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of events generated in the cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of events
-acknowledged: Events which have been acknowledged
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+<li><strong>acknowledged</strong> &#8211; Events which have been acknowledged</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_hardware_alerts">
 <code class="descname">get_hardware_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_hardware_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_hardware_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of hardware alerts generated in the cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of alerts
-resolved: Alerts which have been resolved
-acknowledged: Alerts which have been acknowledged
-severity: Alert severities
-alertTypeUuid: Alert type ids
-page: Page number
-entityType: Entity type
-entityIds: Entity ids</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+<li><strong>resolved</strong> &#8211; Alerts which have been resolved</li>
+<li><strong>acknowledged</strong> &#8211; Alerts which have been acknowledged</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>alertTypeUuid</strong> &#8211; Alert type ids</li>
+<li><strong>page</strong> &#8211; Page number</li>
+<li><strong>entityType</strong> &#8211; Entity type</li>
+<li><strong>entityIds</strong> &#8211; Entity ids</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_hardware_events">
 <code class="descname">get_hardware_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_hardware_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_hardware_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of hardware events generated in the cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of events
-acknowledged: Events which have been acknowledged
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+<li><strong>acknowledged</strong> &#8211; Events which have been acknowledged</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1432,42 +1672,66 @@ page: Page number</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of alerts
-resolved: Alerts which have been resolved
-acknowledged: Alerts which have been acknowledged
-severity: Alert severities
-alertTypeUuid: Alert type ids
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+<li><strong>resolved</strong> &#8211; Alerts which have been resolved</li>
+<li><strong>acknowledged</strong> &#8211; Alerts which have been acknowledged</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>alertTypeUuid</strong> &#8211; Alert type ids</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_host_events">
 <code class="descname">get_host_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_host_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_host_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of events generated on any host</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of events
-acknowledged: Events which have been acknowledged
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+<li><strong>acknowledged</strong> &#8211; Events which have been acknowledged</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_host_health_check">
 <code class="descname">get_host_health_check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_host_health_check"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_host_health_check" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the health check summary for the hosts</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>filterCriteria: filter criteria
-detailedSummary: detailed summary</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filterCriteria</strong> &#8211; filter criteria</li>
+<li><strong>detailedSummary</strong> &#8211; detailed summary</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1482,28 +1746,44 @@ detailedSummary: detailed summary</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>metrics (required): List of metrics
-startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-intervalInSecs: Sampling interval of stats</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>metrics</strong> &#8211; (required) List of metrics</li>
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>intervalInSecs</strong> &#8211; Sampling interval of stats</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_hosts">
 <code class="descname">get_hosts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_hosts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_hosts" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of physical hosts configured in the cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>count: number of physical hosts to retrieve
-filterCriteria: filter criteria
-sortCriteria: sort criteria
-searchString: search string
-page: page number
-projection: projections on the attributes</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; number of physical hosts to retrieve</li>
+<li><strong>filterCriteria</strong> &#8211; filter criteria</li>
+<li><strong>sortCriteria</strong> &#8211; sort criteria</li>
+<li><strong>searchString</strong> &#8211; search string</li>
+<li><strong>page</strong> &#8211; page number</li>
+<li><strong>projection</strong> &#8211; projections on the attributes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1550,19 +1830,27 @@ projection: projections on the attributes</dd>
 <dt id="pytanix.client.Nutanix.get_license_alerts">
 <code class="descname">get_license_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_license_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_license_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of alerts generated for any license</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of alerts
-resolved: Alerts which have been resolved
-acknowledged: Alerts which have been acknowledged
-severity: Alert severities
-alertTypeUuid: Alert type ids
-page: Page number
-entityType: Entity type
-entityIds: Entity ids</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+<li><strong>resolved</strong> &#8211; Alerts which have been resolved</li>
+<li><strong>acknowledged</strong> &#8211; Alerts which have been acknowledged</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>alertTypeUuid</strong> &#8211; Alert type ids</li>
+<li><strong>page</strong> &#8211; Page number</li>
+<li><strong>entityType</strong> &#8211; Entity type</li>
+<li><strong>entityIds</strong> &#8211; Entity ids</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1575,14 +1863,22 @@ entityIds: Entity ids</dd>
 <dt id="pytanix.client.Nutanix.get_license_events">
 <code class="descname">get_license_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_license_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_license_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of events generated for any license</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of events
-acknowledged: Events which have been acknowledged
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+<li><strong>acknowledged</strong> &#8211; Events which have been acknowledged</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1609,10 +1905,15 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_node_csr">
 <code class="descname">get_node_csr</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_node_csr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_node_csr" title="Permalink to this definition">¶</a></dt>
 <dd><p>download csr for node with given ip</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>nodeIp: IP address of node</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodeIp</strong> &#8211; IP address of node</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1661,11 +1962,19 @@ page: Page number</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>protectionDomainNames: protection domain names
-remoteSiteNames: remote site names</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>protectionDomainNames</strong> &#8211; protection domain names</li>
+<li><strong>remoteSiteNames</strong> &#8211; remote site names</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1680,10 +1989,15 @@ remoteSiteNames: remote site names</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>remoteSiteNames: names of remote sites</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>remoteSiteNames</strong> &#8211; names of remote sites</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1698,13 +2012,21 @@ remoteSiteNames: remote site names</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>metroAvail: whether to include only metro availability related protection domains
-vStoreName: vStore name
-remoteSiteName: remote site name
-projection: projections on the attributes</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>metroAvail</strong> &#8211; whether to include only metro availability related protection domains</li>
+<li><strong>vStoreName</strong> &#8211; vStore name</li>
+<li><strong>remoteSiteName</strong> &#8211; remote site name</li>
+<li><strong>projection</strong> &#8211; projections on the attributes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1719,19 +2041,27 @@ projection: projections on the attributes</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of alerts
-resolved: Alerts which have been resolved
-acknowledged: Alerts which have been acknowledged
-severity: Alert severities
-alertTypeUuid: Alert type ids
-page: Page number
-entityType: Entity type
-entityIds: Entity ids</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+<li><strong>resolved</strong> &#8211; Alerts which have been resolved</li>
+<li><strong>acknowledged</strong> &#8211; Alerts which have been acknowledged</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>alertTypeUuid</strong> &#8211; Alert type ids</li>
+<li><strong>page</strong> &#8211; Page number</li>
+<li><strong>entityType</strong> &#8211; Entity type</li>
+<li><strong>entityIds</strong> &#8211; Entity ids</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1746,25 +2076,41 @@ entityIds: Entity ids</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of events
-acknowledged: Events which have been acknowledged
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+<li><strong>acknowledged</strong> &#8211; Events which have been acknowledged</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_protection_domain_health">
 <code class="descname">get_protection_domain_health</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_protection_domain_health"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_protection_domain_health" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the health check summary for the protection domain</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>filterCriteria: filter criteria
-detailedSummary: detailed summary</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filterCriteria</strong> &#8211; filter criteria</li>
+<li><strong>detailedSummary</strong> &#8211; detailed summary</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1782,13 +2128,21 @@ stats are retrieved.</p>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>metrics (required): list of metrics
-startTimeInUsecs: start time in microseconds
-endTimeInUsecs: end time in microseconds
-intervalInSecs: sampling interval of stats</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>metrics</strong> &#8211; (required) list of metrics</li>
+<li><strong>startTimeInUsecs</strong> &#8211; start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; end time in microseconds</li>
+<li><strong>intervalInSecs</strong> &#8211; sampling interval of stats</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1801,15 +2155,23 @@ intervalInSecs: sampling interval of stats</dd>
 <dt id="pytanix.client.Nutanix.get_protection_domains">
 <code class="descname">get_protection_domains</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_protection_domains"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_protection_domains" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of protection domains configured in the cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>names: protection domain names
-metroAvail: metro availability protection domain
-vStoreName: vStore name
-remoteSiteName: remote site name
-includeDeleted: include deleted
-projection: projections on the attributes</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>names</strong> &#8211; protection domain names</li>
+<li><strong>metroAvail</strong> &#8211; metro availability protection domain</li>
+<li><strong>vStoreName</strong> &#8211; vStore name</li>
+<li><strong>remoteSiteName</strong> &#8211; remote site name</li>
+<li><strong>includeDeleted</strong> &#8211; include deleted</li>
+<li><strong>projection</strong> &#8211; projections on the attributes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1864,10 +2226,15 @@ projection: projections on the attributes</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>projection: projections on the attributes</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>projection</strong> &#8211; projections on the attributes</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1882,19 +2249,27 @@ projection: projections on the attributes</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of alerts
-resolved: Alerts which have been resolved
-acknowledged: Alerts which have been acknowledged
-severity: Alert severities
-alertTypeUuid: Alert type ids
-page: Page number
-entityType: Entity type
-entityIds: Entity ids</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+<li><strong>resolved</strong> &#8211; Alerts which have been resolved</li>
+<li><strong>acknowledged</strong> &#8211; Alerts which have been acknowledged</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>alertTypeUuid</strong> &#8211; Alert type ids</li>
+<li><strong>page</strong> &#8211; Page number</li>
+<li><strong>entityType</strong> &#8211; Entity type</li>
+<li><strong>entityIds</strong> &#8211; Entity ids</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1909,14 +2284,22 @@ entityIds: Entity ids</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of events
-acknowledged: Events which have been acknowledged
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+<li><strong>acknowledged</strong> &#8211; Events which have been acknowledged</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1931,13 +2314,21 @@ page: Page number</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>count: maximum number of DR snapshots to retrieve
-filterCriteria: filter criteria
-sortCriteria: sort criteria
-fullDetails: whether to include consistency group/VM details</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; maximum number of DR snapshots to retrieve</li>
+<li><strong>filterCriteria</strong> &#8211; filter criteria</li>
+<li><strong>sortCriteria</strong> &#8211; sort criteria</li>
+<li><strong>fullDetails</strong> &#8211; whether to include consistency group/VM details</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1955,84 +2346,132 @@ stats are retrieved.</p>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>metrics (required): list of metrics
-startTimeInUsecs: start time in microseconds
-endTimeInUsecs: end time in microseconds
-intervalInSecs: sampling interval of stats</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>metrics</strong> &#8211; (required) list of metrics</li>
+<li><strong>startTimeInUsecs</strong> &#8211; start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; end time in microseconds</li>
+<li><strong>intervalInSecs</strong> &#8211; sampling interval of stats</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_remote_sites">
 <code class="descname">get_remote_sites</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_remote_sites"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_sites" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of remote sites configured in the cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>names: remote site names
-metroCompatible: remote site stretchable
-fullDetails: remote cluster full detail
-includeDeleted: include deleted
-projection: projections on the attributes</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>names</strong> &#8211; remote site names</li>
+<li><strong>metroCompatible</strong> &#8211; remote site stretchable</li>
+<li><strong>fullDetails</strong> &#8211; remote cluster full detail</li>
+<li><strong>includeDeleted</strong> &#8211; include deleted</li>
+<li><strong>projection</strong> &#8211; projections on the attributes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_remote_sites_alerts">
 <code class="descname">get_remote_sites_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_remote_sites_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_sites_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of alerts generated on any remote site</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of alerts
-resolved: Alerts which have been resolved
-acknowledged: Alerts which have been acknowledged
-severity: Alert severities
-alertTypeUuid: Alert type ids
-page: Page number
-entityType: Entity type
-entityIds: Entity ids</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+<li><strong>resolved</strong> &#8211; Alerts which have been resolved</li>
+<li><strong>acknowledged</strong> &#8211; Alerts which have been acknowledged</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>alertTypeUuid</strong> &#8211; Alert type ids</li>
+<li><strong>page</strong> &#8211; Page number</li>
+<li><strong>entityType</strong> &#8211; Entity type</li>
+<li><strong>entityIds</strong> &#8211; Entity ids</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_remote_sites_events">
 <code class="descname">get_remote_sites_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_remote_sites_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_sites_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of events generated on any remote site</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of events
-acknowledged: Events which have been acknowledged
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+<li><strong>acknowledged</strong> &#8211; Events which have been acknowledged</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_remote_sites_health">
 <code class="descname">get_remote_sites_health</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_remote_sites_health"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_sites_health" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the health check summary for the remote sites</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>filterCriteria: filter criteria
-detailedSummary: detailed summary</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filterCriteria</strong> &#8211; filter criteria</li>
+<li><strong>detailedSummary</strong> &#8211; detailed summary</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_remote_sites_snapshots">
 <code class="descname">get_remote_sites_snapshots</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_remote_sites_snapshots"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_sites_snapshots" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of all snapshots created in remote sites</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>count: maximum number of DR snapshots to retrieve
-filterCriteria: filter criteria
-sortCriteria: sort criteria
-fullDetails: whether to include consistency group/VM details</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; maximum number of DR snapshots to retrieve</li>
+<li><strong>filterCriteria</strong> &#8211; filter criteria</li>
+<li><strong>sortCriteria</strong> &#8211; sort criteria</li>
+<li><strong>fullDetails</strong> &#8211; whether to include consistency group/VM details</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2077,45 +2516,69 @@ fullDetails: whether to include consistency group/VM details</dd>
 <dt id="pytanix.client.Nutanix.get_storage_alerts">
 <code class="descname">get_storage_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_storage_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_storage_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of storage alerts generated in the cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of alerts
-resolved: Alerts which have been resolved
-acknowledged: Alerts which have been acknowledged
-severity: Alert severities
-alertTypeUuid: Alert type ids
-page: Page number
-entityType: Entity type
-entityIds: Entity ids</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+<li><strong>resolved</strong> &#8211; Alerts which have been resolved</li>
+<li><strong>acknowledged</strong> &#8211; Alerts which have been acknowledged</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>alertTypeUuid</strong> &#8211; Alert type ids</li>
+<li><strong>page</strong> &#8211; Page number</li>
+<li><strong>entityType</strong> &#8211; Entity type</li>
+<li><strong>entityIds</strong> &#8211; Entity ids</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_storage_events">
 <code class="descname">get_storage_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_storage_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_storage_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of storage events generated in the cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-count: Maximum number of events
-acknowledged: Events which have been acknowledged
-page: Page number</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>count</strong> &#8211; Maximum number of events</li>
+<li><strong>acknowledged</strong> &#8211; Events which have been acknowledged</li>
+<li><strong>page</strong> &#8211; Page number</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_unprotected_vms">
 <code class="descname">get_unprotected_vms</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.get_unprotected_vms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_unprotected_vms" title="Permalink to this definition">¶</a></dt>
 <dd><p>get list of unprotected VMs in a cluster that can participate in Nutanix native backup and DR</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>hostIds: host IDs
-vmNames: VM names
-containerNames: container names</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>hostIds</strong> &#8211; host IDs</li>
+<li><strong>vmNames</strong> &#8211; VM names</li>
+<li><strong>containerNames</strong> &#8211; container names</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2144,10 +2607,15 @@ containerNames: container names</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>skipRemoteCheck: skip checking remote protection domain</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>skipRemoteCheck</strong> &#8211; skip checking remote protection domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2172,10 +2640,15 @@ containerNames: container names</dd>
 <dt id="pytanix.client.Nutanix.rekey_disks">
 <code class="descname">rekey_disks</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.rekey_disks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.rekey_disks" title="Permalink to this definition">¶</a></dt>
 <dd><p>set new password for encryption capable disks</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>array: list of disk ids on which rekey needs to be performed</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>array</strong> &#8211; list of disk ids on which rekey needs to be performed</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2224,15 +2697,23 @@ containerNames: container names</dd>
 <dt id="pytanix.client.Nutanix.resolve_alerts">
 <code class="descname">resolve_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.resolve_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.resolve_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>resolve alerts using a filter criteria</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>startTimeInUsecs: Start time in microseconds
-endTimeInUsecs: End time in microseconds
-severity: Alert severities
-entityType: Entity type
-entityTypeIds: Entity type ids
-count: Maximum number of alerts</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startTimeInUsecs</strong> &#8211; Start time in microseconds</li>
+<li><strong>endTimeInUsecs</strong> &#8211; End time in microseconds</li>
+<li><strong>severity</strong> &#8211; Alert severities</li>
+<li><strong>entityType</strong> &#8211; Entity type</li>
+<li><strong>entityTypeIds</strong> &#8211; Entity type ids</li>
+<li><strong>count</strong> &#8211; Maximum number of alerts</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2294,12 +2775,21 @@ count: Maximum number of alerts</dd>
 <dt id="pytanix.client.Nutanix.search">
 <code class="descname">search</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>perform a spotlight search on the cluster</p>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>searchString (str): search string
-entityTypes: entity types
-fieldNames: field names</dd>
-</dl>
+<p>Kwargs:</p>
+<blockquote>
+<div>searchString (str): search string</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>entityTypes</strong> &#8211; entity types</li>
+<li><strong>fieldNames</strong> &#8211; field names</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2412,10 +2902,15 @@ fieldNames: field names</dd>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>Kwargs:</dt>
-<dd>array (required): list of VMs</dd>
-</dl>
+<p>Kwargs:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>array</strong> &#8211; (required) list of VMs</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2609,13 +3104,15 @@ fieldNames: field names</dd>
 <dt id="pytanix.client.Nutanix.update_replication_timeout">
 <code class="descname">update_replication_timeout</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pytanix/client.html#Nutanix.update_replication_timeout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_replication_timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>update metro availability timeout for a specific protection domain</p>
-<blockquote>
-<div>name: name of the protection domain</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json replication timeout configuration</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; name of the protection domain</li>
+<li><strong>payload</strong> &#8211; json replication timeout configuration</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>

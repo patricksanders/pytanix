@@ -131,16 +131,27 @@ class Nutanix(object):
         '''returns a list of alerts
             
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
-            entityType: Entity type
-            entityIds: Entity ids
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
+        :param entityType:
+            Entity type
+        :param entityIds:
+            Entity ids
         '''
         return self._get('alerts', kwargs)
 
@@ -148,12 +159,19 @@ class Nutanix(object):
         '''acknowledge alerts using a filter criteria
             
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            severity: Alert severities
-            entityType: Entity type
-            entityTypeIds: Entity type ids
-            count: Maximum number of alerts
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param severity:
+            Alert severities
+        :param entityType:
+            Entity type
+        :param entityTypeIds:
+            Entity type ids
+        :param count:
+            Maximum number of alerts
         '''
         return self._post('alerts/acknowledge', kwargs)
 
@@ -174,16 +192,27 @@ class Nutanix(object):
         '''get the list of hardware alerts generated in the cluster
             
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
-            entityType: Entity type
-            entityIds: Entity ids
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
+        :param entityType:
+            Entity type
+        :param entityIds:
+            Entity ids
         '''
         return self._get('alerts/hardware', kwargs)
 
@@ -191,8 +220,11 @@ class Nutanix(object):
         '''get the list of alerts metadata generated in the cluster
             
         Kwargs:
-            ids: Alert UUIDs
-            excludeDisabled: Exclude disabled alerts
+
+        :param ids:
+            Alert UUIDs
+        :param excludeDisabled:
+            Exclude disabled alerts
         '''
         return self._get('alerts/metadata', kwargs)
 
@@ -216,12 +248,19 @@ class Nutanix(object):
         '''resolve alerts using a filter criteria
             
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            severity: Alert severities
-            entityType: Entity type
-            entityTypeIds: Entity type ids
-            count: Maximum number of alerts
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param severity:
+            Alert severities
+        :param entityType:
+            Entity type
+        :param entityTypeIds:
+            Entity type ids
+        :param count:
+            Maximum number of alerts
         '''
         return self._post('alerts/resolve', kwargs)
 
@@ -229,16 +268,27 @@ class Nutanix(object):
         '''get the list of storage alerts generated in the cluster
             
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
-            entityType: Entity type
-            entityIds: Entity ids
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
+        :param entityType:
+            Entity type
+        :param entityIds:
+            Entity ids
         '''
         return self._get('alerts/storage', kwargs)
 
@@ -414,7 +464,9 @@ class Nutanix(object):
         '''download csr for node with given ip
 
         Kwargs:
-            nodeIp: IP address of node
+
+        :param nodeIp:
+            IP address of node
         '''
         return self._get('certificates/csr_for_discovered_node', kwargs)
 
@@ -422,7 +474,9 @@ class Nutanix(object):
         '''download csr files from cluster
 
         Kwargs:
-            nodeIdList: list of node IDs
+
+        :param nodeIdList:
+            list of node IDs
         '''
         return self._get('certificates/csrs', kwargs)
 
@@ -430,8 +484,11 @@ class Nutanix(object):
         '''delete an svm certificate from cluster
 
         Kwargs:
-            nodeId: id of the node on which the cert is installed
-            serverName: key management server for which cert is installed
+
+        :param nodeId:
+            id of the node on which the cert is installed
+        :param serverName:
+            key management server for which cert is installed
         '''
         return self._delete('certificate/svm_certificate/', kwargs)
     
@@ -606,9 +663,12 @@ class Nutanix(object):
         '''perform a spotlight search on the cluster
 
         Kwargs:
+
             searchString (str): search string
-            entityTypes: entity types
-            fieldNames: field names
+        :param entityTypes:
+            entity types
+        :param fieldNames:
+            field names
         '''
         return self._get('cluster/search/', kwargs)
 
@@ -647,10 +707,15 @@ class Nutanix(object):
         '''get the list of cluster stats
 
         Kwargs:
-            metrics (required): list of metrics
-            startTimeInUsecs (required): start time in microseconds
-            endTimeInUsecs (required): end time in microseconds
-            intervalInSecs (required): sampling interval of stats
+
+        :param metrics:
+            (required) list of metrics
+        :param startTimeInUsecs:
+            (required) start time in microseconds
+        :param endTimeInUsecs:
+            (required) end time in microseconds
+        :param intervalInSecs:
+            (required) sampling interval of stats
         '''
         return self._get('cluster/stats/', kwargs)
 
@@ -661,12 +726,19 @@ class Nutanix(object):
         '''get the list of clusters
 
         Kwargs:
-            count: number of clusters to retrieve
-            filterCriteria: filter criteria
-            sortCriteria: sort criteria
-            searchString: search string
-            page: page number
-            projection: projections on the attributes
+
+        :param count:
+            number of clusters to retrieve
+        :param filterCriteria:
+            filter criteria
+        :param sortCriteria:
+            sort criteria
+        :param searchString:
+            search string
+        :param page:
+            page number
+        :param projection:
+            projections on the attributes
         '''
         return self._get('clusters/', kwargs)
 
@@ -674,14 +746,23 @@ class Nutanix(object):
         '''get the list of alerts generated on any cluster
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
         '''
         return self._get('clusters/alerts')
 
@@ -689,11 +770,17 @@ class Nutanix(object):
         '''get the list of events generated on any cluster
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('clusters/events', kwargs)
 
@@ -704,7 +791,9 @@ class Nutanix(object):
             id of the cluster
 
         Kwargs:
-            projection: projections on the attributes
+
+        :param projection:
+            projections on the attributes
         '''
         return self._get('clusters/{id}'.format(id), kwargs)
 
@@ -715,14 +804,23 @@ class Nutanix(object):
             id of the cluster
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
         '''
         return self._get('clusters/{id}/alerts'.format(id), kwargs)
 
@@ -733,11 +831,17 @@ class Nutanix(object):
             id of the cluster
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('clusters/{id}/events'.format(id), kwargs)
         
@@ -748,10 +852,15 @@ class Nutanix(object):
             id of the cluster
 
         Kwargs:
-            metrics (required): list of metrics
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            intervalInSecs: sampling interval of stats
+
+        :param metrics:
+            (required) list of metrics
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param intervalInSecs:
+            sampling interval of stats
         '''
         return self._get('clusters/{id}/stats'.format(id), kwargs)
 
@@ -762,12 +871,19 @@ class Nutanix(object):
         '''get the list of containers
 
         Kwargs:
-            count: number of containers to retrieve
-            filterCriteria: filter criteria
-            sortCriteria: sort criteria
-            searchString: search string
-            page: page number
-            projection: projections on the attributes
+
+        :param count:
+            number of containers to retrieve
+        :param filterCriteria:
+            filter criteria
+        :param sortCriteria:
+            sort criteria
+        :param searchString:
+            search string
+        :param page:
+            page number
+        :param projection:
+            projections on the attributes
         '''
         return self._get('containers/', kwargs)
 
@@ -791,14 +907,23 @@ class Nutanix(object):
         '''get the list of alerts generated on any container
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
         '''
         return self._get('containers/alerts', kwargs)
 
@@ -827,11 +952,17 @@ class Nutanix(object):
         '''get the list of events generated on any container
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('containers/events', kwargs)
 
@@ -842,8 +973,11 @@ class Nutanix(object):
             ID of the container
 
         Kwargs:
-            ignoreSmallFiles: ignore small files
-            ignoreVDisks: ignore all vdisks
+
+        :param ignoreSmallFiles:
+            ignore small files
+        :param ignoreVDisks:
+            ignore all vdisks
         '''
         return self._delete('containers/{0}'.format(id), kwargs)
 
@@ -854,7 +988,9 @@ class Nutanix(object):
             id of the container
 
         Kwargs:
-            projection: projections on the attributes
+
+        :param projection:
+            projections on the attributes
         '''
         return self._get('containers/{0}'.format(id), kwargs)
 
@@ -865,14 +1001,23 @@ class Nutanix(object):
             id of the container
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
         '''
         return self._get('containers/{0}/alerts'.format(id), kwargs)
 
@@ -883,11 +1028,17 @@ class Nutanix(object):
             id of the container
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('containers/{0}/events'.format(id), kwargs)
 
@@ -898,10 +1049,15 @@ class Nutanix(object):
             id of the container
 
         Kwargs:
-            metrics (required): List of metrics
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            intervalInSecs: Sampling interval of stats
+
+        :param metrics:
+            (required) List of metrics
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param intervalInSecs:
+            Sampling interval of stats
         '''
         return self._get('containers/{0}/stats/'.format(id), kwargs)
 
@@ -920,12 +1076,19 @@ class Nutanix(object):
         '''get the list of disks configured in the cluster
 
         Kwargs:
-            count: number of disks to retrieve
-            filterCriteria: filter criteria
-            sortCriteria: sort criteria
-            searchString: search string
-            page: page number
-            projection: projections on the attributes
+
+        :param count:
+            number of disks to retrieve
+        :param filterCriteria:
+            filter criteria
+        :param sortCriteria:
+            sort criteria
+        :param searchString:
+            search string
+        :param page:
+            page number
+        :param projection:
+            projections on the attributes
         '''
         return self.get('disks/', kwargs)
 
@@ -933,14 +1096,23 @@ class Nutanix(object):
         '''get the list of alerts generated on any disk
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
         '''
         return self._get('disks/alerts', kwargs)
 
@@ -948,11 +1120,17 @@ class Nutanix(object):
         '''get the list of events generated on any disk
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('disks/events', kwargs)
 
@@ -960,8 +1138,11 @@ class Nutanix(object):
         '''get the health check summary for the disks
 
         Kwargs:
-            filterCriteria: filter criteria
-            detailedSummary: detailed summary
+
+        :param filterCriteria:
+            filter criteria
+        :param detailedSummary:
+            detailed summary
         '''
         return self._get('disks/health_check_summary', kwargs)
 
@@ -972,7 +1153,9 @@ class Nutanix(object):
             ID of the disk
 
         Kwargs:
-            projection: projections on the attributes
+
+        :param projection:
+            projections on the attributes
         '''
         return self._get('disks/{0}'.format(id), kwargs)
 
@@ -983,7 +1166,9 @@ class Nutanix(object):
             ID of the disk
 
         Kwargs:
-            force: force the operation (ignores all system validations)
+
+        :param force:
+            force the operation (ignores all system validations)
         '''
         return self._delete('disks/{0}'.format(id), kwargs)
 
@@ -994,14 +1179,23 @@ class Nutanix(object):
             id of the disk
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
         '''
         return self._get('disks/{0}/alerts'.format(id), kwargs)
 
@@ -1012,11 +1206,17 @@ class Nutanix(object):
             id of the disk
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('disks/{0}/events'.format(id), kwargs)
 
@@ -1027,10 +1227,15 @@ class Nutanix(object):
             id of the disk
 
         Kwargs:
-            metrics (required): List of metrics
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            intervalInSecs: Sampling interval of stats
+
+        :param metrics:
+            (required) List of metrics
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param intervalInSecs:
+            Sampling interval of stats
         '''
         return self._get('disks/{0}/stats/'.format(id), kwargs)
 
@@ -1056,8 +1261,11 @@ class Nutanix(object):
         '''get recent certificate test results
 
         Kwargs:
-            hostIds: list of host IDs
-            kmsServerNames: list of key management server names
+
+        :param hostIds:
+            list of host IDs
+        :param kmsServerNames:
+            list of key management server names
         '''
         return self._get('encryption/recent_certificate_test_results', kwargs)
 
@@ -1065,7 +1273,9 @@ class Nutanix(object):
         '''set new password for encryption capable disks
 
         Kwargs:
-            array: list of disk ids on which rekey needs to be performed
+
+        :param array:
+            list of disk ids on which rekey needs to be performed
         '''
         return self._post('encryption/rekey', kwargs)
 
@@ -1087,11 +1297,17 @@ class Nutanix(object):
         '''get the list of events generated in the cluster
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('events/', kwargs)
 
@@ -1099,12 +1315,19 @@ class Nutanix(object):
         '''acknowledge events using a filter criteria
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            severity: Severity
-            entityType: Entity type
-            entityTypeIds: Entity type IDs
-            count: Maximum number of events
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param severity:
+            Severity
+        :param entityType:
+            Entity type
+        :param entityTypeIds:
+            Entity type IDs
+        :param count:
+            Maximum number of events
         '''
         return self._post('events/acknowledge', kwargs)
 
@@ -1112,11 +1335,17 @@ class Nutanix(object):
         '''get the list of hardware events generated in the cluster
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('events/hardware', kwargs)
 
@@ -1124,11 +1353,17 @@ class Nutanix(object):
         '''get the list of storage events generated in the cluster
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('events/storage', kwargs)
 
@@ -1171,12 +1406,19 @@ class Nutanix(object):
         '''get the list of physical hosts configured in the cluster
 
         Kwargs:
-            count: number of physical hosts to retrieve
-            filterCriteria: filter criteria
-            sortCriteria: sort criteria
-            searchString: search string
-            page: page number
-            projection: projections on the attributes
+
+        :param count:
+            number of physical hosts to retrieve
+        :param filterCriteria:
+            filter criteria
+        :param sortCriteria:
+            sort criteria
+        :param searchString:
+            search string
+        :param page:
+            page number
+        :param projection:
+            projections on the attributes
         '''
         return self._get('hosts/', kwargs)
 
@@ -1184,14 +1426,23 @@ class Nutanix(object):
         '''get the list of alerts generated on any host
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
         '''
         return self._get('hosts/alerts', kwargs)
 
@@ -1199,11 +1450,17 @@ class Nutanix(object):
         '''get the list of events generated on any host
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('hosts/events', kwargs)
 
@@ -1211,8 +1468,11 @@ class Nutanix(object):
         '''get the health check summary for the hosts
 
         Kwargs:
-            filterCriteria: filter criteria
-            detailedSummary: detailed summary
+
+        :param filterCriteria:
+            filter criteria
+        :param detailedSummary:
+            detailed summary
         '''
         return self._get('hosts/health_check_summary', kwargs)
 
@@ -1223,14 +1483,23 @@ class Nutanix(object):
             service VM ID
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
         '''
         return self._get('hosts/{0}/alerts'.format(svm_id), kwargs)
 
@@ -1241,11 +1510,17 @@ class Nutanix(object):
             service VM ID
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('hosts/{0}/events'.format(svm_id), kwargs)
 
@@ -1256,10 +1531,15 @@ class Nutanix(object):
             service VM ID
 
         Kwargs:
-            metrics (required): List of metrics
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            intervalInSecs: Sampling interval of stats
+
+        :param metrics:
+            (required) List of metrics
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param intervalInSecs:
+            Sampling interval of stats
         '''
         return self._get('hosts/{0}/stats/'.format(svm_id), kwargs)
 
@@ -1371,16 +1651,27 @@ class Nutanix(object):
         '''get the list of alerts generated for any license
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
-            entityType: Entity type
-            entityIds: Entity ids
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
+        :param entityType:
+            Entity type
+        :param entityIds:
+            Entity ids
         '''
         return self._get('license/alerts/', kwargs)
 
@@ -1411,11 +1702,17 @@ class Nutanix(object):
         '''get the list of events generated for any license
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('license/events', kwargs)
 
@@ -1426,12 +1723,19 @@ class Nutanix(object):
         '''get the list of protection domains configured in the cluster
 
         Kwargs:
-            names: protection domain names
-            metroAvail: metro availability protection domain
-            vStoreName: vStore name
-            remoteSiteName: remote site name
-            includeDeleted: include deleted
-            projection: projections on the attributes
+
+        :param names:
+            protection domain names
+        :param metroAvail:
+            metro availability protection domain
+        :param vStoreName:
+            vStore name
+        :param remoteSiteName:
+            remote site name
+        :param includeDeleted:
+            include deleted
+        :param projection:
+            projections on the attributes
         '''
         return self._get('protection_domains/', kwargs)
 
@@ -1447,16 +1751,27 @@ class Nutanix(object):
         '''get the list of alerts generated on any protection domain
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
-            entityType: Entity type
-            entityIds: Entity ids
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
+        :param entityType:
+            Entity type
+        :param entityIds:
+            Entity ids
         '''
         return self._get('protection_domains/alerts', kwargs)
 
@@ -1464,9 +1779,13 @@ class Nutanix(object):
         '''get the list of consistency groups in the cluster
 
         Kwargs:
-            protectionDomains: protection domain names
-            consistencyGroups: consistency group names
-            includeDeleted: include deleted
+
+        :param protectionDomains:
+            protection domain names
+        :param consistencyGroups:
+            consistency group names
+        :param includeDeleted:
+            include deleted
         '''
         return self._get('protection_domains/consistency_groups/', kwargs)
 
@@ -1474,10 +1793,15 @@ class Nutanix(object):
         '''get the list of snapshots created in protection domains
 
         Kwargs:
-            count: number of DR snapshots to retrieve
-            filterCriteria: filter criteria
-            sortCriteria: sort criteria
-            fullDetails: whether to include CG/VM details
+
+        :param count:
+            number of DR snapshots to retrieve
+        :param filterCriteria:
+            filter criteria
+        :param sortCriteria:
+            sort criteria
+        :param fullDetails:
+            whether to include CG/VM details
         '''
         return self._get('consistency_groups/dr_snapshots/', kwargs)
 
@@ -1485,11 +1809,17 @@ class Nutanix(object):
         '''get the list of events generated on any protection domain
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('protection_domain/events', kwargs)
 
@@ -1497,8 +1827,11 @@ class Nutanix(object):
         '''get the health check summary for the protection domain
 
         Kwargs:
-            filterCriteria: filter criteria
-            detailedSummary: detailed summary
+
+        :param filterCriteria:
+            filter criteria
+        :param detailedSummary:
+            detailed summary
         '''
         return self._get('protection_domains/health_check_summary', kwargs)
 
@@ -1506,7 +1839,9 @@ class Nutanix(object):
         '''get the list of out-of-band schedules in protection domains configured in the cluster
 
         Kwargs:
-            protectionDomainNames: names of protection domains
+
+        :param protectionDomainNames:
+            names of protection domains
         '''
         return self._get('protectoin_domains/oob_schedules/', kwargs)
 
@@ -1514,7 +1849,9 @@ class Nutanix(object):
         '''get the list of pending actions in the cluster
 
         Kwargs:
-            protectionDomainNames: names of protection domains
+
+        :param protectionDomainNames:
+            names of protection domains
         '''
         return self._get('protection_domains/pending_actions/', kwargs)
 
@@ -1522,8 +1859,11 @@ class Nutanix(object):
         '''get the list of pending replications in the cluster
 
         Kwargs:
-            protectionDomainNames: protection domain names
-            remoteSiteNames: remote site names
+
+        :param protectionDomainNames:
+            protection domain names
+        :param remoteSiteNames:
+            remote site names
         '''
         return self._get('protection_domains/pending_replications/', kwargs)
 
@@ -1531,8 +1871,11 @@ class Nutanix(object):
         '''get the list of replications in the cluster
 
         Kwargs:
-            protectionDomainNames: protection domain names
-            remoteSiteNames: remote site names
+
+        :param protectionDomainNames:
+            protection domain names
+        :param remoteSiteNames:
+            remote site names
         '''
         return self._get('protection_domains/replications/', kwargs)
 
@@ -1545,9 +1888,13 @@ class Nutanix(object):
         '''get list of unprotected VMs in a cluster that can participate in Nutanix native backup and DR
 
         Kwargs:
-            hostIds: host IDs
-            vmNames: VM names
-            containerNames: container names
+
+        :param hostIds:
+            host IDs
+        :param vmNames:
+            VM names
+        :param containerNames:
+            container names
         '''
         return self._get('protection_domains/unprotected_vms/', kwargs)
 
@@ -1558,10 +1905,15 @@ class Nutanix(object):
             name of the protection domain
 
         Kwargs:
-            metroAvail: whether to include only metro availability related protection domains
-            vStoreName: vStore name
-            remoteSiteName: remote site name
-            projection: projections on the attributes
+
+        :param metroAvail:
+            whether to include only metro availability related protection domains
+        :param vStoreName:
+            vStore name
+        :param remoteSiteName:
+            remote site name
+        :param projection:
+            projections on the attributes
         '''
         return self._get('protection_domains/{0}'.format(name), kwargs)
 
@@ -1574,7 +1926,9 @@ class Nutanix(object):
             name of the protection domain
 
         Kwargs:
-            skipRemoteCheck: skip checking remote protection domain
+
+        :param skipRemoteCheck:
+            skip checking remote protection domain
         '''
         return self._delete('protection_domains/{0}'.format(name), kwargs)
 
@@ -1593,16 +1947,27 @@ class Nutanix(object):
             name of the protection domain
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
-            entityType: Entity type
-            entityIds: Entity ids
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
+        :param entityType:
+            Entity type
+        :param entityIds:
+            Entity ids
         '''
         return self._get('protection_domains/{0}/alerts'.format(name), kwargs)
 
@@ -1629,10 +1994,15 @@ class Nutanix(object):
             name of the protection domain
 
         Kwargs:
-            count: number of DR snapshots to retrieve
-            filterCriteria: filter criteria
-            sortCriteria: sort criteria
-            fullDetails: whether to include CG/VM details
+
+        :param count:
+            number of DR snapshots to retrieve
+        :param filterCriteria:
+            filter criteria
+        :param sortCriteria:
+            sort criteria
+        :param fullDetails:
+            whether to include CG/VM details
         '''
         return self._get('protection_domains/{0}/dr_snapshots/'.format(name), kwargs)
 
@@ -1643,11 +2013,17 @@ class Nutanix(object):
             name of the protection domain
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('protection_domain/{0}/events'.format(name), kwargs)
 
@@ -1702,7 +2078,9 @@ class Nutanix(object):
             name of the protection domain
 
         Kwargs:
-            remoteSiteNames: names of remote sites
+
+        :param remoteSiteNames:
+            names of remote sites
         '''
         return self._get('protection_domains/{0}/pending_replications'.format(name), kwargs)
 
@@ -1770,10 +2148,15 @@ class Nutanix(object):
             name of the protection domain
 
         Kwargs:
-            metrics (required): list of metrics
-            startTimeInUsecs: start time in microseconds
-            endTimeInUsecs: end time in microseconds
-            intervalInSecs: sampling interval of stats
+
+        :param metrics:
+            (required) list of metrics
+        :param startTimeInUsecs:
+            start time in microseconds
+        :param endTimeInUsecs:
+            end time in microseconds
+        :param intervalInSecs:
+            sampling interval of stats
         '''
         return self._get('protection_domains/{0}/stats/'.format(name), kwargs)
 
@@ -1784,14 +2167,17 @@ class Nutanix(object):
             name of the protection domain
 
         Kwargs:
-            array (required): list of VMs
+
+        :param array:
+            (required) list of VMs
         '''
         return self._post('protection_domains/{0}/unprotect_vms'.format(name), kwargs)
 
     def update_replication_timeout(self, name, payload):
         '''update metro availability timeout for a specific protection domain
 
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
         :param payload:
             json replication timeout configuration
         '''
@@ -1804,7 +2190,9 @@ class Nutanix(object):
             name of the protection domain
 
         Kwargs:
-            skipRemoteCheck: skip checking remote protection domain
+
+        :param skipRemoteCheck:
+            skip checking remote protection domain
         '''
         return self._post('protection_domains/{0}/demote'.format(name), kwargs)
 
@@ -1815,7 +2203,9 @@ class Nutanix(object):
             name of the protection domain
 
         Kwargs:
-            skipRemoteCheck: skip checking remote protection domain
+
+        :param skipRemoteCheck:
+            skip checking remote protection domain
         '''
         return self._post('protection_domains/{0}/metro_avail_disable'.format(name), kwargs)
 
@@ -1828,9 +2218,13 @@ class Nutanix(object):
             vStore and remote site configuration
 
         Kwargs:
-            reEnable: re-enable operation
-            skipRemoteCheck: skip checking remote protection domain
-            force: skip checking remote container emptiness
+
+        :param reEnable:
+            re-enable operation
+        :param skipRemoteCheck:
+            skip checking remote protection domain
+        :param force:
+            skip checking remote container emptiness
         '''
         return self._post('protection_domains/{0}/metro_avail_enable'.format(name), kwargs, payload=payload)
 
@@ -1841,7 +2235,9 @@ class Nutanix(object):
             name of the protection domain
 
         Kwargs:
-            skipRemoteCheck: skip checking remote protection domain
+
+        :param skipRemoteCheck:
+            skip checking remote protection domain
         '''
         return self._post('protection_domains/{0}/promote'.format(name), kwargs)
 
@@ -1956,11 +2352,17 @@ class Nutanix(object):
         '''get the list of remote sites configured in the cluster
         
         Kwargs:
-            names: remote site names
-            metroCompatible: remote site stretchable
-            fullDetails: remote cluster full detail
-            includeDeleted: include deleted
-            projection: projections on the attributes
+
+        :param names:
+            remote site names
+        :param metroCompatible:
+            remote site stretchable
+        :param fullDetails:
+            remote cluster full detail
+        :param includeDeleted:
+            include deleted
+        :param projection:
+            projections on the attributes
         '''
         return self._get('remote_sites/', kwargs)
 
@@ -1984,16 +2386,27 @@ class Nutanix(object):
         '''get the list of alerts generated on any remote site
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
-            entityType: Entity type
-            entityIds: Entity ids
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
+        :param entityType:
+            Entity type
+        :param entityIds:
+            Entity ids
         '''
         return self._get('remote_sites/alerts', kwargs)
 
@@ -2001,10 +2414,15 @@ class Nutanix(object):
         '''get the list of all snapshots created in remote sites
 
         Kwargs:
-            count: maximum number of DR snapshots to retrieve
-            filterCriteria: filter criteria
-            sortCriteria: sort criteria
-            fullDetails: whether to include consistency group/VM details
+
+        :param count:
+            maximum number of DR snapshots to retrieve
+        :param filterCriteria:
+            filter criteria
+        :param sortCriteria:
+            sort criteria
+        :param fullDetails:
+            whether to include consistency group/VM details
         '''
         return self._get('remote_sites/dr_snapshots', kwargs)
 
@@ -2012,11 +2430,17 @@ class Nutanix(object):
         '''get the list of events generated on any remote site
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('remote_sites/events', kwargs)
 
@@ -2024,8 +2448,11 @@ class Nutanix(object):
         '''get the health check summary for the remote sites
 
         Kwargs:
-            filterCriteria: filter criteria
-            detailedSummary: detailed summary
+
+        :param filterCriteria:
+            filter criteria
+        :param detailedSummary:
+            detailed summary
         '''
         return self._get('remote_sites/health_check_summary', kwargs)
 
@@ -2033,8 +2460,11 @@ class Nutanix(object):
         '''get all pending replications on the cluster
 
         Kwargs:
-            protectionDomainNames: protection domain names
-            remoteSiteNames: remote site names
+
+        :param protectionDomainNames:
+            protection domain names
+        :param remoteSiteNames:
+            remote site names
         '''
         return self._get('remote_sites/pending_replications/', kwargs)
 
@@ -2045,7 +2475,9 @@ class Nutanix(object):
             name of the remote site
 
         Kwargs:
-            projection: projections on the attributes
+
+        :param projection:
+            projections on the attributes
         '''
         return self._get('remote_sites/{0}'.format(name), kwargs)
 
@@ -2064,16 +2496,27 @@ class Nutanix(object):
             name of the remote site
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of alerts
-            resolved: Alerts which have been resolved
-            acknowledged: Alerts which have been acknowledged
-            severity: Alert severities
-            alertTypeUuid: Alert type ids
-            page: Page number
-            entityType: Entity type
-            entityIds: Entity ids
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of alerts
+        :param resolved:
+            Alerts which have been resolved
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :param severity:
+            Alert severities
+        :param alertTypeUuid:
+            Alert type ids
+        :param page:
+            Page number
+        :param entityType:
+            Entity type
+        :param entityIds:
+            Entity ids
         '''
         return self._get('remote_sites/{0}/alerts'.format(name), kwargs)
 
@@ -2084,10 +2527,15 @@ class Nutanix(object):
             name of the remote site
 
         Kwargs:
-            count: maximum number of DR snapshots to retrieve
-            filterCriteria: filter criteria
-            sortCriteria: sort criteria
-            fullDetails: whether to include consistency group/VM details
+
+        :param count:
+            maximum number of DR snapshots to retrieve
+        :param filterCriteria:
+            filter criteria
+        :param sortCriteria:
+            sort criteria
+        :param fullDetails:
+            whether to include consistency group/VM details
         '''
         return self._get('remote_sites/{0}/dr_snapshots/'.format(name), kwargs)
 
@@ -2098,11 +2546,17 @@ class Nutanix(object):
             name of the remote site
 
         Kwargs:
-            startTimeInUsecs: Start time in microseconds
-            endTimeInUsecs: End time in microseconds
-            count: Maximum number of events
-            acknowledged: Events which have been acknowledged
-            page: Page number
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
         '''
         return self._get('remote_sites/{0}/events'.format(name), kwargs)
 
@@ -2113,8 +2567,11 @@ class Nutanix(object):
             name of the remote site
 
         Kwargs:
-            protectionDomainNames: protection domain names
-            remoteSiteNames: remote site names
+
+        :param protectionDomainNames:
+            protection domain names
+        :param remoteSiteNames:
+            remote site names
         '''
         return self._get('remote_sites/{0}/pending_replications/'.format(name), kwargs)
 
@@ -2128,10 +2585,15 @@ class Nutanix(object):
             name of the remote site
 
         Kwargs:
-            metrics (required): list of metrics
-            startTimeInUsecs: start time in microseconds
-            endTimeInUsecs: end time in microseconds
-            intervalInSecs: sampling interval of stats
+
+        :param metrics:
+            (required) list of metrics
+        :param startTimeInUsecs:
+            start time in microseconds
+        :param endTimeInUsecs:
+            end time in microseconds
+        :param intervalInSecs:
+            sampling interval of stats
         '''
         return self._get('remote_stats/{0}/stats/'.format(name), kwargs)
 
