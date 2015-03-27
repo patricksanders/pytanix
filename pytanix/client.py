@@ -35,10 +35,13 @@ class Nutanix(object):
     def __init__(self, ip, auth=None, requests_session=True):
         '''Create a Nutanix REST API object.
 
-        Args:
-            ip: A Nutanix cluster or CVM IP address
-            auth: An authorization token (optional)
-            requests_session: A Requests session object of a truthy value to create one.
+        :param ip:
+            A Nutanix cluster or CVM IP address
+        :type ip: ``string``
+        :param auth:
+            An authorization token (optional)
+        :param requests_session:
+            A Requests session object of a truthy value to create one.
             A falsy value disables sessions.
         '''
         # TODO: let user set base IP
@@ -162,8 +165,8 @@ class Nutanix(object):
     def update_alerts_configuration(self, payload):
         '''update the configuration that is used to send alert emails
 
-        Args:
-            payload: json object of new alert configuration
+        :param payload:
+            json object of new alert configuration
         '''
         return self._put('alerts/configuration', payload=payload)
 
@@ -196,16 +199,16 @@ class Nutanix(object):
     def update_alerts_metadata(self, payload):
         '''get the list of alerts metadata generated in the cluster
 
-        Args:
-            payload: json object of new alert metadata
+        :param payload:
+            json object of new alert metadata
         '''
         return self._put('alerts/metadata', payload=payload)
 
     def get_alerts_metadata(self, alertTypeUuid):
         '''get the list of alerts metadata generated in the cluster
 
-        Args:
-            alertTypeUuid: Alert type UUID of the Alert metadata
+        :param alertTypeUuid:
+            Alert type UUID of the Alert metadata
         '''
         return self._get('alerts/metadata/{0}'.format(alertTypeUuid))
 
@@ -242,16 +245,16 @@ class Nutanix(object):
     def acknowledge_alert(self, id):
         '''acknowledge alert by id
             
-        Args:
-            id: Alert id
+        :param id:
+            Alert id
         '''
         return self._post('alerts/{0}/acknowledge'.format(id))
 
     def resolve_alert(self, id):
         '''resolve alert by id
             
-        Args:
-            id: Alert id
+        :param id:
+            Alert id
         '''
         return self._post('alerts/{0}/resolve'.format(id))
 
@@ -266,8 +269,8 @@ class Nutanix(object):
     def update_auth_config(self, payload):
         '''update auth configuration
 
-        Args:
-            payload: json of updated auth config
+        :param payload:
+            json of updated auth config
         '''
         return self._put('authconfig', payload=payload)
 
@@ -279,16 +282,16 @@ class Nutanix(object):
     def add_auth_types(self, payload):
         '''add authentication types
 
-        Args:
-            payload: json array of auth types
+        :param payload:
+            json array of auth types
         '''
         return self._post('authconfig/add_auth_types', payload=payload)
 
     def update_auth_types(self, payload):
         '''add authentication types
 
-        Args:
-            payload: json array of auth types
+        :param payload:
+            json array of auth types
         '''
         return self._put('authconfig/auth_types', payload=payload)
 
@@ -300,8 +303,8 @@ class Nutanix(object):
     def set_client_auth_status(self, enable):
         '''enable or disable client authentication
 
-        Args:
-            enable: boolean for enabling or disabling client auth
+        :param enable:
+            boolean for enabling or disabling client auth
         '''
         payload = {"value": enable}
         return self._post('authconfig/client_auth/', payload=payload)
@@ -314,24 +317,24 @@ class Nutanix(object):
     def delete_client_auth(self, name):
         '''delete client chain certificate on the cluster
 
-        Args:
-            name: name of the certificate
+        :param name:
+            name of the certificate
         '''
         return self._delete('authconfig/client_auth/{0}'.format(name))
 
     def add_auth_directory(self, payload):
         '''add directory config to the cluster
 
-        Args:
-            payload: json auth directory config
+        :param payload:
+            json auth directory config
         '''
         return self._post('authconfig/directories/', payload=payload)
 
     def edit_auth_directory(self, payload):
         '''edit the specified directory config
 
-        Args:
-            payload: json auth directory config
+        :param payload:
+            json auth directory config
         '''
         return self._put('authconfig/directories/', payload=payload)
 
@@ -343,32 +346,32 @@ class Nutanix(object):
     def test_auth_connection(self, payload):
         '''test LDAP directory connection status
 
-        Args:
-            payload: json containing user, pass, and AD name
+        :param payload:
+            json containing user, pass, and AD name
         '''
         return self._post('authconfig/directories/connection_status', payload=payload)
 
     def get_auth_directory(self, name):
         '''get directory with the specified name
         
-        Args:
-            name: name of directory
+        :param name:
+            name of directory
         '''
         return self._get('authconfig/directories/{0}'.format(name))
 
     def delete_auth_directory(self, name):
         '''delete directory with the specified name
         
-        Args:
-            name: name of directory
+        :param name:
+            name of directory
         '''
         return self._delete('authconfig/directories/{0}'.format(name))
 
     def remove_auth_types(self, payload):
         '''remove auth types from the existing auth types
 
-        Args:
-            payload: json containing user, pass, and AD name
+        :param payload:
+            json containing user, pass, and AD name
         '''
         return self._post('authconfig/remove_auth_types', payload=payload)
 
@@ -389,16 +392,16 @@ class Nutanix(object):
     def delete_ca_cert(self, name):
         '''delete a CA certificate from the cluster
 
-        Args:
-            name: Certificate Authority name
+        :param name:
+            Certificate Authority name
         '''
         return self._delete('certificates/ca_certificates/{0}'.format(name))
 
     def update_cert_info(self, payload):
         '''update the certification information
 
-        Args:
-            payload: json certification information
+        :param payload:
+            json certification information
         '''
         return self._put('certificates/certification_information', payload=payload)
 
@@ -454,16 +457,16 @@ class Nutanix(object):
     def update_cluster(self, payload):
         '''update cluster details
 
-        Args:
-            payload: cluster detail json
+        :param payload:
+            cluster detail json
         '''
         return self._put('/cluster/', payload=payload)
 
     def cluster_domain(self, payload):
         '''join/unjoin the storage cluster to/from a Windows AD domain
 
-        Args:
-            payload: information pertaining to the Windows AD domain
+        :param payload:
+            information pertaining to the Windows AD domain
         '''
         return self._put('cluster/cluster_domain', payload=payload)
 
@@ -475,8 +478,8 @@ class Nutanix(object):
     def add_cluster_nameserver(self, server):
         '''add a nameserver to the cluster
 
-        Args:
-            server: address of nameserver
+        :param server:
+            address of nameserver
         '''
         payload = {"value": server}
         return self._post('cluster/name_servers', payload=payload)
@@ -484,8 +487,8 @@ class Nutanix(object):
     def delete_cluster_nameserver(self, server):
         '''delete a nameserver with the specified name
         
-        Args:
-            server: name of nameserver to delete
+        :param server:
+            name of nameserver to delete
         '''
         return self._delete('cluster/name_servers/{0}'.format(server))
 
@@ -497,8 +500,8 @@ class Nutanix(object):
     def add_nfs_whitelist(self, entry):
         '''add an address to the NFS subnet whitelist
 
-        Args:
-            entry: value to add to NFS whitelist
+        :param entry:
+            value to add to NFS whitelist
         '''
         payload = {"value": entry}
         return self._post('cluster/nfs_whitelist', payload=payload)
@@ -506,8 +509,8 @@ class Nutanix(object):
     def delete_nfs_whitelist(self, name):
         '''delete an address from the NFS subnet whitelist
         
-        Args:
-            name: NFS whitelist entry to delete
+        :param name:
+            NFS whitelist entry to delete
         '''
         return self._delete('cluster/nfs_whitelist/{0}'.format(name))
 
@@ -519,8 +522,8 @@ class Nutanix(object):
     def add_ntp_server(self, server):
         '''add NTP server to the cluster
 
-        Args:
-            server: NTP server to add to the cluster
+        :param server:
+            NTP server to add to the cluster
         '''
         payload = {"value": server}
         return self._post('cluster/ntp_servers', payload=payload)
@@ -528,8 +531,8 @@ class Nutanix(object):
     def delete_ntp_server(self, server):
         '''remove NTP server from the cluster
 
-        Args:
-            server: NTP server to be removed from the cluster
+        :param server:
+            NTP server to be removed from the cluster
         '''
         return self._delete('cluster/ntp_servers/{0}'.format(server))
 
@@ -541,9 +544,10 @@ class Nutanix(object):
     def add_public_key(self, name, key):
         '''add a public key to the cluster
 
-        Args:
-            name: name for the public key
-            key: key to be added
+        :param name:
+            name for the public key
+        :param key:
+            key to be added
         '''
         payload = {"name": name, "key": key}
         return self._post('cluster/public_keys/', payload=payload)
@@ -551,16 +555,16 @@ class Nutanix(object):
     def delete_public_key(self, name):
         '''delete a public key from the cluster
 
-        Args:
-            name: name of the key to be deleted
+        :param name:
+            name of the key to be deleted
         '''
         return self._delete('cluster/public_keys/{0}'.format(name))
 
     def get_public_key(self, name):
         '''get a public key by name
 
-        Args:
-            name: name of public key
+        :param name:
+            name of public key
         '''
         return self._get('cluster/public_keys/{0}'.format(name))
 
@@ -572,16 +576,16 @@ class Nutanix(object):
     def get_rackable_unit(self, id):
         '''get a rackable unit with the specified ID
         
-        Args:
-            id: ID of a rackable unit
+        :param id:
+            ID of a rackable unit
         '''
         return self._get('cluster/rackable_units/{0}'.format(id))
 
     def delete_rackable_unit(self, id):
         '''delete a rackable unit with the specified ID
         
-        Args:
-            id: ID of a rackable unit
+        :param id:
+            ID of a rackable unit
         '''
         return self._delete('cluster/rackable_units/{0}'.format(id))
 
@@ -593,8 +597,8 @@ class Nutanix(object):
     def update_remote_support(self, payload):
         '''update the remote support settings on the cluster
 
-        Args:
-            payload: a timed bool instance
+        :param payload:
+            a timed bool instance
         '''
         return self._put('cluster/remote_support', payload=payload)
 
@@ -611,8 +615,8 @@ class Nutanix(object):
     def send_email(self, payload):
         '''send an email using the smtp server configuration
 
-        Args:
-            payload: json email instance
+        :param payload:
+            json email instance
         '''
         return self._post('cluster/send_email', payload=payload)
 
@@ -624,8 +628,8 @@ class Nutanix(object):
     def update_smtp_config(self, payload):
         '''update the cluster SMTP server configuration
 
-        Args:
-            payload: json SMTP server configuration
+        :param payload:
+            json SMTP server configuration
         '''
         return self._put('/cluster/smtp', payload=payload)
 
@@ -696,8 +700,8 @@ class Nutanix(object):
     def get_cluster_by_id(self, id, **kwargs):
         '''get a cluster
         
-        Args:
-            id: id of the cluster
+        :param id:
+            id of the cluster
 
         Kwargs:
             projection: projections on the attributes
@@ -707,8 +711,8 @@ class Nutanix(object):
     def get_cluster_alerts(self, id, **kwargs):
         '''get the list of alerts generated on a specified cluster
 
-        Args:
-            id: id of the cluster
+        :param id:
+            id of the cluster
 
         Kwargs:
             startTimeInUsecs: Start time in microseconds
@@ -725,8 +729,8 @@ class Nutanix(object):
     def get_cluster_events(self, id, **kwargs):
         '''get the list of events generated on a specified cluster
 
-        Args:
-            id: id of the cluster
+        :param id:
+            id of the cluster
 
         Kwargs:
             startTimeInUsecs: Start time in microseconds
@@ -740,8 +744,8 @@ class Nutanix(object):
     def get_cluster_stats(self, id, **kwargs):
         '''get the stats for a specified cluster
 
-        Args:
-            id: id of the cluster
+        :param id:
+            id of the cluster
 
         Kwargs:
             metrics (required): list of metrics
@@ -770,16 +774,16 @@ class Nutanix(object):
     def add_container(self, payload):
         '''add a container to the cluster
 
-        Args:
-            payload: json container configuration
+        :param payload:
+            json container configuration
         '''
         return self._post('container/', payload=payload)
 
     def update_container(self, payload):
         '''update a container's configuration
 
-        Args:
-            payload: json container configuration
+        :param payload:
+            json container configuration
         '''
         return self._put('container/', payload=payload)
 
@@ -806,16 +810,16 @@ class Nutanix(object):
     def add_datastore(self, payload):
         '''add an NFS datastore
 
-        Paramaters:
-            payload: json datastore configuration
+        :param payload:
+            json datastore configuration
         '''
         return self._post('containers/datastores/add_datastore', payload=payload)
 
     def remove_datastore(self, payload):
         '''remove an NFS datastore
 
-        Args:
-            payload: json removal request
+        :param payload:
+            json removal request
         '''
         return self._post('containers/datastores/remove_datastore', payload=payload)
 
@@ -834,8 +838,8 @@ class Nutanix(object):
     def delete_container(self, id, **kwargs):
         '''delete a container with the specified ID from the cluster
 
-        Args:
-            id: ID of the container
+        :param id:
+            ID of the container
 
         Kwargs:
             ignoreSmallFiles: ignore small files
@@ -846,8 +850,8 @@ class Nutanix(object):
     def get_container(self, id, **kwargs):
         '''get a container with the specified ID
 
-        Args:
-            id: id of the container
+        :param id:
+            id of the container
 
         Kwargs:
             projection: projections on the attributes
@@ -857,8 +861,8 @@ class Nutanix(object):
     def get_container_alerts(self, id, **kwargs):
         '''get the list of alerts generated on any container
 
-        Args:
-            id: id of the container
+        :param id:
+            id of the container
 
         Kwargs:
             startTimeInUsecs: Start time in microseconds
@@ -875,8 +879,8 @@ class Nutanix(object):
     def get_container_events(self, id, **kwargs):
         '''get the list of events generated on any container
 
-        Args:
-            id: id of the container
+        :param id:
+            id of the container
 
         Kwargs:
             startTimeInUsecs: Start time in microseconds
@@ -890,8 +894,8 @@ class Nutanix(object):
     def get_container_stats(self, id, **kwargs):
         '''get the stats for a specified container
 
-        Args:
-            id: id of the container
+        :param id:
+            id of the container
 
         Kwargs:
             metrics (required): List of metrics
@@ -904,8 +908,8 @@ class Nutanix(object):
     def get_container_vdisks(self, id):
         '''get the list of vDisks of the specified container
 
-        Args:
-            id: id of the container
+        :param id:
+            id of the container
         '''
         return self._get('containers/{0}/vdisks'.format(id))
 
@@ -964,8 +968,8 @@ class Nutanix(object):
     def get_disk(self, id, **kwargs):
         '''get a disk with the specified id
 
-        Args:
-            id: ID of the disk
+        :param id:
+            ID of the disk
 
         Kwargs:
             projection: projections on the attributes
@@ -975,8 +979,8 @@ class Nutanix(object):
     def delete_disk(self, id, **kwargs):
         '''mark specified disk for removal
 
-        Args:
-            id: ID of the disk
+        :param id:
+            ID of the disk
 
         Kwargs:
             force: force the operation (ignores all system validations)
@@ -986,8 +990,8 @@ class Nutanix(object):
     def get_disk_alerts(self, id, **kwargs):
         '''get the list of alerts generated on any disk
 
-        Args:
-            id: id of the disk
+        :param id:
+            id of the disk
 
         Kwargs:
             startTimeInUsecs: Start time in microseconds
@@ -1004,8 +1008,8 @@ class Nutanix(object):
     def get_disk_events(self, id, **kwargs):
         '''get the list of events generated on any disk
 
-        Args:
-            id: id of the disk
+        :param id:
+            id of the disk
 
         Kwargs:
             startTimeInUsecs: Start time in microseconds
@@ -1019,8 +1023,8 @@ class Nutanix(object):
     def get_disk_stats(self, id, **kwargs):
         '''get the stats for a specified disk
 
-        Args:
-            id: id of the disk
+        :param id:
+            id of the disk
 
         Kwargs:
             metrics (required): List of metrics
@@ -1042,8 +1046,8 @@ class Nutanix(object):
     def set_encryption(self, enable):
         '''enable or disable encryption on the cluster
 
-        Args:
-            enable: enable encryption
+        :param enable:
+            enable encryption
         '''
         payload = {"value": enable}
         return self._post('encryption/enable', payload=payload)
@@ -1068,9 +1072,10 @@ class Nutanix(object):
     def test_encryption(self, node_ids, kms_names):
         '''test encryption configuration of the cluster
 
-        Args:
-            node_ids: list of node IDs
-            kms_names: list of key management server names
+        :param node_ids:
+            list of node IDs
+        :param kms_names:
+            list of key management server names
         '''
         payload = {"serverList": kms_names, "nodeIdList": node_ids}
         return self._post('encryption/test', payload=payload)
@@ -1130,8 +1135,8 @@ class Nutanix(object):
     def acknowledge_event(self, id):
         '''acknowledge event with the specified ID
 
-        Args:
-            id: Event ID
+        :param id:
+            Event ID
         '''
         return self._put('events/{0}/acknowledge'.format(id))
 
@@ -1146,16 +1151,16 @@ class Nutanix(object):
     def update_health_checks(self, payload):
         '''update health check details
 
-        Args:
-            payload: json health check instance
+        :param payload:
+            json health check instance
         '''
         return self._put('health_checks/', payload=payload)
 
     def get_health_check(self, id):
         '''get the health check with the specified ID
 
-        Args:
-            id: ID of the health check
+        :param id:
+            ID of the health check
         '''
         return self._get('health_checks/{0}'.format(id))
 
@@ -1214,8 +1219,8 @@ class Nutanix(object):
     def get_host_alerts(self, svm_id, **kwargs):
         '''get the list of alerts generated on any host
 
-        Args:
-            svm_id: service VM ID
+        :param svm_id:
+            service VM ID
 
         Kwargs:
             startTimeInUsecs: Start time in microseconds
@@ -1232,8 +1237,8 @@ class Nutanix(object):
     def get_disk_events(self, svm_id, **kwargs):
         '''get the list of events generated on any host
 
-        Args:
-            svm_id: service VM ID
+        :param svm_id:
+            service VM ID
 
         Kwargs:
             startTimeInUsecs: Start time in microseconds
@@ -1247,8 +1252,8 @@ class Nutanix(object):
     def get_host_stats(self, svm_id, **kwargs):
         '''get the stats for a specified host
 
-        Args:
-            svm_id: service VM ID
+        :param svm_id:
+            service VM ID
 
         Kwargs:
             metrics (required): List of metrics
@@ -1269,10 +1274,12 @@ class Nutanix(object):
     def add_http_proxy(self, address, username=None, password=None):
         '''add an HTTP proxy to the cluster
 
-        Args:
-            address: proxy address
-            username: proxy username
-            password: proxy password
+        :param address:
+            proxy address
+        :param username:
+            proxy username
+        :param password:
+            proxy password
         '''
         payload = {"address": address,
                    "username": username,
@@ -1282,24 +1289,24 @@ class Nutanix(object):
     def update_http_proxy(self, payload):
         '''update an HTTP proxy
 
-        Args:
-            payload: json HTTP proxy configuration
+        :param payload:
+            json HTTP proxy configuration
         '''
         return self._put('http_proxies/', payload=payload)
 
     def get_http_proxy(self, name):
         '''get an HTTP proxy with the specified name
 
-        Args:
-            name: name of an HTTP proxy
+        :param name:
+            name of an HTTP proxy
         '''
         return self._get('http_proxies/{0}'.format(name))
 
     def delete_http_proxy(self, name):
         '''delete an HTTP proxy with the specified name
 
-        Args:
-            name: name of an HTTP proxy
+        :param name:
+            name of an HTTP proxy
         '''
         return self._delete('http_proxies/{0}'.format(name))
 
@@ -1314,32 +1321,32 @@ class Nutanix(object):
     def add_kms(self, payload):
         '''add key management server to the cluster
 
-        Args:
-            payload: json key management server configuration
+        :param payload:
+            json key management server configuration
         '''
         return self._post('key_management_servers/', payload=payload)
 
     def update_kms(self, payload):
         '''update the key management server configuration
 
-        Args:
-            payload: json key management server configuration
+        :param payload:
+            json key management server configuration
         '''
         return self._put('key_management_server/', payload=payload)
 
     def get_kms(self, name):
         '''get key management server with the specified name
 
-        Args:
-            name: key management server name
+        :param name:
+            key management server name
         '''
         return self._get('key_management_server/{0}'.format(name))
 
     def delete_kms(self, name):
         '''delete key management server with the specified name
 
-        Args:
-            name: key management server name
+        :param name:
+            key management server name
         '''
         return self._delete('key_management_server/{0}'.format(name))
 
@@ -1354,8 +1361,8 @@ class Nutanix(object):
     def add_license(self, license_file):
         '''apply license file to the cluster
 
-        Args:
-            license_file: license file
+        :param license_file:
+            license file
         '''
         #TODO: handle license file upload
         pass
@@ -1385,8 +1392,8 @@ class Nutanix(object):
     def get_license_feature(self, feature_name):
         '''show allowances for a particular feature
 
-        Args:
-            feature_name: name of the feature
+        :param feature_name:
+            name of the feature
         '''
         return self._get('license/allowances/{0}'.format(feature_name))
 
@@ -1431,8 +1438,8 @@ class Nutanix(object):
     def add_protection_domain(self, payload):
         '''add a protection domain to be used for disaster recovery and backups
 
-        Args:
-            payload: json protection domain configuration
+        :param payload:
+            json protection domain configuration
         '''
         return self._post('protection_domains/', payload=payload)
 
@@ -1547,8 +1554,8 @@ class Nutanix(object):
     def get_protection_domain(self, name, **kwargs):
         '''get a protection domain with the specified name
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
 
         Kwargs:
             metroAvail: whether to include only metro availability related protection domains
@@ -1563,8 +1570,8 @@ class Nutanix(object):
         Protection domain will be removed from the cluster when all outstanding
         operations on it are cancelled
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
 
         Kwargs:
             skipRemoteCheck: skip checking remote protection domain
@@ -1574,16 +1581,16 @@ class Nutanix(object):
     def activate_protection_domain(self, name):
         '''activate a protection domain with the specified name
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
         '''
         return self._post('protection_domains/{0}/activate'.format(name))
 
     def get_protection_domain_alerts(self, name, **kwargs):
         '''get the list of alerts generated on a specified protection domain
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
 
         Kwargs:
             startTimeInUsecs: Start time in microseconds
@@ -1602,24 +1609,24 @@ class Nutanix(object):
     def get_consistency_groups(self, name):
         '''get list of consistency groups in a specified protection domain
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
         '''
         return self._get('protection_domains/{0}/consistency_groups/'.format(name))
 
     def deactivate_protection_domain(self, name):
         '''deactivate a protection domain with the specified name
         
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
         '''
         return self._post('protection_domains/{0}/deactivate'.format(name))
 
     def get_dr_snapshots(self, name, **kwargs):
         '''get the list of snapshots created in a specified protection domain
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
 
         Kwargs:
             count: number of DR snapshots to retrieve
@@ -1632,8 +1639,8 @@ class Nutanix(object):
     def get_protection_domain_events(self, name, **kwargs):
         '''get the list of events generated on a specified protection domain
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
 
         Kwargs:
             startTimeInUsecs: Start time in microseconds
@@ -1647,50 +1654,52 @@ class Nutanix(object):
     def migrate_protection_domain(self, name):
         '''mark the specified protection domain as inactive and failover to the given remote site
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
         '''
         return self._post('protection_domains/{0}/migrate'.format(name))
 
     def add_oob_schedule(self, name, payload):
         '''add an out of band snapshot schedule in the specified protection domain
 
-        Args:
-            name: name of the protection domain
-            payload: json out of band snapshot schedule configuration
+        :param name:
+            name of the protection domain
+        :param payload:
+            json out of band snapshot schedule configuration
         '''
         return self._post('protection_domains/{0}/oob_schedules'.format(name), kwargs)
 
     def get_oob_schedules(self, name):
         '''get the list of out of band schedules in the specified protection domain
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
         '''
         return self._get('protection_domains/{0}/oob_schedules'.format(name))
 
     def delete_oob_schedule(self, pd_name, shedule_id):
         '''delete an out of band schedule
 
-        Args:
-            pd_name: name of the protection domain
-            schedule_id: ID of the out of band schedule
+        :param pd_name:
+            name of the protection domain
+        :param schedule_id:
+            ID of the out of band schedule
         '''
         return self._delete('protection_domains/{0}/oob_schedules/{1}'.format(pd_name, schedule_id))
 
     def get_pending_actions(self, name):
         '''get list of pending actions in the specified protection domain
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
         '''
         return self._get('protection_domains/{0}/pending_actions/'.format(name))
 
     def get_pending_replications(self, name, **kwargs):
         '''get list of pending replications in the specified protection domain
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
 
         Kwargs:
             remoteSiteNames: names of remote sites
@@ -1700,35 +1709,38 @@ class Nutanix(object):
     def protect_vms(self, name, payload):
         '''add VMs to a protection domain to enable backup and disaster recovery
 
-        Args:
-            name: name of the protection domain
-            payload: json vm protection configuration
+        :param name:
+            name of the protection domain
+        :param payload:
+            json vm protection configuration
         '''
         return self._post('protection_domains/{0}/protect_vms'.format(name), payload=payload)
 
     def get_replications(self, name):
         '''get list of replications in a protection domain
 
-        Args:
-            name: name of protection domain
+        :param name:
+            name of protection domain
         '''
         return self._get('protection_domains/{0}/replications/'.format(name))
 
     def restore_entities(self, name, payload):
         '''rollback VMs and/or NFS files in a protection domain to a given snapshot
 
-        Args:
-            name: name of the protection domain
-            payload: json restore configuration
+        :param name:
+            name of the protection domain
+        :param payload:
+            json restore configuration
         '''
         return self._post('protection_domains/{0}/restore_entities'.format(name), payload=payload)
 
     def rollback(self, pd_name, snapshot_id):
         '''rollback the specified protection domain to a given snapshot
 
-        Args:
-            pd_name: name of the protection domain
-            snapshot_id: ID of the snapshot
+        :param pd_name:
+            name of the protection domain
+        :param snapshot_id:
+            ID of the snapshot
         '''
         payload = {"value": snapshot_id}
         return self._post('protection_domains/{0}/rollback'.format(name), payload=payload)
@@ -1736,9 +1748,10 @@ class Nutanix(object):
     def add_snapshot_schedule(self, name, payload):
         '''add a snapshot schedule to the specified protection domain
 
-        Args:
-            name: name of the protection domains
-            payload: json snapshot schedule configuration
+        :param name:
+            name of the protection domains
+        :param payload:
+            json snapshot schedule configuration
         '''
         return self._post('protection_domains/{0}/schedules'.format(name), payload=payload)
 
@@ -1753,8 +1766,8 @@ class Nutanix(object):
         then historical stats are retrieved. Otherwise, the latest
         stats are retrieved.
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
 
         Kwargs:
             metrics (required): list of metrics
@@ -1767,8 +1780,8 @@ class Nutanix(object):
     def unprotect_vms(self, name, **kwargs):
         '''remove VMs from a protection domain
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
 
         Kwargs:
             array (required): list of VMs
@@ -1778,17 +1791,17 @@ class Nutanix(object):
     def update_replication_timeout(self, name, payload):
         '''update metro availability timeout for a specific protection domain
 
-        Args:
             name: name of the protection domain
-            payload: json replication timeout configuration
+        :param payload:
+            json replication timeout configuration
         '''
         return self._put('protection_domains/{0}/break_replication_timeout'.format(name), payload=payload)
 
     def demote_protection_domain(self, name, **kwargs):
         '''demotes to standby metro availability role for a specified protection domain
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
 
         Kwargs:
             skipRemoteCheck: skip checking remote protection domain
@@ -1798,8 +1811,8 @@ class Nutanix(object):
     def disable_metro_availability(self, name, **kwargs):
         '''disable metro availability for a specified protection domain
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
 
         Kwargs:
             skipRemoteCheck: skip checking remote protection domain
@@ -1809,9 +1822,10 @@ class Nutanix(object):
     def enable_metro_availability(self, name, payload, **kwargs):
         '''enable metro availability for a specific protection domain based on vStore and remote site
 
-        Args:
-            name: name of the protection domain
-            payload: vStore and remote site configuration
+        :param name:
+            name of the protection domain
+        :param payload:
+            vStore and remote site configuration
 
         Kwargs:
             reEnable: re-enable operation
@@ -1823,8 +1837,8 @@ class Nutanix(object):
     def promote_protection_domain(self, name, **kwargs):
         '''promotes to active metro availability role for a specified protection domain
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
 
         Kwargs:
             skipRemoteCheck: skip checking remote protection domain
@@ -1834,65 +1848,74 @@ class Nutanix(object):
     def delete_snapshot_schedules(self, name):
         '''remove all snapshot schedules from the specified protection domain
 
-        Args:
-            name: name of the protection domain
+        :param name:
+            name of the protection domain
         '''
         return self._delete('protection_domains/{0}/schedules'.format(name))
 
     def delete_snapshot_schedule(self, pd_name, schedule_id):
         '''remove a snapshot schedule from the specified protection domain
 
-        Args:
-            pd_name: name of the protection domain
-        schedule-id: ID of the snapshot schedule
+        :param pd_name:
+            name of the protection domain
+        :param schedule_id:
+            ID of the snapshot schedule
         '''
         return self._delete('protection_domains/{0}/schedules/{1}'.format(pd_name, schedule_id))
 
     def update_snapshot_schedule(self, pd_name, schedule_id, payload):
         '''replace a snapshot schedule from the specified protection domain
 
-        Args:
-            pd_name: name of the protection domain
-        schedule-id: ID of the snapshot schedule
-            payload: json snapshot schedule configuration
+        :param pd_name:
+            name of the protection domain
+        :param schedule_id:
+            ID of the snapshot schedule
+        :param payload:
+            json snapshot schedule configuration
         '''
         return self._put('protection_domains/{0}/schedules/{1}'.format(pd_name, schedule_id), payload=payload)
 
     def set_retention_policies(self, pd_name, schedule_id, payload):
         '''set retention policies of specified snapshot schedule from the specified protection domain
 
-        Args:
-            pd_name: name of the protection domain
-        schedule-id: ID of the snapshot schedule
-            payload: json snapshot schedule configuration
+        :param pd_name:
+            name of the protection domain
+        :param schedule_id:
+            ID of the snapshot schedule
+        :param payload:
+            json snapshot schedule configuration
         '''
         return self._post('protection_domains/{0}/schedules/{1}/retention_policies'.format(pd_name, schedule_id), payload=payload)
 
     def clear_retention_policies(self, pd_name, schedule_id):
         '''clear retention policies of specified snapshot schedule from the specified protection domain
 
-        Args:
-            pd_name: name of the protection domain
-        schedule-id: ID of the snapshot schedule
+        :param pd_name:
+            name of the protection domain
+        :param schedule_id:
+            ID of the snapshot schedule
         '''
         return self._delete('protection_domains/{0}/schedules/{1}/retention_policies'.format(pd_name, schedule_id))
 
     def delete_snapshot(self, pd_name, snapshot_id):
         '''delete a snapshot of a protection domain
 
-        Args:
-            pd_name: name of the protection domain
-            snapshot_id: ID of the snapshot
+        :param pd_name:
+            name of the protection domain
+        :param snapshot_id:
+            ID of the snapshot
         '''
         return self._delete('protection_domains/{0}/dr_snapshots/{1}'.format(pd_name, snapshot_id))
 
     def retain_snapshot(self, pd_name, snapshot_id, retention_time):
         '''retain a snapshot of a protection domain
 
-        Args:
-            pd_name: name of the protection domain
-            snapshot_id: ID of the snapshot
-            retention_time: retention time in microseconds
+        :param pd_name:
+            name of the protection domain
+        :param snapshot_id:
+            ID of the snapshot
+        :param retention_time:
+            retention time in microseconds
         '''
         payload = {"value": retention_time}
         return self._post('protection_domains/{0}/dr_snapshots/{1}'.format(pd_name, snapshot_id), payload=payload)
@@ -1900,19 +1923,24 @@ class Nutanix(object):
     def update_replication_status(self, pd_name, replication_id, payload):
         '''update the state of the replication in a protection domain
 
-        Args:
-            pd_name: name of the protection domain
-            replication_id: ID of the replication
-            payload: json of updated replication status (pause, resume, abort)
+        :param pd_name:
+            name of the protection domain
+        :param replication_id:
+            ID of the replication
+        :param payload:
+            json of updated replication status (pause, resume, abort)
         '''
         return self._put('protection_domains/{0}/replications/{1}'.format(pd_name, replication_id), payload=payload)
 
     def abort_replication(self, pd_name, replication_id):
         '''abort a replication in a protection domain
 
-        Args:
-            pd_name (str): name of the protection domain
-            replication_id (str): ID of the replication
+        :param pd_name:
+            name of the protection domain
+        :type pd_name: ``str``
+        :param replication_id:
+            ID of the replication
+        :type replication_id: ``str``
         '''
         return self._delete('protection_domains/{0}/replications/{1}'.format(pd_name, replication_id))
 
@@ -1939,16 +1967,16 @@ class Nutanix(object):
     def add_remote_site(self, payload):
         '''add a remote site
 
-        Args:
-            payload: json remote site configuration
+        :param payload:
+            json remote site configuration
         '''
         return self._post('remote_sites/', payload=payload)
 
     def update_remote_site(self, payload):
         '''update a remote site
 
-        Args:
-            payload: json remote site configuration
+        :param payload:
+            json remote site configuration
         '''
         return self._put('remote_sites/', payload=payload)
 
@@ -2013,8 +2041,8 @@ class Nutanix(object):
     def get_remote_site(self, name, **kwargs):
         '''get a remote site with the specified name
 
-        Args:
-            name: name of the remote site
+        :param name:
+            name of the remote site
 
         Kwargs:
             projection: projections on the attributes
@@ -2024,16 +2052,16 @@ class Nutanix(object):
     def delete_remote_site(self, name):
         '''delete a remote site with the specified name from the cluster
 
-        Args:
-            name: name of the remote site
+        :param name:
+            name of the remote site
         '''
         return self._delete('remote_sites/{0}'.format(name))
 
     def get_remote_site_alerts(self, name, **kwargs):
         '''get the list of alerts generated on a specified remote site
 
-        Args:
-            name: name of the remote site
+        :param name:
+            name of the remote site
 
         Kwargs:
             startTimeInUsecs: Start time in microseconds
@@ -2052,8 +2080,8 @@ class Nutanix(object):
     def get_remote_site_snapshots(self, name, **kwargs):
         '''get the list of snapshots created in a particular remote site
 
-        Args:
-            name: name of the remote site
+        :param name:
+            name of the remote site
 
         Kwargs:
             count: maximum number of DR snapshots to retrieve
@@ -2066,8 +2094,8 @@ class Nutanix(object):
     def get_remote_site_events(self, name, **kwargs):
         '''get the list of events generated on a specified remote site
 
-        Args:
-            name: name of the remote site
+        :param name:
+            name of the remote site
 
         Kwargs:
             startTimeInUsecs: Start time in microseconds
@@ -2081,8 +2109,8 @@ class Nutanix(object):
     def get_pending_remote_replications(self, name, **kwargs):
         '''get all pending replications on the cluster
 
-        Args:
-            name: name of the remote site
+        :param name:
+            name of the remote site
 
         Kwargs:
             protectionDomainNames: protection domain names
@@ -2096,8 +2124,8 @@ class Nutanix(object):
         then historical stats are retrieved. Otherwise, the latest
         stats are retrieved.
 
-        Args:
-            name: name of the remote site
+        :param name:
+            name of the remote site
 
         Kwargs:
             metrics (required): list of metrics
