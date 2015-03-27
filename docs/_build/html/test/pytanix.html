@@ -1,0 +1,2192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pytanix package &mdash; pytanix 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="pytanix 0.1 documentation" href="../index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pytanix 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pytanix-package">
+<h1>pytanix package<a class="headerlink" href="#pytanix-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pytanix.client">
+<span id="pytanix-client-module"></span><h2>pytanix.client module<a class="headerlink" href="#module-pytanix.client" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pytanix.client.Nutanix">
+<em class="property">class </em><code class="descclassname">pytanix.client.</code><code class="descname">Nutanix</code><span class="sig-paren">(</span><em>ip</em>, <em>auth=None</em>, <em>requests_session=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Example usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">pytanix</span>
+<span class="n">nu</span> <span class="o">=</span> <span class="n">pytanix</span><span class="o">.</span><span class="n">Nutanix</span><span class="p">()</span>
+<span class="n">alerts</span> <span class="o">=</span> <span class="n">nu</span><span class="o">.</span><span class="n">alerts</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">alerts</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="pytanix.client.Nutanix.abort_replication">
+<code class="descname">abort_replication</code><span class="sig-paren">(</span><em>pd_name</em>, <em>replication_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.abort_replication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.abort_replication" title="Permalink to this definition">¶</a></dt>
+<dd><p>abort a replication in a protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">pd_name &#8211; name of the protection domain</div>
+<div class="line">replication_id &#8211; ID of the replication</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.acknowledge_alert">
+<code class="descname">acknowledge_alert</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.acknowledge_alert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.acknowledge_alert" title="Permalink to this definition">¶</a></dt>
+<dd><p>acknowledge alert by id</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; Alert id</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.acknowledge_alerts">
+<code class="descname">acknowledge_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.acknowledge_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.acknowledge_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>acknowledge alerts using a filter criteria</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">entityType &#8211; Entity type</div>
+<div class="line">entityTypeIds &#8211; Entity type ids</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.acknowledge_event">
+<code class="descname">acknowledge_event</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.acknowledge_event"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.acknowledge_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>acknowledge event with the specified ID</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; Event ID</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.acknowledge_events">
+<code class="descname">acknowledge_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.acknowledge_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.acknowledge_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>acknowledge events using a filter criteria</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">severity &#8211; Severity</div>
+<div class="line">entityType &#8211; Entity type</div>
+<div class="line">entityTypeIds &#8211; Entity type IDs</div>
+<div class="line">count &#8211; Maximum number of events</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.activate_protection_domain">
+<code class="descname">activate_protection_domain</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.activate_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.activate_protection_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>activate a protection domain with the specified name</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_auth_directory">
+<code class="descname">add_auth_directory</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_auth_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_auth_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>add directory config to the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json auth directory config</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_auth_types">
+<code class="descname">add_auth_types</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_auth_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_auth_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>add authentication types</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json array of auth types</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_ca_cert">
+<code class="descname">add_ca_cert</code><span class="sig-paren">(</span><em>name</em>, <em>cert</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_ca_cert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_ca_cert" title="Permalink to this definition">¶</a></dt>
+<dd><p>add trusted CA certificate to the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_cluster_nameserver">
+<code class="descname">add_cluster_nameserver</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_cluster_nameserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_cluster_nameserver" title="Permalink to this definition">¶</a></dt>
+<dd><p>add a nameserver to the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">server &#8211; address of nameserver</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_container">
+<code class="descname">add_container</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_container"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_container" title="Permalink to this definition">¶</a></dt>
+<dd><p>add a container to the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json container configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_datastore">
+<code class="descname">add_datastore</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_datastore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_datastore" title="Permalink to this definition">¶</a></dt>
+<dd><p>add an NFS datastore</p>
+<p>Paramaters:
+|  payload &#8211; json datastore configuration</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_http_proxy">
+<code class="descname">add_http_proxy</code><span class="sig-paren">(</span><em>address</em>, <em>username=None</em>, <em>password=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_http_proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_http_proxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>add an HTTP proxy to the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">address &#8211; proxy address</div>
+<div class="line">username &#8211; proxy username</div>
+<div class="line">password &#8211; proxy password</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_kms">
+<code class="descname">add_kms</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_kms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_kms" title="Permalink to this definition">¶</a></dt>
+<dd><p>add key management server to the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json key management server configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_license">
+<code class="descname">add_license</code><span class="sig-paren">(</span><em>license_file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_license"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_license" title="Permalink to this definition">¶</a></dt>
+<dd><p>apply license file to the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">license_file &#8211; license file</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_nfs_whitelist">
+<code class="descname">add_nfs_whitelist</code><span class="sig-paren">(</span><em>entry</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_nfs_whitelist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_nfs_whitelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>add an address to the NFS subnet whitelist</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">entry &#8211; value to add to NFS whitelist</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_ntp_server">
+<code class="descname">add_ntp_server</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_ntp_server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_ntp_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>add NTP server to the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">server &#8211; NTP server to add to the cluster</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_oob_schedule">
+<code class="descname">add_oob_schedule</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_oob_schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_oob_schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>add an out of band snapshot schedule in the specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+<div class="line">payload &#8211; json out of band snapshot schedule configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_protection_domain">
+<code class="descname">add_protection_domain</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_protection_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>add a protection domain to be used for disaster recovery and backups</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json protection domain configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_public_key">
+<code class="descname">add_public_key</code><span class="sig-paren">(</span><em>name</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_public_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_public_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>add a public key to the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name for the public key</div>
+<div class="line">key &#8211; key to be added</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_remote_site">
+<code class="descname">add_remote_site</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_remote_site"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_remote_site" title="Permalink to this definition">¶</a></dt>
+<dd><p>add a remote site</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json remote site configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_snapshot_schedule">
+<code class="descname">add_snapshot_schedule</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_snapshot_schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_snapshot_schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>add a snapshot schedule to the specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domains</div>
+<div class="line">payload &#8211; json snapshot schedule configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.add_svm_cert">
+<code class="descname">add_svm_cert</code><span class="sig-paren">(</span><em>kms_name</em>, <em>cert</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_svm_cert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_svm_cert" title="Permalink to this definition">¶</a></dt>
+<dd><p>add certificate to the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.clear_retention_policies">
+<code class="descname">clear_retention_policies</code><span class="sig-paren">(</span><em>pd_name</em>, <em>schedule_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.clear_retention_policies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.clear_retention_policies" title="Permalink to this definition">¶</a></dt>
+<dd><p>clear retention policies of specified snapshot schedule from the specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">pd_name &#8211; name of the protection domain</div>
+<div class="line">schedule_id &#8211; ID of the snapshot schedule</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.cluster_domain">
+<code class="descname">cluster_domain</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.cluster_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.cluster_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>join/unjoin the storage cluster to/from a Windows AD domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; information pertaining to the Windows AD domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.deactivate_protection_domain">
+<code class="descname">deactivate_protection_domain</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.deactivate_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.deactivate_protection_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>deactivate a protection domain with the specified name</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_auth_config">
+<code class="descname">delete_auth_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_auth_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_auth_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete auth configuration</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_auth_directory">
+<code class="descname">delete_auth_directory</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_auth_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_auth_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete directory with the specified name</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of directory</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_ca_cert">
+<code class="descname">delete_ca_cert</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_ca_cert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_ca_cert" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete a CA certificate from the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; Certificate Authority name</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_client_auth">
+<code class="descname">delete_client_auth</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_client_auth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_client_auth" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete client chain certificate on the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the certificate</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_cluster_nameserver">
+<code class="descname">delete_cluster_nameserver</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_cluster_nameserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_cluster_nameserver" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete a nameserver with the specified name</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">server &#8211; name of nameserver to delete</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_container">
+<code class="descname">delete_container</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_container"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_container" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete a container with the specified ID from the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; ID of the container</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">ignoreSmallFiles &#8211; ignore small files</div>
+<div class="line">ignoreVDisks &#8211; ignore all vdisks</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_disk">
+<code class="descname">delete_disk</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_disk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_disk" title="Permalink to this definition">¶</a></dt>
+<dd><p>mark specified disk for removal</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; ID of the disk</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">force &#8211; force the operation (ignores all system validations)</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_http_proxy">
+<code class="descname">delete_http_proxy</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_http_proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_http_proxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete an HTTP proxy with the specified name</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of an HTTP proxy</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_kms">
+<code class="descname">delete_kms</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_kms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_kms" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete key management server with the specified name</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; key management server name</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_nfs_whitelist">
+<code class="descname">delete_nfs_whitelist</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_nfs_whitelist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_nfs_whitelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete an address from the NFS subnet whitelist</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; NFS whitelist entry to delete</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_ntp_server">
+<code class="descname">delete_ntp_server</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_ntp_server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_ntp_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove NTP server from the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">server &#8211; NTP server to be removed from the cluster</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_oob_schedule">
+<code class="descname">delete_oob_schedule</code><span class="sig-paren">(</span><em>pd_name</em>, <em>shedule_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_oob_schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_oob_schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete an out of band schedule</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">pd_name &#8211; name of the protection domain</div>
+<div class="line">schedule_id &#8211; ID of the out of band schedule</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_protection_domain">
+<code class="descname">delete_protection_domain</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_protection_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>mark a protection domain for removal
+Protection domain will be removed from the cluster when all outstanding
+operations on it are cancelled</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">skipRemoteCheck &#8211; skip checking remote protection domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_public_key">
+<code class="descname">delete_public_key</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_public_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_public_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete a public key from the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the key to be deleted</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_rackable_unit">
+<code class="descname">delete_rackable_unit</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_rackable_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_rackable_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete a rackable unit with the specified ID</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; ID of a rackable unit</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_remote_site">
+<code class="descname">delete_remote_site</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_remote_site"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_remote_site" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete a remote site with the specified name from the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the remote site</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_smtp_config">
+<code class="descname">delete_smtp_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_smtp_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_smtp_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete the cluster&#8217;s SMTP server configuration</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_snapshot">
+<code class="descname">delete_snapshot</code><span class="sig-paren">(</span><em>pd_name</em>, <em>snapshot_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_snapshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_snapshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete a snapshot of a protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">pd_name &#8211; name of the protection domain</div>
+<div class="line">snapshot_id &#8211; ID of the snapshot</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_snapshot_schedule">
+<code class="descname">delete_snapshot_schedule</code><span class="sig-paren">(</span><em>pd_name</em>, <em>schedule_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_snapshot_schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_snapshot_schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove a snapshot schedule from the specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">pd_name &#8211; name of the protection domain</div>
+<div class="line">schedule_id &#8211; ID of the snapshot schedule</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_snapshot_schedules">
+<code class="descname">delete_snapshot_schedules</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_snapshot_schedules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_snapshot_schedules" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove all snapshot schedules from the specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.delete_svm_cert">
+<code class="descname">delete_svm_cert</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_svm_cert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_svm_cert" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete an svm certificate from cluster</p>
+<p>Keyword arguments:
+|  nodeId &#8211; id of the node on which the cert is installed
+|  serverName &#8211; key management server for which cert is installed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.demote_protection_domain">
+<code class="descname">demote_protection_domain</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.demote_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.demote_protection_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>demotes to standby metro availability role for a specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">skipRemoteCheck &#8211; skip checking remote protection domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.disable_metro_availability">
+<code class="descname">disable_metro_availability</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.disable_metro_availability"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.disable_metro_availability" title="Permalink to this definition">¶</a></dt>
+<dd><p>disable metro availability for a specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">skipRemoteCheck &#8211; skip checking remote protection domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.edit_auth_directory">
+<code class="descname">edit_auth_directory</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.edit_auth_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.edit_auth_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>edit the specified directory config</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json auth directory config</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.enable_metro_availability">
+<code class="descname">enable_metro_availability</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.enable_metro_availability"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.enable_metro_availability" title="Permalink to this definition">¶</a></dt>
+<dd><p>enable metro availability for a specific protection domain based on vStore and remote site</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+<div class="line">payload &#8211; vStore and remote site configuration</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">reEnable &#8211; re-enable operation</div>
+<div class="line">skipRemoteCheck &#8211; skip checking remote protection domain</div>
+<div class="line">force &#8211; skip checking remote container emptiness</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_alerts">
+<code class="descname">get_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of alerts</p>
+<div class="line-block">
+<div class="line">|  Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+<div class="line">resolved &#8211; Alerts which have been resolved</div>
+<div class="line">acknowledged &#8211; Alerts which have been acknowledged</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">alertTypeUuid &#8211; Alert type ids</div>
+<div class="line">page &#8211; Page number</div>
+<div class="line">entityType &#8211; Entity type</div>
+<div class="line">entityIds &#8211; Entity ids</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_alerts_configuration">
+<code class="descname">get_alerts_configuration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_alerts_configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_alerts_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the configuration that is used to send alert emails</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_alerts_metadata">
+<code class="descname">get_alerts_metadata</code><span class="sig-paren">(</span><em>alertTypeUuid</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_alerts_metadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_alerts_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of alerts metadata generated in the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">alertTypeUuid &#8211; Alert type UUID of the Alert metadata</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_auth_config">
+<code class="descname">get_auth_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_auth_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_auth_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>get auth configuration</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_auth_directories">
+<code class="descname">get_auth_directories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_auth_directories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_auth_directories" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of directories configured in the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_auth_directory">
+<code class="descname">get_auth_directory</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_auth_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_auth_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>get directory with the specified name</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of directory</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_auth_types">
+<code class="descname">get_auth_types</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_auth_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_auth_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>get authentication types</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_ca_certs">
+<code class="descname">get_ca_certs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_ca_certs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_ca_certs" title="Permalink to this definition">¶</a></dt>
+<dd><p>get all CA certificates from cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_cert_info">
+<code class="descname">get_cert_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cert_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cert_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>get certificate signing information</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_cert_test_results">
+<code class="descname">get_cert_test_results</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cert_test_results"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cert_test_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>get recent certificate test results</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">hostIds &#8211; list of host IDs</div>
+<div class="line">kmsServerNames &#8211; list of key management server names</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_client_auth_status">
+<code class="descname">get_client_auth_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_client_auth_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_client_auth_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>get authentication types</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_cluster">
+<code class="descname">get_cluster</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cluster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>get cluster details</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_cluster_alerts">
+<code class="descname">get_cluster_alerts</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cluster_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of alerts generated on a specified cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; id of the cluster</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+<div class="line">resolved &#8211; Alerts which have been resolved</div>
+<div class="line">acknowledged &#8211; Alerts which have been acknowledged</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">alertTypeUuid &#8211; Alert type ids</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_cluster_by_id">
+<code class="descname">get_cluster_by_id</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cluster_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster_by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; id of the cluster</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">projection &#8211; projections on the attributes</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_cluster_csrs">
+<code class="descname">get_cluster_csrs</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cluster_csrs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster_csrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>download csr files from cluster</p>
+<p>Keyword arguments:
+|  nodeIdList &#8211; list of node IDs</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_cluster_events">
+<code class="descname">get_cluster_events</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cluster_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of events generated on a specified cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; id of the cluster</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of events</div>
+<div class="line">acknowledged &#8211; Events which have been acknowledged</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_cluster_license_info">
+<code class="descname">get_cluster_license_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cluster_license_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster_license_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>get cluster license info</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_cluster_nameservers">
+<code class="descname">get_cluster_nameservers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cluster_nameservers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster_nameservers" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of nameservers configured on the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_cluster_stats">
+<code class="descname">get_cluster_stats</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cluster_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the stats for a specified cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; id of the cluster</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">metrics (required) &#8211; list of metrics</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">intervalInSecs &#8211; sampling interval of stats</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_clusters">
+<code class="descname">get_clusters</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_clusters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_clusters" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of clusters</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">count &#8211; number of clusters to retrieve</div>
+<div class="line">filterCriteria &#8211; filter criteria</div>
+<div class="line">sortCriteria &#8211; sort criteria</div>
+<div class="line">searchString &#8211; search string</div>
+<div class="line">page &#8211; page number</div>
+<div class="line">projection &#8211; projections on the attributes</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_clusters_events">
+<code class="descname">get_clusters_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_clusters_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_clusters_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of events generated on any cluster</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of events</div>
+<div class="line">acknowledged &#8211; Events which have been acknowledged</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_consistency_groups">
+<code class="descname">get_consistency_groups</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_consistency_groups"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_consistency_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>get list of consistency groups in a specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_container">
+<code class="descname">get_container</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_container"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_container" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a container with the specified ID</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; id of the container</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">projection &#8211; projections on the attributes</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_container_alerts">
+<code class="descname">get_container_alerts</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_container_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_container_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of alerts generated on any container</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; id of the container</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+<div class="line">resolved &#8211; Alerts which have been resolved</div>
+<div class="line">acknowledged &#8211; Alerts which have been acknowledged</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">alertTypeUuid &#8211; Alert type ids</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_container_events">
+<code class="descname">get_container_events</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_container_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_container_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of events generated on any container</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; id of the container</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of events</div>
+<div class="line">acknowledged &#8211; Events which have been acknowledged</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_container_stats">
+<code class="descname">get_container_stats</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_container_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_container_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the stats for a specified container</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; id of the container</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">metrics (required) &#8211; List of metrics</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">intervalInSecs &#8211; Sampling interval of stats</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_container_vdisks">
+<code class="descname">get_container_vdisks</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_container_vdisks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_container_vdisks" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of vDisks of the specified container</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; id of the container</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_containers">
+<code class="descname">get_containers</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_containers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_containers" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of containers</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">count &#8211; number of containers to retrieve</div>
+<div class="line">filterCriteria &#8211; filter criteria</div>
+<div class="line">sortCriteria &#8211; sort criteria</div>
+<div class="line">searchString &#8211; search string</div>
+<div class="line">page &#8211; page number</div>
+<div class="line">projection &#8211; projections on the attributes</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_csf">
+<code class="descname">get_csf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_csf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_csf" title="Permalink to this definition">¶</a></dt>
+<dd><p>get cluster summary file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_datastores">
+<code class="descname">get_datastores</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_datastores"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_datastores" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of NFS datastores mounted using containers in the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_disk">
+<code class="descname">get_disk</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_disk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_disk" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a disk with the specified id</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; ID of the disk</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">projection &#8211; projections on the attributes</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_disk_alerts">
+<code class="descname">get_disk_alerts</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_disk_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_disk_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of alerts generated on any disk</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; id of the disk</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+<div class="line">resolved &#8211; Alerts which have been resolved</div>
+<div class="line">acknowledged &#8211; Alerts which have been acknowledged</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">alertTypeUuid &#8211; Alert type ids</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_disk_events">
+<code class="descname">get_disk_events</code><span class="sig-paren">(</span><em>svm_id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_disk_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_disk_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of events generated on any host</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">svm_id &#8211; service VM ID</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of events</div>
+<div class="line">acknowledged &#8211; Events which have been acknowledged</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_disk_health_check">
+<code class="descname">get_disk_health_check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_disk_health_check"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_disk_health_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the health check summary for the disks</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">filterCriteria &#8211; filter criteria</div>
+<div class="line">detailedSummary &#8211; detailed summary</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_disk_stats">
+<code class="descname">get_disk_stats</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_disk_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_disk_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the stats for a specified disk</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; id of the disk</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">metrics (required) &#8211; List of metrics</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">intervalInSecs &#8211; Sampling interval of stats</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_disks">
+<code class="descname">get_disks</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_disks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_disks" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of disks configured in the cluster</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">count &#8211; number of disks to retrieve</div>
+<div class="line">filterCriteria &#8211; filter criteria</div>
+<div class="line">sortCriteria &#8211; sort criteria</div>
+<div class="line">searchString &#8211; search string</div>
+<div class="line">page &#8211; page number</div>
+<div class="line">projection &#8211; projections on the attributes</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_dr_snapshots">
+<code class="descname">get_dr_snapshots</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_dr_snapshots"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_dr_snapshots" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of snapshots created in a specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">count &#8211; number of DR snapshots to retrieve</div>
+<div class="line">filterCriteria &#8211; filter criteria</div>
+<div class="line">sortCriteria &#8211; sort criteria</div>
+<div class="line">fullDetails &#8211; whether to include CG/VM details</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_encryption_status">
+<code class="descname">get_encryption_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_encryption_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_encryption_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>get encryption status of the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_events">
+<code class="descname">get_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of events generated in the cluster</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of events</div>
+<div class="line">acknowledged &#8211; Events which have been acknowledged</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_hardware_alerts">
+<code class="descname">get_hardware_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_hardware_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_hardware_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of hardware alerts generated in the cluster</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+<div class="line">resolved &#8211; Alerts which have been resolved</div>
+<div class="line">acknowledged &#8211; Alerts which have been acknowledged</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">alertTypeUuid &#8211; Alert type ids</div>
+<div class="line">page &#8211; Page number</div>
+<div class="line">entityType &#8211; Entity type</div>
+<div class="line">entityIds &#8211; Entity ids</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_hardware_events">
+<code class="descname">get_hardware_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_hardware_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_hardware_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of hardware events generated in the cluster</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of events</div>
+<div class="line">acknowledged &#8211; Events which have been acknowledged</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_health_check">
+<code class="descname">get_health_check</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_health_check"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_health_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the health check with the specified ID</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; ID of the health check</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_health_checks">
+<code class="descname">get_health_checks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_health_checks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_health_checks" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of health checks configured in the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_host_alerts">
+<code class="descname">get_host_alerts</code><span class="sig-paren">(</span><em>svm_id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_host_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_host_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of alerts generated on any host</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">svm_id &#8211; service VM ID</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+<div class="line">resolved &#8211; Alerts which have been resolved</div>
+<div class="line">acknowledged &#8211; Alerts which have been acknowledged</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">alertTypeUuid &#8211; Alert type ids</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_host_events">
+<code class="descname">get_host_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_host_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_host_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of events generated on any host</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of events</div>
+<div class="line">acknowledged &#8211; Events which have been acknowledged</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_host_health_check">
+<code class="descname">get_host_health_check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_host_health_check"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_host_health_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the health check summary for the hosts</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">filterCriteria &#8211; filter criteria</div>
+<div class="line">detailedSummary &#8211; detailed summary</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_host_stats">
+<code class="descname">get_host_stats</code><span class="sig-paren">(</span><em>svm_id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_host_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_host_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the stats for a specified host</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">svm_id &#8211; service VM ID</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">metrics (required) &#8211; List of metrics</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">intervalInSecs &#8211; Sampling interval of stats</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_hosts">
+<code class="descname">get_hosts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_hosts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_hosts" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of physical hosts configured in the cluster</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">count &#8211; number of physical hosts to retrieve</div>
+<div class="line">filterCriteria &#8211; filter criteria</div>
+<div class="line">sortCriteria &#8211; sort criteria</div>
+<div class="line">searchString &#8211; search string</div>
+<div class="line">page &#8211; page number</div>
+<div class="line">projection &#8211; projections on the attributes</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_http_proxies">
+<code class="descname">get_http_proxies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_http_proxies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_http_proxies" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of HTTP proxies configured in the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_http_proxy">
+<code class="descname">get_http_proxy</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_http_proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_http_proxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>get an HTTP proxy with the specified name</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of an HTTP proxy</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_kms">
+<code class="descname">get_kms</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_kms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_kms" title="Permalink to this definition">¶</a></dt>
+<dd><p>get key management server with the specified name</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; key management server name</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_license">
+<code class="descname">get_license</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_license"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_license" title="Permalink to this definition">¶</a></dt>
+<dd><p>get current license file from the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_license_alerts">
+<code class="descname">get_license_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_license_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_license_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of alerts generated for any license</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+<div class="line">resolved &#8211; Alerts which have been resolved</div>
+<div class="line">acknowledged &#8211; Alerts which have been acknowledged</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">alertTypeUuid &#8211; Alert type ids</div>
+<div class="line">page &#8211; Page number</div>
+<div class="line">entityType &#8211; Entity type</div>
+<div class="line">entityIds &#8211; Entity ids</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_license_allowances">
+<code class="descname">get_license_allowances</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_license_allowances"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_license_allowances" title="Permalink to this definition">¶</a></dt>
+<dd><p>show allowances for all features</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_license_events">
+<code class="descname">get_license_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_license_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_license_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of events generated for any license</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of events</div>
+<div class="line">acknowledged &#8211; Events which have been acknowledged</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_license_feature">
+<code class="descname">get_license_feature</code><span class="sig-paren">(</span><em>feature_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_license_feature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_license_feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>show allowances for a particular feature</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">feature_name &#8211; name of the feature</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_nfs_whitelist">
+<code class="descname">get_nfs_whitelist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_nfs_whitelist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_nfs_whitelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the NFS subnet whitelist on the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_node_csr">
+<code class="descname">get_node_csr</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_node_csr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_node_csr" title="Permalink to this definition">¶</a></dt>
+<dd><p>download csr for node with given ip</p>
+<p>Keyword arguments:
+|  nodeIp &#8211; IP address of node</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_ntp_servers">
+<code class="descname">get_ntp_servers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_ntp_servers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_ntp_servers" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of NTP servers for the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_oob_schedules">
+<code class="descname">get_oob_schedules</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_oob_schedules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_oob_schedules" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of out of band schedules in the specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_pending_actions">
+<code class="descname">get_pending_actions</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_pending_actions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_pending_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>get list of pending actions in the specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_pending_remote_replications">
+<code class="descname">get_pending_remote_replications</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_pending_remote_replications"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_pending_remote_replications" title="Permalink to this definition">¶</a></dt>
+<dd><p>get all pending replications on the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the remote site</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">protectionDomainNames &#8211; protection domain names</div>
+<div class="line">remoteSiteNames &#8211; remote site names</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_pending_replications">
+<code class="descname">get_pending_replications</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_pending_replications"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_pending_replications" title="Permalink to this definition">¶</a></dt>
+<dd><p>get list of pending replications in the specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">remoteSiteNames &#8211; names of remote sites</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_protection_domain">
+<code class="descname">get_protection_domain</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_protection_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a protection domain with the specified name</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">metroAvail &#8211; whether to include only metro availability related protection domains</div>
+<div class="line">vStoreName &#8211; vStore name</div>
+<div class="line">remoteSiteName &#8211; remote site name</div>
+<div class="line">projection &#8211; projections on the attributes</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_protection_domain_alerts">
+<code class="descname">get_protection_domain_alerts</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_protection_domain_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_protection_domain_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of alerts generated on a specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+<div class="line">resolved &#8211; Alerts which have been resolved</div>
+<div class="line">acknowledged &#8211; Alerts which have been acknowledged</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">alertTypeUuid &#8211; Alert type ids</div>
+<div class="line">page &#8211; Page number</div>
+<div class="line">entityType &#8211; Entity type</div>
+<div class="line">entityIds &#8211; Entity ids</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_protection_domain_events">
+<code class="descname">get_protection_domain_events</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_protection_domain_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_protection_domain_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of events generated on a specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of events</div>
+<div class="line">acknowledged &#8211; Events which have been acknowledged</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_protection_domain_health">
+<code class="descname">get_protection_domain_health</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_protection_domain_health"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_protection_domain_health" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the health check summary for the protection domain</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">filterCriteria &#8211; filter criteria</div>
+<div class="line">detailedSummary &#8211; detailed summary</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_protection_domain_stats">
+<code class="descname">get_protection_domain_stats</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_protection_domain_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_protection_domain_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the status for a specified protection domain
+If start time and end time are included in the query string,
+then historical stats are retrieved. Otherwise, the latest
+stats are retrieved.</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+<p>Keyword arguments:
+|  metrics (required) &#8211; list of metrics
+|  startTimeInUsecs &#8211; start time in microseconds
+|  endTimeInUsecs &#8211; end time in microseconds
+|  intervalInSecs &#8211; sampling interval of stats</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_protection_domain_status">
+<code class="descname">get_protection_domain_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_protection_domain_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_protection_domain_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the data protection status for all protection domains</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_protection_domains">
+<code class="descname">get_protection_domains</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_protection_domains"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_protection_domains" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of protection domains configured in the cluster</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">names &#8211; protection domain names</div>
+<div class="line">metroAvail &#8211; metro availability protection domain</div>
+<div class="line">vStoreName &#8211; vStore name</div>
+<div class="line">remoteSiteName &#8211; remote site name</div>
+<div class="line">includeDeleted &#8211; include deleted</div>
+<div class="line">projection &#8211; projections on the attributes</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_public_key">
+<code class="descname">get_public_key</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_public_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_public_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a public key by name</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of public key</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_public_keys">
+<code class="descname">get_public_keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_public_keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_public_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>get cluster&#8217;s public keys</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_rackable_unit">
+<code class="descname">get_rackable_unit</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_rackable_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_rackable_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a rackable unit with the specified ID</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; ID of a rackable unit</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_rackable_units">
+<code class="descname">get_rackable_units</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_rackable_units"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_rackable_units" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a list of rackable units configured on the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_remote_site">
+<code class="descname">get_remote_site</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_site"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_site" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a remote site with the specified name</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the remote site</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">projection &#8211; projections on the attributes</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_remote_site_alerts">
+<code class="descname">get_remote_site_alerts</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_site_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_site_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of alerts generated on a specified remote site</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the remote site</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+<div class="line">resolved &#8211; Alerts which have been resolved</div>
+<div class="line">acknowledged &#8211; Alerts which have been acknowledged</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">alertTypeUuid &#8211; Alert type ids</div>
+<div class="line">page &#8211; Page number</div>
+<div class="line">entityType &#8211; Entity type</div>
+<div class="line">entityIds &#8211; Entity ids</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_remote_site_events">
+<code class="descname">get_remote_site_events</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_site_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_site_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of events generated on a specified remote site</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the remote site</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of events</div>
+<div class="line">acknowledged &#8211; Events which have been acknowledged</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_remote_site_snapshots">
+<code class="descname">get_remote_site_snapshots</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_site_snapshots"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_site_snapshots" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of snapshots created in a particular remote site</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the remote site</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">count &#8211; maximum number of DR snapshots to retrieve</div>
+<div class="line">filterCriteria &#8211; filter criteria</div>
+<div class="line">sortCriteria &#8211; sort criteria</div>
+<div class="line">fullDetails &#8211; whether to include consistency group/VM details</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_remote_site_stats">
+<code class="descname">get_remote_site_stats</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_site_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_site_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the stats for a specified remote site
+If start time and end time are included in the query string,
+then historical stats are retrieved. Otherwise, the latest
+stats are retrieved.</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the remote site</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">metrics (required) &#8211; list of metrics</div>
+<div class="line">startTimeInUsecs &#8211; start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; end time in microseconds</div>
+<div class="line">intervalInSecs &#8211; sampling interval of stats</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_remote_sites">
+<code class="descname">get_remote_sites</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_sites"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of remote sites configured in the cluster</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">names &#8211; remote site names</div>
+<div class="line">metroCompatible &#8211; remote site stretchable</div>
+<div class="line">fullDetails &#8211; remote cluster full detail</div>
+<div class="line">includeDeleted &#8211; include deleted</div>
+<div class="line">projection &#8211; projections on the attributes</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_remote_sites_alerts">
+<code class="descname">get_remote_sites_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_sites_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_sites_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of alerts generated on any remote site</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+<div class="line">resolved &#8211; Alerts which have been resolved</div>
+<div class="line">acknowledged &#8211; Alerts which have been acknowledged</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">alertTypeUuid &#8211; Alert type ids</div>
+<div class="line">page &#8211; Page number</div>
+<div class="line">entityType &#8211; Entity type</div>
+<div class="line">entityIds &#8211; Entity ids</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_remote_sites_events">
+<code class="descname">get_remote_sites_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_sites_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_sites_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of events generated on any remote site</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of events</div>
+<div class="line">acknowledged &#8211; Events which have been acknowledged</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_remote_sites_health">
+<code class="descname">get_remote_sites_health</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_sites_health"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_sites_health" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the health check summary for the remote sites</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">filterCriteria &#8211; filter criteria</div>
+<div class="line">detailedSummary &#8211; detailed summary</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_remote_sites_snapshots">
+<code class="descname">get_remote_sites_snapshots</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_sites_snapshots"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_sites_snapshots" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of all snapshots created in remote sites</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">count &#8211; maximum number of DR snapshots to retrieve</div>
+<div class="line">filterCriteria &#8211; filter criteria</div>
+<div class="line">sortCriteria &#8211; sort criteria</div>
+<div class="line">fullDetails &#8211; whether to include consistency group/VM details</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_remote_support_status">
+<code class="descname">get_remote_support_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_support_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_support_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the status of remote support settings on the cluster</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_replications">
+<code class="descname">get_replications</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_replications"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_replications" title="Permalink to this definition">¶</a></dt>
+<dd><p>get list of replications in a protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of protection domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_smtp_config">
+<code class="descname">get_smtp_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_smtp_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_smtp_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the SMTP server configuration</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_smtp_security_modes">
+<code class="descname">get_smtp_security_modes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_smtp_security_modes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_smtp_security_modes" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of supported security modes for the SMTP server</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_snapshot_schedules">
+<code class="descname">get_snapshot_schedules</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_snapshot_schedules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_snapshot_schedules" title="Permalink to this definition">¶</a></dt>
+<dd><p>retrieve all snapshot schedules from the specified protection domain</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_storage_alerts">
+<code class="descname">get_storage_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_storage_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_storage_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of storage alerts generated in the cluster</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+<div class="line">resolved &#8211; Alerts which have been resolved</div>
+<div class="line">acknowledged &#8211; Alerts which have been acknowledged</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">alertTypeUuid &#8211; Alert type ids</div>
+<div class="line">page &#8211; Page number</div>
+<div class="line">entityType &#8211; Entity type</div>
+<div class="line">entityIds &#8211; Entity ids</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_storage_events">
+<code class="descname">get_storage_events</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_storage_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_storage_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of storage events generated in the cluster</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">count &#8211; Maximum number of events</div>
+<div class="line">acknowledged &#8211; Events which have been acknowledged</div>
+<div class="line">page &#8211; Page number</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.get_unprotected_vms">
+<code class="descname">get_unprotected_vms</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_unprotected_vms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_unprotected_vms" title="Permalink to this definition">¶</a></dt>
+<dd><p>get list of unprotected VMs in a cluster that can participate in Nutanix native backup and DR</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">hostIds &#8211; host IDs</div>
+<div class="line">vmNames &#8211; VM names</div>
+<div class="line">containerNames &#8211; container names</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.migrate_protection_domain">
+<code class="descname">migrate_protection_domain</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.migrate_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.migrate_protection_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>mark the specified protection domain as inactive and failover to the given remote site</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.promote_protection_domain">
+<code class="descname">promote_protection_domain</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.promote_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.promote_protection_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>promotes to active metro availability role for a specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">skipRemoteCheck &#8211; skip checking remote protection domain</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.protect_vms">
+<code class="descname">protect_vms</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.protect_vms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.protect_vms" title="Permalink to this definition">¶</a></dt>
+<dd><p>add VMs to a protection domain to enable backup and disaster recovery</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+<div class="line">payload &#8211; json vm protection configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.rekey_disks">
+<code class="descname">rekey_disks</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.rekey_disks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.rekey_disks" title="Permalink to this definition">¶</a></dt>
+<dd><p>set new password for encryption capable disks</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">array &#8211; list of disk ids on which rekey needs to be performed</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.remove_auth_types">
+<code class="descname">remove_auth_types</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.remove_auth_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.remove_auth_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove auth types from the existing auth types</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json containing user, pass, and AD name</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.remove_datastore">
+<code class="descname">remove_datastore</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.remove_datastore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.remove_datastore" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove an NFS datastore</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json removal request</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.resolve_alert">
+<code class="descname">resolve_alert</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.resolve_alert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.resolve_alert" title="Permalink to this definition">¶</a></dt>
+<dd><p>resolve alert by id</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">id &#8211; Alert id</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.resolve_alerts">
+<code class="descname">resolve_alerts</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.resolve_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.resolve_alerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>resolve alerts using a filter criteria</p>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">startTimeInUsecs &#8211; Start time in microseconds</div>
+<div class="line">endTimeInUsecs &#8211; End time in microseconds</div>
+<div class="line">severity &#8211; Alert severities</div>
+<div class="line">entityType &#8211; Entity type</div>
+<div class="line">entityTypeIds &#8211; Entity type ids</div>
+<div class="line">count &#8211; Maximum number of alerts</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.restore_entities">
+<code class="descname">restore_entities</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.restore_entities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.restore_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>rollback VMs and/or NFS files in a protection domain to a given snapshot</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+<div class="line">payload &#8211; json restore configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.retain_snapshot">
+<code class="descname">retain_snapshot</code><span class="sig-paren">(</span><em>pd_name</em>, <em>snapshot_id</em>, <em>retention_time</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.retain_snapshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.retain_snapshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>retain a snapshot of a protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">pd_name &#8211; name of the protection domain</div>
+<div class="line">snapshot_id &#8211; ID of the snapshot</div>
+<div class="line">retention_time &#8211; retention time in microseconds</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.rollback">
+<code class="descname">rollback</code><span class="sig-paren">(</span><em>pd_name</em>, <em>snapshot_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.rollback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.rollback" title="Permalink to this definition">¶</a></dt>
+<dd><p>rollback the specified protection domain to a given snapshot</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">pd_name &#8211; name of the protection domain</div>
+<div class="line">snapshot_id &#8211; ID of the snapshot</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>perform a spotlight search on the cluster</p>
+<p>Keyword arguments:
+|  searchString (required) &#8211; search string
+|  entityTypes &#8211; entity types
+|  fieldNames &#8211; field names</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.send_email">
+<code class="descname">send_email</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.send_email"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.send_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>send an email using the smtp server configuration</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json email instance</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.set_client_auth_status">
+<code class="descname">set_client_auth_status</code><span class="sig-paren">(</span><em>enable</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.set_client_auth_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.set_client_auth_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>enable or disable client authentication</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">enable &#8211; boolean for enabling or disabling client auth</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.set_encryption">
+<code class="descname">set_encryption</code><span class="sig-paren">(</span><em>enable</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.set_encryption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.set_encryption" title="Permalink to this definition">¶</a></dt>
+<dd><p>enable or disable encryption on the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">enable &#8211; enable encryption</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.set_retention_policies">
+<code class="descname">set_retention_policies</code><span class="sig-paren">(</span><em>pd_name</em>, <em>schedule_id</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.set_retention_policies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.set_retention_policies" title="Permalink to this definition">¶</a></dt>
+<dd><p>set retention policies of specified snapshot schedule from the specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">pd_name &#8211; name of the protection domain</div>
+<div class="line">schedule_id &#8211; ID of the snapshot schedule</div>
+<div class="line">payload &#8211; json snapshot schedule configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.test_auth_connection">
+<code class="descname">test_auth_connection</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.test_auth_connection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.test_auth_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>test LDAP directory connection status</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json containing user, pass, and AD name</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.test_encryption">
+<code class="descname">test_encryption</code><span class="sig-paren">(</span><em>node_ids</em>, <em>kms_names</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.test_encryption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.test_encryption" title="Permalink to this definition">¶</a></dt>
+<dd><p>test encryption configuration of the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">node_ids &#8211; list of node IDs</div>
+<div class="line">kms_names &#8211; list of key management server names</div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pytanix.client.Nutanix.trace">
+<code class="descname">trace</code><em class="property"> = False</em><a class="headerlink" href="#pytanix.client.Nutanix.trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.unprotect_vms">
+<code class="descname">unprotect_vms</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.unprotect_vms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.unprotect_vms" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove VMs from a protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+</div>
+<div class="line-block">
+<div class="line">Keyword arguments:</div>
+<div class="line">array (required) &#8211; list of VMs</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_alerts_configuration">
+<code class="descname">update_alerts_configuration</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_alerts_configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_alerts_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>update the configuration that is used to send alert emails</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json object of new alert configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_alerts_metadata">
+<code class="descname">update_alerts_metadata</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_alerts_metadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_alerts_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the list of alerts metadata generated in the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json object of new alert metadata</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_auth_config">
+<code class="descname">update_auth_config</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_auth_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_auth_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>update auth configuration</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json of updated auth config</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_auth_types">
+<code class="descname">update_auth_types</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_auth_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_auth_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>add authentication types</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json array of auth types</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_cert_info">
+<code class="descname">update_cert_info</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_cert_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_cert_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>update the certification information</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json certification information</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_cluster">
+<code class="descname">update_cluster</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_cluster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>update cluster details</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; cluster detail json</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_container">
+<code class="descname">update_container</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_container"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_container" title="Permalink to this definition">¶</a></dt>
+<dd><p>update a container&#8217;s configuration</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json container configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_health_checks">
+<code class="descname">update_health_checks</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_health_checks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_health_checks" title="Permalink to this definition">¶</a></dt>
+<dd><p>update health check details</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json health check instance</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_http_proxy">
+<code class="descname">update_http_proxy</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_http_proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_http_proxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>update an HTTP proxy</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json HTTP proxy configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_kms">
+<code class="descname">update_kms</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_kms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_kms" title="Permalink to this definition">¶</a></dt>
+<dd><p>update the key management server configuration</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json key management server configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_remote_site">
+<code class="descname">update_remote_site</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_remote_site"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_remote_site" title="Permalink to this definition">¶</a></dt>
+<dd><p>update a remote site</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json remote site configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_remote_support">
+<code class="descname">update_remote_support</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_remote_support"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_remote_support" title="Permalink to this definition">¶</a></dt>
+<dd><p>update the remote support settings on the cluster</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; a timed bool instance</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_replication_status">
+<code class="descname">update_replication_status</code><span class="sig-paren">(</span><em>pd_name</em>, <em>replication_id</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_replication_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_replication_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>update the state of the replication in a protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">pd_name &#8211; name of the protection domain</div>
+<div class="line">replication_id &#8211; ID of the replication</div>
+<div class="line">payload &#8211; json of updated replication status (pause, resume, abort)</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_replication_timeout">
+<code class="descname">update_replication_timeout</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_replication_timeout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_replication_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>update metro availability timeout for a specific protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">name &#8211; name of the protection domain</div>
+<div class="line">payload &#8211; json replication timeout configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_smtp_config">
+<code class="descname">update_smtp_config</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_smtp_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_smtp_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>update the cluster SMTP server configuration</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">payload &#8211; json SMTP server configuration</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pytanix.client.Nutanix.update_snapshot_schedule">
+<code class="descname">update_snapshot_schedule</code><span class="sig-paren">(</span><em>pd_name</em>, <em>schedule_id</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_snapshot_schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_snapshot_schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>replace a snapshot schedule from the specified protection domain</p>
+<div class="line-block">
+<div class="line">Parameters:</div>
+<div class="line">pd_name &#8211; name of the protection domain</div>
+<div class="line">schedule_id &#8211; ID of the snapshot schedule</div>
+<div class="line">payload &#8211; json snapshot schedule configuration</div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pytanix.client.Nutanix.verify_ssl">
+<code class="descname">verify_ssl</code><em class="property"> = True</em><a class="headerlink" href="#pytanix.client.Nutanix.verify_ssl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pytanix.client.NutanixException">
+<em class="property">exception </em><code class="descclassname">pytanix.client.</code><code class="descname">NutanixException</code><span class="sig-paren">(</span><em>http_status</em>, <em>code</em>, <em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#NutanixException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.NutanixException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pytanix">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pytanix" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pytanix package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-pytanix.client">pytanix.client module</a></li>
+<li><a class="reference internal" href="#module-pytanix">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/test/pytanix.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Patrick Sanders.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.3</a>
+      
+      |
+      <a href="../_sources/test/pytanix.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+  </body>
+</html>
