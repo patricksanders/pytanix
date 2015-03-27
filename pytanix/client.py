@@ -2753,6 +2753,219 @@ class Nutanix(object):
     ############################################################
     # Storage Pools
     ############################################################
+    def get_storage_pools(self, **kwargs):
+        '''get the list of storage pools configured in the cluster
+
+        Kwargs:
+
+        :param count:
+            number of clusters to retrieve
+        :param filterCriteria:
+            filter criteria
+        :param sortCriteria:
+            sort criteria
+        :param searchString:
+            search string
+        :param page:
+            page number
+        :param projection:
+            projections on the attributes
+        '''
+        return self._get('storage_pools/', kwargs)
+
+    def add_storage_pool(self, payload, **kwargs):
+        '''add a storage pool to the cluster
+
+        :param payload:
+            json storage pool configuration
+
+        Kwargs:
+
+        :param force:
+            force the operation
+        :type force: ``boolean``
+        '''
+        return self._post('storage_pools/', kwargs, payload=payload)
+
+    def update_storage_pool(self, payload, **kwargs):
+        '''update the specified storage pool
+
+        :param payload:
+            json storage pool configuration
+
+        Kwargs:
+
+        :param force:
+            force the operation
+        :type force: ``boolean``
+        '''
+        return self._put('storage_pools/', kwargs, payload=payload)
+
+    def get_storage_pool_alerts(self, **kwargs):
+        '''get the list of alerts generated on any storage pool
+
+        Kwargs:
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :type startTimeInUsecs: ``int``
+        :param endTimeInUsecs:
+            End time in microseconds
+        :type endTimeInUsecs: ``int``
+        :param count:
+            Maximum number of alerts
+        :type count: ``int``
+        :param resolved:
+            Alerts which have been resolved
+        :type resolved: ``boolean``
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :type acknowledged: ``boolean``
+        :param severity:
+            Alert severities
+        :type severity: ``list``
+        :param alertTypeUuid:
+            Alert type ids
+        :type alertTypeUuid: ``list``
+        :param page:
+            Page number
+        :type page: ``int``
+        '''
+        return self._get('storage_pools/alerts/', kwargs)
+
+    def get_storage_pool_events(self, **kwargs):
+        '''get the list of events generated on any storage pool
+
+        Kwargs:
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :type startTimeInUsecs: ``int``
+        :param endTimeInUsecs:
+            End time in microseconds
+        :type endTimeInUsecs: ``int``
+        :param count:
+            Maximum number of alerts
+        :type count: ``int``
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :type acknowledged: ``boolean``
+        :param page:
+            Page number
+        :type page: ``int``
+        '''
+        return self._get('storage_pools/events/', kwargs)
+
+    def get_storage_pool(self, id, **kwargs):
+        '''get a storage pool with the specified ID
+
+        :param id:
+            ID of the storage pool
+
+        Kwargs:
+
+        :param count:
+            number of clusters to retrieve
+        :param filterCriteria:
+            filter criteria
+        :param sortCriteria:
+            sort criteria
+        :param searchString:
+            search string
+        :param page:
+            page number
+        :param projection:
+            projections on the attributes
+        '''
+        return self._get('storage_pools/{0}'.format(id), kwargs)
+
+    def delete_storage_pool(self, id):
+        '''delete a storage pool with the specified ID
+
+        :param id:
+            ID of the storage pool
+        '''
+        return self._delete('storage_pools/{0}'.format(id))
+
+    def get_storage_pool_alerts(self, id, **kwargs):
+        '''get the list of alerts generated on a specified storage pool
+
+        :param id:
+            ID of a storage pool
+
+        Kwargs:
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :type startTimeInUsecs: ``int``
+        :param endTimeInUsecs:
+            End time in microseconds
+        :type endTimeInUsecs: ``int``
+        :param count:
+            Maximum number of alerts
+        :type count: ``int``
+        :param resolved:
+            Alerts which have been resolved
+        :type resolved: ``boolean``
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :type acknowledged: ``boolean``
+        :param severity:
+            Alert severities
+        :type severity: ``list``
+        :param alertTypeUuid:
+            Alert type ids
+        :type alertTypeUuid: ``list``
+        :param page:
+            Page number
+        :type page: ``int``
+        '''
+        return self._get('storage_pools/{0}/alerts/'.format(id), kwargs)
+
+    def get_storage_pool_events(self, id, **kwargs):
+        '''get the list of events generated on a specified storage pool
+
+        :param id:
+            ID of a storage pool
+
+        Kwargs:
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :type startTimeInUsecs: ``int``
+        :param endTimeInUsecs:
+            End time in microseconds
+        :type endTimeInUsecs: ``int``
+        :param count:
+            Maximum number of alerts
+        :type count: ``int``
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :type acknowledged: ``boolean``
+        :param page:
+            Page number
+        :type page: ``int``
+        '''
+        return self._get('storage_pools/{0}/events/'.format(id), kwargs)
+
+    def get_storage_pool_stats(self, id, **kwargs):
+        '''get the stats for a specified storage pool
+
+        :param id:
+            ID of a storage pool
+
+        Kwargs:
+
+        :param metrics:
+            (required) list of metrics
+        :param startTimeInUsecs:
+            start time in microseconds
+        :param endTimeInUsecs:
+            end time in microseconds
+        :param intervalInSecs:
+            sampling interval of stats
+        '''
+        return self._get('storage_pools/{0}/stats/'.format(id), kwargs)
 
     ############################################################
     # Upgrade
