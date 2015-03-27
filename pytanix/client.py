@@ -602,7 +602,7 @@ class Nutanix(object):
         '''perform a spotlight search on the cluster
 
         Kwargs:
-            searchString (required): search string
+            searchString (str): search string
             entityTypes: entity types
             fieldNames: field names
         '''
@@ -1911,8 +1911,8 @@ class Nutanix(object):
         '''abort a replication in a protection domain
 
         Args:
-            pd_name: name of the protection domain
-            replication_id: ID of the replication
+            pd_name (str): name of the protection domain
+            replication_id (str): ID of the replication
         '''
         return self._delete('protection_domains/{0}/replications/{1}'.format(pd_name, replication_id))
 
