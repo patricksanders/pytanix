@@ -2610,6 +2610,18 @@ class Nutanix(object):
     ############################################################
     # SMB Server
     ############################################################
+    def get_smb_config(self):
+        '''retrieves SMB server configuration settings for the cluster
+        '''
+        return self._get('smb_server/configuration')
+
+    def manage_kerberos(self, payload):
+        '''manages enabling/disabling Kerberos security for the cluster
+
+        :param payload:
+            json kerberos configuration
+        '''
+        return self._put('smb_server/kerberos', payload=payload)
 
     ############################################################
     # SNMP
