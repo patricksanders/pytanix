@@ -9,4 +9,4 @@ setup(
     url='https://github.com/patricksanders/pytanix',
     install_requires=['requests>=1.0'],
     license='LICENSE',
-    py_modules=[])
+    packages=['pytanix'])
