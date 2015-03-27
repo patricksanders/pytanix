@@ -24,7 +24,7 @@ class Nutanix(object):
     Example usage::
         
         import pytanix
-        nu = pytanix.Nutanix()
+        nu = pytanix.Nutanix('1.2.3.4')
         alerts = nu.alerts()
         print(alerts)
     '''

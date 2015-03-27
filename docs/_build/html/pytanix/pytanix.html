@@ -70,21 +70,32 @@
 <dt id="pytanix.client.Nutanix.abort_replication">
 <code class="descname">abort_replication</code><span class="sig-paren">(</span><em>pd_name</em>, <em>replication_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.abort_replication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.abort_replication" title="Permalink to this definition">¶</a></dt>
 <dd><p>abort a replication in a protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>pd_name: name of the protection domain
-replication_id: ID of the replication</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pd_name</strong> (<code class="docutils literal"><span class="pre">str</span></code>) &#8211; name of the protection domain</li>
+<li><strong>replication_id</strong> (<code class="docutils literal"><span class="pre">str</span></code>) &#8211; ID of the replication</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.acknowledge_alert">
 <code class="descname">acknowledge_alert</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.acknowledge_alert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.acknowledge_alert" title="Permalink to this definition">¶</a></dt>
 <dd><p>acknowledge alert by id</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>id: Alert id</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; Alert id</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -106,10 +117,14 @@ count: Maximum number of alerts</dd>
 <dt id="pytanix.client.Nutanix.acknowledge_event">
 <code class="descname">acknowledge_event</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.acknowledge_event"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.acknowledge_event" title="Permalink to this definition">¶</a></dt>
 <dd><p>acknowledge event with the specified ID</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>id: Event ID</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; Event ID</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -131,30 +146,42 @@ count: Maximum number of events</dd>
 <dt id="pytanix.client.Nutanix.activate_protection_domain">
 <code class="descname">activate_protection_domain</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.activate_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.activate_protection_domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>activate a protection domain with the specified name</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_auth_directory">
 <code class="descname">add_auth_directory</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_auth_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_auth_directory" title="Permalink to this definition">¶</a></dt>
 <dd><p>add directory config to the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json auth directory config</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json auth directory config</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_auth_types">
 <code class="descname">add_auth_types</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_auth_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_auth_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>add authentication types</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json array of auth types</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json array of auth types</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -167,135 +194,199 @@ count: Maximum number of events</dd>
 <dt id="pytanix.client.Nutanix.add_cluster_nameserver">
 <code class="descname">add_cluster_nameserver</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_cluster_nameserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_cluster_nameserver" title="Permalink to this definition">¶</a></dt>
 <dd><p>add a nameserver to the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>server: address of nameserver</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>server</strong> &#8211; address of nameserver</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_container">
 <code class="descname">add_container</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_container"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_container" title="Permalink to this definition">¶</a></dt>
 <dd><p>add a container to the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json container configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json container configuration</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_datastore">
 <code class="descname">add_datastore</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_datastore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_datastore" title="Permalink to this definition">¶</a></dt>
 <dd><p>add an NFS datastore</p>
-<dl class="docutils">
-<dt>Paramaters:</dt>
-<dd>payload: json datastore configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json datastore configuration</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_http_proxy">
 <code class="descname">add_http_proxy</code><span class="sig-paren">(</span><em>address</em>, <em>username=None</em>, <em>password=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_http_proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_http_proxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>add an HTTP proxy to the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>address: proxy address
-username: proxy username
-password: proxy password</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>address</strong> &#8211; proxy address</li>
+<li><strong>username</strong> &#8211; proxy username</li>
+<li><strong>password</strong> &#8211; proxy password</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_kms">
 <code class="descname">add_kms</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_kms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_kms" title="Permalink to this definition">¶</a></dt>
 <dd><p>add key management server to the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json key management server configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json key management server configuration</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_license">
 <code class="descname">add_license</code><span class="sig-paren">(</span><em>license_file</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_license"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_license" title="Permalink to this definition">¶</a></dt>
 <dd><p>apply license file to the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>license_file: license file</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>license_file</strong> &#8211; license file</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_nfs_whitelist">
 <code class="descname">add_nfs_whitelist</code><span class="sig-paren">(</span><em>entry</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_nfs_whitelist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_nfs_whitelist" title="Permalink to this definition">¶</a></dt>
 <dd><p>add an address to the NFS subnet whitelist</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>entry: value to add to NFS whitelist</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>entry</strong> &#8211; value to add to NFS whitelist</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_ntp_server">
 <code class="descname">add_ntp_server</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_ntp_server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_ntp_server" title="Permalink to this definition">¶</a></dt>
 <dd><p>add NTP server to the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>server: NTP server to add to the cluster</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>server</strong> &#8211; NTP server to add to the cluster</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_oob_schedule">
 <code class="descname">add_oob_schedule</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_oob_schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_oob_schedule" title="Permalink to this definition">¶</a></dt>
 <dd><p>add an out of band snapshot schedule in the specified protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain
-payload: json out of band snapshot schedule configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; name of the protection domain</li>
+<li><strong>payload</strong> &#8211; json out of band snapshot schedule configuration</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_protection_domain">
 <code class="descname">add_protection_domain</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_protection_domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>add a protection domain to be used for disaster recovery and backups</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json protection domain configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json protection domain configuration</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_public_key">
 <code class="descname">add_public_key</code><span class="sig-paren">(</span><em>name</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_public_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_public_key" title="Permalink to this definition">¶</a></dt>
 <dd><p>add a public key to the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name for the public key
-key: key to be added</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; name for the public key</li>
+<li><strong>key</strong> &#8211; key to be added</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_remote_site">
 <code class="descname">add_remote_site</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_remote_site"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_remote_site" title="Permalink to this definition">¶</a></dt>
 <dd><p>add a remote site</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json remote site configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json remote site configuration</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.add_snapshot_schedule">
 <code class="descname">add_snapshot_schedule</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.add_snapshot_schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.add_snapshot_schedule" title="Permalink to this definition">¶</a></dt>
 <dd><p>add a snapshot schedule to the specified protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domains
-payload: json snapshot schedule configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; name of the protection domains</li>
+<li><strong>payload</strong> &#8211; json snapshot schedule configuration</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -308,31 +399,46 @@ payload: json snapshot schedule configuration</dd>
 <dt id="pytanix.client.Nutanix.clear_retention_policies">
 <code class="descname">clear_retention_policies</code><span class="sig-paren">(</span><em>pd_name</em>, <em>schedule_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.clear_retention_policies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.clear_retention_policies" title="Permalink to this definition">¶</a></dt>
 <dd><p>clear retention policies of specified snapshot schedule from the specified protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>pd_name: name of the protection domain</dd>
-</dl>
-<p>schedule-id: ID of the snapshot schedule</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pd_name</strong> &#8211; name of the protection domain</li>
+<li><strong>schedule_id</strong> &#8211; ID of the snapshot schedule</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.cluster_domain">
 <code class="descname">cluster_domain</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.cluster_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.cluster_domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>join/unjoin the storage cluster to/from a Windows AD domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: information pertaining to the Windows AD domain</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; information pertaining to the Windows AD domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.deactivate_protection_domain">
 <code class="descname">deactivate_protection_domain</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.deactivate_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.deactivate_protection_domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>deactivate a protection domain with the specified name</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -345,49 +451,71 @@ payload: json snapshot schedule configuration</dd>
 <dt id="pytanix.client.Nutanix.delete_auth_directory">
 <code class="descname">delete_auth_directory</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_auth_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_auth_directory" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete directory with the specified name</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of directory</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of directory</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.delete_ca_cert">
 <code class="descname">delete_ca_cert</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_ca_cert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_ca_cert" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete a CA certificate from the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: Certificate Authority name</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; Certificate Authority name</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.delete_client_auth">
 <code class="descname">delete_client_auth</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_client_auth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_client_auth" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete client chain certificate on the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the certificate</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the certificate</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.delete_cluster_nameserver">
 <code class="descname">delete_cluster_nameserver</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_cluster_nameserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_cluster_nameserver" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete a nameserver with the specified name</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>server: name of nameserver to delete</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>server</strong> &#8211; name of nameserver to delete</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.delete_container">
 <code class="descname">delete_container</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_container"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_container" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete a container with the specified ID from the cluster</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; ID of the container</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: ID of the container</dd>
 <dt>Kwargs:</dt>
 <dd>ignoreSmallFiles: ignore small files
 ignoreVDisks: ignore all vdisks</dd>
@@ -398,9 +526,15 @@ ignoreVDisks: ignore all vdisks</dd>
 <dt id="pytanix.client.Nutanix.delete_disk">
 <code class="descname">delete_disk</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_disk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_disk" title="Permalink to this definition">¶</a></dt>
 <dd><p>mark specified disk for removal</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; ID of the disk</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: ID of the disk</dd>
 <dt>Kwargs:</dt>
 <dd>force: force the operation (ignores all system validations)</dd>
 </dl>
@@ -410,51 +544,74 @@ ignoreVDisks: ignore all vdisks</dd>
 <dt id="pytanix.client.Nutanix.delete_http_proxy">
 <code class="descname">delete_http_proxy</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_http_proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_http_proxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete an HTTP proxy with the specified name</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of an HTTP proxy</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of an HTTP proxy</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.delete_kms">
 <code class="descname">delete_kms</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_kms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_kms" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete key management server with the specified name</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: key management server name</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; key management server name</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.delete_nfs_whitelist">
 <code class="descname">delete_nfs_whitelist</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_nfs_whitelist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_nfs_whitelist" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete an address from the NFS subnet whitelist</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: NFS whitelist entry to delete</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; NFS whitelist entry to delete</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.delete_ntp_server">
 <code class="descname">delete_ntp_server</code><span class="sig-paren">(</span><em>server</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_ntp_server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_ntp_server" title="Permalink to this definition">¶</a></dt>
 <dd><p>remove NTP server from the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>server: NTP server to be removed from the cluster</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>server</strong> &#8211; NTP server to be removed from the cluster</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.delete_oob_schedule">
 <code class="descname">delete_oob_schedule</code><span class="sig-paren">(</span><em>pd_name</em>, <em>shedule_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_oob_schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_oob_schedule" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete an out of band schedule</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>pd_name: name of the protection domain
-schedule_id: ID of the out of band schedule</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pd_name</strong> &#8211; name of the protection domain</li>
+<li><strong>schedule_id</strong> &#8211; ID of the out of band schedule</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -463,9 +620,15 @@ schedule_id: ID of the out of band schedule</dd>
 <dd><p>mark a protection domain for removal
 Protection domain will be removed from the cluster when all outstanding
 operations on it are cancelled</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
 <dt>Kwargs:</dt>
 <dd>skipRemoteCheck: skip checking remote protection domain</dd>
 </dl>
@@ -475,30 +638,42 @@ operations on it are cancelled</p>
 <dt id="pytanix.client.Nutanix.delete_public_key">
 <code class="descname">delete_public_key</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_public_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_public_key" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete a public key from the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the key to be deleted</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the key to be deleted</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.delete_rackable_unit">
 <code class="descname">delete_rackable_unit</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_rackable_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_rackable_unit" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete a rackable unit with the specified ID</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>id: ID of a rackable unit</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; ID of a rackable unit</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.delete_remote_site">
 <code class="descname">delete_remote_site</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_remote_site"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_remote_site" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete a remote site with the specified name from the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the remote site</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the remote site</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -511,32 +686,50 @@ operations on it are cancelled</p>
 <dt id="pytanix.client.Nutanix.delete_snapshot">
 <code class="descname">delete_snapshot</code><span class="sig-paren">(</span><em>pd_name</em>, <em>snapshot_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_snapshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_snapshot" title="Permalink to this definition">¶</a></dt>
 <dd><p>delete a snapshot of a protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>pd_name: name of the protection domain
-snapshot_id: ID of the snapshot</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pd_name</strong> &#8211; name of the protection domain</li>
+<li><strong>snapshot_id</strong> &#8211; ID of the snapshot</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.delete_snapshot_schedule">
 <code class="descname">delete_snapshot_schedule</code><span class="sig-paren">(</span><em>pd_name</em>, <em>schedule_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_snapshot_schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_snapshot_schedule" title="Permalink to this definition">¶</a></dt>
 <dd><p>remove a snapshot schedule from the specified protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>pd_name: name of the protection domain</dd>
-</dl>
-<p>schedule-id: ID of the snapshot schedule</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pd_name</strong> &#8211; name of the protection domain</li>
+<li><strong>schedule_id</strong> &#8211; ID of the snapshot schedule</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.delete_snapshot_schedules">
 <code class="descname">delete_snapshot_schedules</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.delete_snapshot_schedules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.delete_snapshot_schedules" title="Permalink to this definition">¶</a></dt>
 <dd><p>remove all snapshot schedules from the specified protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -554,9 +747,15 @@ serverName: key management server for which cert is installed</dd>
 <dt id="pytanix.client.Nutanix.demote_protection_domain">
 <code class="descname">demote_protection_domain</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.demote_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.demote_protection_domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>demotes to standby metro availability role for a specified protection domain</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
 <dt>Kwargs:</dt>
 <dd>skipRemoteCheck: skip checking remote protection domain</dd>
 </dl>
@@ -566,9 +765,15 @@ serverName: key management server for which cert is installed</dd>
 <dt id="pytanix.client.Nutanix.disable_metro_availability">
 <code class="descname">disable_metro_availability</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.disable_metro_availability"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.disable_metro_availability" title="Permalink to this definition">¶</a></dt>
 <dd><p>disable metro availability for a specified protection domain</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
 <dt>Kwargs:</dt>
 <dd>skipRemoteCheck: skip checking remote protection domain</dd>
 </dl>
@@ -578,20 +783,33 @@ serverName: key management server for which cert is installed</dd>
 <dt id="pytanix.client.Nutanix.edit_auth_directory">
 <code class="descname">edit_auth_directory</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.edit_auth_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.edit_auth_directory" title="Permalink to this definition">¶</a></dt>
 <dd><p>edit the specified directory config</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json auth directory config</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json auth directory config</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.enable_metro_availability">
 <code class="descname">enable_metro_availability</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.enable_metro_availability"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.enable_metro_availability" title="Permalink to this definition">¶</a></dt>
 <dd><p>enable metro availability for a specific protection domain based on vStore and remote site</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; name of the protection domain</li>
+<li><strong>payload</strong> &#8211; vStore and remote site configuration</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain
-payload: vStore and remote site configuration</dd>
 <dt>Kwargs:</dt>
 <dd>reEnable: re-enable operation
 skipRemoteCheck: skip checking remote protection domain
@@ -628,10 +846,14 @@ entityIds: Entity ids</dd>
 <dt id="pytanix.client.Nutanix.get_alerts_metadata">
 <code class="descname">get_alerts_metadata</code><span class="sig-paren">(</span><em>alertTypeUuid</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_alerts_metadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_alerts_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of alerts metadata generated in the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>alertTypeUuid: Alert type UUID of the Alert metadata</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>alertTypeUuid</strong> &#8211; Alert type UUID of the Alert metadata</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -650,10 +872,14 @@ entityIds: Entity ids</dd>
 <dt id="pytanix.client.Nutanix.get_auth_directory">
 <code class="descname">get_auth_directory</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_auth_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_auth_directory" title="Permalink to this definition">¶</a></dt>
 <dd><p>get directory with the specified name</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of directory</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of directory</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -701,9 +927,15 @@ kmsServerNames: list of key management server names</dd>
 <dt id="pytanix.client.Nutanix.get_cluster_alerts">
 <code class="descname">get_cluster_alerts</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cluster_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of alerts generated on a specified cluster</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of the cluster</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: id of the cluster</dd>
 <dt>Kwargs:</dt>
 <dd>startTimeInUsecs: Start time in microseconds
 endTimeInUsecs: End time in microseconds
@@ -720,9 +952,15 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_cluster_by_id">
 <code class="descname">get_cluster_by_id</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cluster_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster_by_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>get a cluster</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of the cluster</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: id of the cluster</dd>
 <dt>Kwargs:</dt>
 <dd>projection: projections on the attributes</dd>
 </dl>
@@ -742,9 +980,15 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_cluster_events">
 <code class="descname">get_cluster_events</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cluster_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of events generated on a specified cluster</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of the cluster</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: id of the cluster</dd>
 <dt>Kwargs:</dt>
 <dd>startTimeInUsecs: Start time in microseconds
 endTimeInUsecs: End time in microseconds
@@ -770,9 +1014,15 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_cluster_stats">
 <code class="descname">get_cluster_stats</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_cluster_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_cluster_stats" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the stats for a specified cluster</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of the cluster</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: id of the cluster</dd>
 <dt>Kwargs:</dt>
 <dd>metrics (required): list of metrics
 startTimeInUsecs: Start time in microseconds
@@ -814,19 +1064,29 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_consistency_groups">
 <code class="descname">get_consistency_groups</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_consistency_groups"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_consistency_groups" title="Permalink to this definition">¶</a></dt>
 <dd><p>get list of consistency groups in a specified protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_container">
 <code class="descname">get_container</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_container"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_container" title="Permalink to this definition">¶</a></dt>
 <dd><p>get a container with the specified ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of the container</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: id of the container</dd>
 <dt>Kwargs:</dt>
 <dd>projection: projections on the attributes</dd>
 </dl>
@@ -836,9 +1096,15 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_container_alerts">
 <code class="descname">get_container_alerts</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_container_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_container_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of alerts generated on any container</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of the container</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: id of the container</dd>
 <dt>Kwargs:</dt>
 <dd>startTimeInUsecs: Start time in microseconds
 endTimeInUsecs: End time in microseconds
@@ -855,9 +1121,15 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_container_events">
 <code class="descname">get_container_events</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_container_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_container_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of events generated on any container</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of the container</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: id of the container</dd>
 <dt>Kwargs:</dt>
 <dd>startTimeInUsecs: Start time in microseconds
 endTimeInUsecs: End time in microseconds
@@ -871,9 +1143,15 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_container_stats">
 <code class="descname">get_container_stats</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_container_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_container_stats" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the stats for a specified container</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of the container</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: id of the container</dd>
 <dt>Kwargs:</dt>
 <dd>metrics (required): List of metrics
 startTimeInUsecs: Start time in microseconds
@@ -886,10 +1164,14 @@ intervalInSecs: Sampling interval of stats</dd>
 <dt id="pytanix.client.Nutanix.get_container_vdisks">
 <code class="descname">get_container_vdisks</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_container_vdisks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_container_vdisks" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of vDisks of the specified container</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>id: id of the container</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of the container</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -923,9 +1205,15 @@ projection: projections on the attributes</dd>
 <dt id="pytanix.client.Nutanix.get_disk">
 <code class="descname">get_disk</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_disk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_disk" title="Permalink to this definition">¶</a></dt>
 <dd><p>get a disk with the specified id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; ID of the disk</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: ID of the disk</dd>
 <dt>Kwargs:</dt>
 <dd>projection: projections on the attributes</dd>
 </dl>
@@ -935,9 +1223,15 @@ projection: projections on the attributes</dd>
 <dt id="pytanix.client.Nutanix.get_disk_alerts">
 <code class="descname">get_disk_alerts</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_disk_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_disk_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of alerts generated on any disk</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of the disk</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: id of the disk</dd>
 <dt>Kwargs:</dt>
 <dd>startTimeInUsecs: Start time in microseconds
 endTimeInUsecs: End time in microseconds
@@ -954,9 +1248,15 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_disk_events">
 <code class="descname">get_disk_events</code><span class="sig-paren">(</span><em>svm_id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_disk_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_disk_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of events generated on any host</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>svm_id</strong> &#8211; service VM ID</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>svm_id: service VM ID</dd>
 <dt>Kwargs:</dt>
 <dd>startTimeInUsecs: Start time in microseconds
 endTimeInUsecs: End time in microseconds
@@ -981,9 +1281,15 @@ detailedSummary: detailed summary</dd>
 <dt id="pytanix.client.Nutanix.get_disk_stats">
 <code class="descname">get_disk_stats</code><span class="sig-paren">(</span><em>id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_disk_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_disk_stats" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the stats for a specified disk</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id of the disk</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>id: id of the disk</dd>
 <dt>Kwargs:</dt>
 <dd>metrics (required): List of metrics
 startTimeInUsecs: Start time in microseconds
@@ -1011,9 +1317,15 @@ projection: projections on the attributes</dd>
 <dt id="pytanix.client.Nutanix.get_dr_snapshots">
 <code class="descname">get_dr_snapshots</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_dr_snapshots"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_dr_snapshots" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of snapshots created in a specified protection domain</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
 <dt>Kwargs:</dt>
 <dd>count: number of DR snapshots to retrieve
 filterCriteria: filter criteria
@@ -1079,10 +1391,14 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_health_check">
 <code class="descname">get_health_check</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_health_check"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_health_check" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the health check with the specified ID</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>id: ID of the health check</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; ID of the health check</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1095,9 +1411,15 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_host_alerts">
 <code class="descname">get_host_alerts</code><span class="sig-paren">(</span><em>svm_id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_host_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_host_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of alerts generated on any host</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>svm_id</strong> &#8211; service VM ID</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>svm_id: service VM ID</dd>
 <dt>Kwargs:</dt>
 <dd>startTimeInUsecs: Start time in microseconds
 endTimeInUsecs: End time in microseconds
@@ -1139,9 +1461,15 @@ detailedSummary: detailed summary</dd>
 <dt id="pytanix.client.Nutanix.get_host_stats">
 <code class="descname">get_host_stats</code><span class="sig-paren">(</span><em>svm_id</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_host_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_host_stats" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the stats for a specified host</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>svm_id</strong> &#8211; service VM ID</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>svm_id: service VM ID</dd>
 <dt>Kwargs:</dt>
 <dd>metrics (required): List of metrics
 startTimeInUsecs: Start time in microseconds
@@ -1175,20 +1503,28 @@ projection: projections on the attributes</dd>
 <dt id="pytanix.client.Nutanix.get_http_proxy">
 <code class="descname">get_http_proxy</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_http_proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_http_proxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>get an HTTP proxy with the specified name</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of an HTTP proxy</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of an HTTP proxy</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_kms">
 <code class="descname">get_kms</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_kms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_kms" title="Permalink to this definition">¶</a></dt>
 <dd><p>get key management server with the specified name</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: key management server name</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; key management server name</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1240,10 +1576,14 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_license_feature">
 <code class="descname">get_license_feature</code><span class="sig-paren">(</span><em>feature_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_license_feature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_license_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>show allowances for a particular feature</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>feature_name: name of the feature</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>feature_name</strong> &#8211; name of the feature</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1272,29 +1612,43 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_oob_schedules">
 <code class="descname">get_oob_schedules</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_oob_schedules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_oob_schedules" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of out of band schedules in the specified protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_pending_actions">
 <code class="descname">get_pending_actions</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_pending_actions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_pending_actions" title="Permalink to this definition">¶</a></dt>
 <dd><p>get list of pending actions in the specified protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.get_pending_remote_replications">
 <code class="descname">get_pending_remote_replications</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_pending_remote_replications"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_pending_remote_replications" title="Permalink to this definition">¶</a></dt>
 <dd><p>get all pending replications on the cluster</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the remote site</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the remote site</dd>
 <dt>Kwargs:</dt>
 <dd>protectionDomainNames: protection domain names
 remoteSiteNames: remote site names</dd>
@@ -1305,9 +1659,15 @@ remoteSiteNames: remote site names</dd>
 <dt id="pytanix.client.Nutanix.get_pending_replications">
 <code class="descname">get_pending_replications</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_pending_replications"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_pending_replications" title="Permalink to this definition">¶</a></dt>
 <dd><p>get list of pending replications in the specified protection domain</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
 <dt>Kwargs:</dt>
 <dd>remoteSiteNames: names of remote sites</dd>
 </dl>
@@ -1317,9 +1677,15 @@ remoteSiteNames: remote site names</dd>
 <dt id="pytanix.client.Nutanix.get_protection_domain">
 <code class="descname">get_protection_domain</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_protection_domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>get a protection domain with the specified name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
 <dt>Kwargs:</dt>
 <dd>metroAvail: whether to include only metro availability related protection domains
 vStoreName: vStore name
@@ -1332,9 +1698,15 @@ projection: projections on the attributes</dd>
 <dt id="pytanix.client.Nutanix.get_protection_domain_alerts">
 <code class="descname">get_protection_domain_alerts</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_protection_domain_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_protection_domain_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of alerts generated on a specified protection domain</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
 <dt>Kwargs:</dt>
 <dd>startTimeInUsecs: Start time in microseconds
 endTimeInUsecs: End time in microseconds
@@ -1353,9 +1725,15 @@ entityIds: Entity ids</dd>
 <dt id="pytanix.client.Nutanix.get_protection_domain_events">
 <code class="descname">get_protection_domain_events</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_protection_domain_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_protection_domain_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of events generated on a specified protection domain</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
 <dt>Kwargs:</dt>
 <dd>startTimeInUsecs: Start time in microseconds
 endTimeInUsecs: End time in microseconds
@@ -1383,9 +1761,15 @@ detailedSummary: detailed summary</dd>
 If start time and end time are included in the query string,
 then historical stats are retrieved. Otherwise, the latest
 stats are retrieved.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
 <dt>Kwargs:</dt>
 <dd>metrics (required): list of metrics
 startTimeInUsecs: start time in microseconds
@@ -1419,10 +1803,14 @@ projection: projections on the attributes</dd>
 <dt id="pytanix.client.Nutanix.get_public_key">
 <code class="descname">get_public_key</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_public_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_public_key" title="Permalink to this definition">¶</a></dt>
 <dd><p>get a public key by name</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of public key</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of public key</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1435,10 +1823,14 @@ projection: projections on the attributes</dd>
 <dt id="pytanix.client.Nutanix.get_rackable_unit">
 <code class="descname">get_rackable_unit</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_rackable_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_rackable_unit" title="Permalink to this definition">¶</a></dt>
 <dd><p>get a rackable unit with the specified ID</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>id: ID of a rackable unit</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; ID of a rackable unit</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1451,9 +1843,15 @@ projection: projections on the attributes</dd>
 <dt id="pytanix.client.Nutanix.get_remote_site">
 <code class="descname">get_remote_site</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_site"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_site" title="Permalink to this definition">¶</a></dt>
 <dd><p>get a remote site with the specified name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the remote site</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the remote site</dd>
 <dt>Kwargs:</dt>
 <dd>projection: projections on the attributes</dd>
 </dl>
@@ -1463,9 +1861,15 @@ projection: projections on the attributes</dd>
 <dt id="pytanix.client.Nutanix.get_remote_site_alerts">
 <code class="descname">get_remote_site_alerts</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_site_alerts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_site_alerts" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of alerts generated on a specified remote site</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the remote site</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the remote site</dd>
 <dt>Kwargs:</dt>
 <dd>startTimeInUsecs: Start time in microseconds
 endTimeInUsecs: End time in microseconds
@@ -1484,9 +1888,15 @@ entityIds: Entity ids</dd>
 <dt id="pytanix.client.Nutanix.get_remote_site_events">
 <code class="descname">get_remote_site_events</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_site_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_site_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of events generated on a specified remote site</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the remote site</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the remote site</dd>
 <dt>Kwargs:</dt>
 <dd>startTimeInUsecs: Start time in microseconds
 endTimeInUsecs: End time in microseconds
@@ -1500,9 +1910,15 @@ page: Page number</dd>
 <dt id="pytanix.client.Nutanix.get_remote_site_snapshots">
 <code class="descname">get_remote_site_snapshots</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_remote_site_snapshots"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_remote_site_snapshots" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of snapshots created in a particular remote site</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the remote site</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the remote site</dd>
 <dt>Kwargs:</dt>
 <dd>count: maximum number of DR snapshots to retrieve
 filterCriteria: filter criteria
@@ -1518,9 +1934,15 @@ fullDetails: whether to include consistency group/VM details</dd>
 If start time and end time are included in the query string,
 then historical stats are retrieved. Otherwise, the latest
 stats are retrieved.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the remote site</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the remote site</dd>
 <dt>Kwargs:</dt>
 <dd>metrics (required): list of metrics
 startTimeInUsecs: start time in microseconds
@@ -1610,10 +2032,14 @@ fullDetails: whether to include consistency group/VM details</dd>
 <dt id="pytanix.client.Nutanix.get_replications">
 <code class="descname">get_replications</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.get_replications"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.get_replications" title="Permalink to this definition">¶</a></dt>
 <dd><p>get list of replications in a protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of protection domain</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of protection domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1683,19 +2109,29 @@ containerNames: container names</dd>
 <dt id="pytanix.client.Nutanix.migrate_protection_domain">
 <code class="descname">migrate_protection_domain</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.migrate_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.migrate_protection_domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>mark the specified protection domain as inactive and failover to the given remote site</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.promote_protection_domain">
 <code class="descname">promote_protection_domain</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.promote_protection_domain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.promote_protection_domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>promotes to active metro availability role for a specified protection domain</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
 <dt>Kwargs:</dt>
 <dd>skipRemoteCheck: skip checking remote protection domain</dd>
 </dl>
@@ -1705,11 +2141,18 @@ containerNames: container names</dd>
 <dt id="pytanix.client.Nutanix.protect_vms">
 <code class="descname">protect_vms</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.protect_vms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.protect_vms" title="Permalink to this definition">¶</a></dt>
 <dd><p>add VMs to a protection domain to enable backup and disaster recovery</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain
-payload: json vm protection configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; name of the protection domain</li>
+<li><strong>payload</strong> &#8211; json vm protection configuration</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1726,30 +2169,42 @@ payload: json vm protection configuration</dd>
 <dt id="pytanix.client.Nutanix.remove_auth_types">
 <code class="descname">remove_auth_types</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.remove_auth_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.remove_auth_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>remove auth types from the existing auth types</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json containing user, pass, and AD name</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json containing user, pass, and AD name</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.remove_datastore">
 <code class="descname">remove_datastore</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.remove_datastore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.remove_datastore" title="Permalink to this definition">¶</a></dt>
 <dd><p>remove an NFS datastore</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json removal request</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json removal request</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.resolve_alert">
 <code class="descname">resolve_alert</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.resolve_alert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.resolve_alert" title="Permalink to this definition">¶</a></dt>
 <dd><p>resolve alert by id</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>id: Alert id</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; Alert id</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1771,34 +2226,55 @@ count: Maximum number of alerts</dd>
 <dt id="pytanix.client.Nutanix.restore_entities">
 <code class="descname">restore_entities</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.restore_entities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.restore_entities" title="Permalink to this definition">¶</a></dt>
 <dd><p>rollback VMs and/or NFS files in a protection domain to a given snapshot</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain
-payload: json restore configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; name of the protection domain</li>
+<li><strong>payload</strong> &#8211; json restore configuration</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.retain_snapshot">
 <code class="descname">retain_snapshot</code><span class="sig-paren">(</span><em>pd_name</em>, <em>snapshot_id</em>, <em>retention_time</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.retain_snapshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.retain_snapshot" title="Permalink to this definition">¶</a></dt>
 <dd><p>retain a snapshot of a protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>pd_name: name of the protection domain
-snapshot_id: ID of the snapshot
-retention_time: retention time in microseconds</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pd_name</strong> &#8211; name of the protection domain</li>
+<li><strong>snapshot_id</strong> &#8211; ID of the snapshot</li>
+<li><strong>retention_time</strong> &#8211; retention time in microseconds</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.rollback">
 <code class="descname">rollback</code><span class="sig-paren">(</span><em>pd_name</em>, <em>snapshot_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.rollback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.rollback" title="Permalink to this definition">¶</a></dt>
 <dd><p>rollback the specified protection domain to a given snapshot</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>pd_name: name of the protection domain
-snapshot_id: ID of the snapshot</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pd_name</strong> &#8211; name of the protection domain</li>
+<li><strong>snapshot_id</strong> &#8211; ID of the snapshot</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -1807,7 +2283,7 @@ snapshot_id: ID of the snapshot</dd>
 <dd><p>perform a spotlight search on the cluster</p>
 <dl class="docutils">
 <dt>Kwargs:</dt>
-<dd>searchString (required): search string
+<dd>searchString (str): search string
 entityTypes: entity types
 fieldNames: field names</dd>
 </dl>
@@ -1817,63 +2293,93 @@ fieldNames: field names</dd>
 <dt id="pytanix.client.Nutanix.send_email">
 <code class="descname">send_email</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.send_email"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.send_email" title="Permalink to this definition">¶</a></dt>
 <dd><p>send an email using the smtp server configuration</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json email instance</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json email instance</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.set_client_auth_status">
 <code class="descname">set_client_auth_status</code><span class="sig-paren">(</span><em>enable</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.set_client_auth_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.set_client_auth_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>enable or disable client authentication</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>enable: boolean for enabling or disabling client auth</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enable</strong> &#8211; boolean for enabling or disabling client auth</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.set_encryption">
 <code class="descname">set_encryption</code><span class="sig-paren">(</span><em>enable</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.set_encryption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.set_encryption" title="Permalink to this definition">¶</a></dt>
 <dd><p>enable or disable encryption on the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>enable: enable encryption</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enable</strong> &#8211; enable encryption</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.set_retention_policies">
 <code class="descname">set_retention_policies</code><span class="sig-paren">(</span><em>pd_name</em>, <em>schedule_id</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.set_retention_policies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.set_retention_policies" title="Permalink to this definition">¶</a></dt>
 <dd><p>set retention policies of specified snapshot schedule from the specified protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>pd_name: name of the protection domain</dd>
-<dt>schedule-id: ID of the snapshot schedule</dt>
-<dd>payload: json snapshot schedule configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pd_name</strong> &#8211; name of the protection domain</li>
+<li><strong>schedule_id</strong> &#8211; ID of the snapshot schedule</li>
+<li><strong>payload</strong> &#8211; json snapshot schedule configuration</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.test_auth_connection">
 <code class="descname">test_auth_connection</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.test_auth_connection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.test_auth_connection" title="Permalink to this definition">¶</a></dt>
 <dd><p>test LDAP directory connection status</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json containing user, pass, and AD name</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json containing user, pass, and AD name</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.test_encryption">
 <code class="descname">test_encryption</code><span class="sig-paren">(</span><em>node_ids</em>, <em>kms_names</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.test_encryption"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.test_encryption" title="Permalink to this definition">¶</a></dt>
 <dd><p>test encryption configuration of the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>node_ids: list of node IDs
-kms_names: list of key management server names</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>node_ids</strong> &#8211; list of node IDs</li>
+<li><strong>kms_names</strong> &#8211; list of key management server names</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -1885,9 +2391,15 @@ kms_names: list of key management server names</dd>
 <dt id="pytanix.client.Nutanix.unprotect_vms">
 <code class="descname">unprotect_vms</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.unprotect_vms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.unprotect_vms" title="Permalink to this definition">¶</a></dt>
 <dd><p>remove VMs from a protection domain</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; name of the protection domain</td>
+</tr>
+</tbody>
+</table>
 <dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain</dd>
 <dt>Kwargs:</dt>
 <dd>array (required): list of VMs</dd>
 </dl>
@@ -1897,165 +2409,236 @@ kms_names: list of key management server names</dd>
 <dt id="pytanix.client.Nutanix.update_alerts_configuration">
 <code class="descname">update_alerts_configuration</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_alerts_configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_alerts_configuration" title="Permalink to this definition">¶</a></dt>
 <dd><p>update the configuration that is used to send alert emails</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json object of new alert configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json object of new alert configuration</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_alerts_metadata">
 <code class="descname">update_alerts_metadata</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_alerts_metadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_alerts_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the list of alerts metadata generated in the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json object of new alert metadata</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json object of new alert metadata</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_auth_config">
 <code class="descname">update_auth_config</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_auth_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_auth_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>update auth configuration</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json of updated auth config</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json of updated auth config</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_auth_types">
 <code class="descname">update_auth_types</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_auth_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_auth_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>add authentication types</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json array of auth types</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json array of auth types</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_cert_info">
 <code class="descname">update_cert_info</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_cert_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_cert_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>update the certification information</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json certification information</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json certification information</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_cluster">
 <code class="descname">update_cluster</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_cluster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_cluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>update cluster details</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: cluster detail json</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; cluster detail json</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_container">
 <code class="descname">update_container</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_container"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_container" title="Permalink to this definition">¶</a></dt>
 <dd><p>update a container&#8217;s configuration</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json container configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json container configuration</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_health_checks">
 <code class="descname">update_health_checks</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_health_checks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_health_checks" title="Permalink to this definition">¶</a></dt>
 <dd><p>update health check details</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json health check instance</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json health check instance</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_http_proxy">
 <code class="descname">update_http_proxy</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_http_proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_http_proxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>update an HTTP proxy</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json HTTP proxy configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json HTTP proxy configuration</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_kms">
 <code class="descname">update_kms</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_kms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_kms" title="Permalink to this definition">¶</a></dt>
 <dd><p>update the key management server configuration</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json key management server configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json key management server configuration</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_remote_site">
 <code class="descname">update_remote_site</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_remote_site"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_remote_site" title="Permalink to this definition">¶</a></dt>
 <dd><p>update a remote site</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json remote site configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json remote site configuration</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_remote_support">
 <code class="descname">update_remote_support</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_remote_support"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_remote_support" title="Permalink to this definition">¶</a></dt>
 <dd><p>update the remote support settings on the cluster</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: a timed bool instance</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; a timed bool instance</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_replication_status">
 <code class="descname">update_replication_status</code><span class="sig-paren">(</span><em>pd_name</em>, <em>replication_id</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_replication_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_replication_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>update the state of the replication in a protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>pd_name: name of the protection domain
-replication_id: ID of the replication
-payload: json of updated replication status (pause, resume, abort)</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pd_name</strong> &#8211; name of the protection domain</li>
+<li><strong>replication_id</strong> &#8211; ID of the replication</li>
+<li><strong>payload</strong> &#8211; json of updated replication status (pause, resume, abort)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_replication_timeout">
 <code class="descname">update_replication_timeout</code><span class="sig-paren">(</span><em>name</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_replication_timeout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_replication_timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>update metro availability timeout for a specific protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>name: name of the protection domain
-payload: json replication timeout configuration</dd>
-</dl>
+<blockquote>
+<div>name: name of the protection domain</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json replication timeout configuration</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_smtp_config">
 <code class="descname">update_smtp_config</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_smtp_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_smtp_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>update the cluster SMTP server configuration</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>payload: json SMTP server configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>payload</strong> &#8211; json SMTP server configuration</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="pytanix.client.Nutanix.update_snapshot_schedule">
 <code class="descname">update_snapshot_schedule</code><span class="sig-paren">(</span><em>pd_name</em>, <em>schedule_id</em>, <em>payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pytanix/client.html#Nutanix.update_snapshot_schedule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pytanix.client.Nutanix.update_snapshot_schedule" title="Permalink to this definition">¶</a></dt>
 <dd><p>replace a snapshot schedule from the specified protection domain</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>pd_name: name of the protection domain</dd>
-<dt>schedule-id: ID of the snapshot schedule</dt>
-<dd>payload: json snapshot schedule configuration</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pd_name</strong> &#8211; name of the protection domain</li>
+<li><strong>schedule_id</strong> &#8211; ID of the snapshot schedule</li>
+<li><strong>payload</strong> &#8211; json snapshot schedule configuration</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">

@@ -88,10 +88,13 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">requests_session</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Create a Nutanix REST API object.</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            ip: A Nutanix cluster or CVM IP address</span>
-<span class="sd">            auth: An authorization token (optional)</span>
-<span class="sd">            requests_session: A Requests session object of a truthy value to create one.</span>
+<span class="sd">        :param ip:</span>
+<span class="sd">            A Nutanix cluster or CVM IP address</span>
+<span class="sd">        :type ip: ``string``</span>
+<span class="sd">        :param auth:</span>
+<span class="sd">            An authorization token (optional)</span>
+<span class="sd">        :param requests_session:</span>
+<span class="sd">            A Requests session object of a truthy value to create one.</span>
 <span class="sd">            A falsy value disables sessions.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="c"># TODO: let user set base IP</span>
@@ -215,8 +218,8 @@
 <div class="viewcode-block" id="Nutanix.update_alerts_configuration"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_alerts_configuration">[docs]</a>    <span class="k">def</span> <span class="nf">update_alerts_configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update the configuration that is used to send alert emails</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json object of new alert configuration</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json object of new alert configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;alerts/configuration&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -249,16 +252,16 @@
 <div class="viewcode-block" id="Nutanix.update_alerts_metadata"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_alerts_metadata">[docs]</a>    <span class="k">def</span> <span class="nf">update_alerts_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of alerts metadata generated in the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json object of new alert metadata</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json object of new alert metadata</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;alerts/metadata&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_alerts_metadata"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_alerts_metadata">[docs]</a>    <span class="k">def</span> <span class="nf">get_alerts_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alertTypeUuid</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of alerts metadata generated in the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            alertTypeUuid: Alert type UUID of the Alert metadata</span>
+<span class="sd">        :param alertTypeUuid:</span>
+<span class="sd">            Alert type UUID of the Alert metadata</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;alerts/metadata/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alertTypeUuid</span><span class="p">))</span>
 </div>
@@ -295,16 +298,16 @@
 <div class="viewcode-block" id="Nutanix.acknowledge_alert"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.acknowledge_alert">[docs]</a>    <span class="k">def</span> <span class="nf">acknowledge_alert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;acknowledge alert by id</span>
 <span class="sd">            </span>
-<span class="sd">        Args:</span>
-<span class="sd">            id: Alert id</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            Alert id</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;alerts/{0}/acknowledge&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.resolve_alert"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.resolve_alert">[docs]</a>    <span class="k">def</span> <span class="nf">resolve_alert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;resolve alert by id</span>
 <span class="sd">            </span>
-<span class="sd">        Args:</span>
-<span class="sd">            id: Alert id</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            Alert id</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;alerts/{0}/resolve&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
 
@@ -319,8 +322,8 @@
 <div class="viewcode-block" id="Nutanix.update_auth_config"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_auth_config">[docs]</a>    <span class="k">def</span> <span class="nf">update_auth_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update auth configuration</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json of updated auth config</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json of updated auth config</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;authconfig&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -332,16 +335,16 @@
 <div class="viewcode-block" id="Nutanix.add_auth_types"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_auth_types">[docs]</a>    <span class="k">def</span> <span class="nf">add_auth_types</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add authentication types</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json array of auth types</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json array of auth types</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;authconfig/add_auth_types&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.update_auth_types"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_auth_types">[docs]</a>    <span class="k">def</span> <span class="nf">update_auth_types</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add authentication types</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json array of auth types</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json array of auth types</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;authconfig/auth_types&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -353,8 +356,8 @@
 <div class="viewcode-block" id="Nutanix.set_client_auth_status"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.set_client_auth_status">[docs]</a>    <span class="k">def</span> <span class="nf">set_client_auth_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enable</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;enable or disable client authentication</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            enable: boolean for enabling or disabling client auth</span>
+<span class="sd">        :param enable:</span>
+<span class="sd">            boolean for enabling or disabling client auth</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="n">enable</span><span class="p">}</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;authconfig/client_auth/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -367,24 +370,24 @@
 <div class="viewcode-block" id="Nutanix.delete_client_auth"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_client_auth">[docs]</a>    <span class="k">def</span> <span class="nf">delete_client_auth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete client chain certificate on the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the certificate</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the certificate</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;authconfig/client_auth/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.add_auth_directory"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_auth_directory">[docs]</a>    <span class="k">def</span> <span class="nf">add_auth_directory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add directory config to the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json auth directory config</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json auth directory config</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;authconfig/directories/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.edit_auth_directory"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.edit_auth_directory">[docs]</a>    <span class="k">def</span> <span class="nf">edit_auth_directory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;edit the specified directory config</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json auth directory config</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json auth directory config</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;authconfig/directories/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -396,32 +399,32 @@
 <div class="viewcode-block" id="Nutanix.test_auth_connection"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.test_auth_connection">[docs]</a>    <span class="k">def</span> <span class="nf">test_auth_connection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;test LDAP directory connection status</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json containing user, pass, and AD name</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json containing user, pass, and AD name</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;authconfig/directories/connection_status&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_auth_directory"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_auth_directory">[docs]</a>    <span class="k">def</span> <span class="nf">get_auth_directory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get directory with the specified name</span>
 <span class="sd">        </span>
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of directory</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of directory</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;authconfig/directories/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.delete_auth_directory"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_auth_directory">[docs]</a>    <span class="k">def</span> <span class="nf">delete_auth_directory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete directory with the specified name</span>
 <span class="sd">        </span>
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of directory</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of directory</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;authconfig/directories/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.remove_auth_types"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.remove_auth_types">[docs]</a>    <span class="k">def</span> <span class="nf">remove_auth_types</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;remove auth types from the existing auth types</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json containing user, pass, and AD name</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json containing user, pass, and AD name</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;authconfig/remove_auth_types&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 
@@ -442,16 +445,16 @@
 <div class="viewcode-block" id="Nutanix.delete_ca_cert"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_ca_cert">[docs]</a>    <span class="k">def</span> <span class="nf">delete_ca_cert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete a CA certificate from the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: Certificate Authority name</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            Certificate Authority name</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;certificates/ca_certificates/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.update_cert_info"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_cert_info">[docs]</a>    <span class="k">def</span> <span class="nf">update_cert_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update the certification information</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json certification information</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json certification information</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;certificates/certification_information&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -507,16 +510,16 @@
 <div class="viewcode-block" id="Nutanix.update_cluster"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_cluster">[docs]</a>    <span class="k">def</span> <span class="nf">update_cluster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update cluster details</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: cluster detail json</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            cluster detail json</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;/cluster/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.cluster_domain"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.cluster_domain">[docs]</a>    <span class="k">def</span> <span class="nf">cluster_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;join/unjoin the storage cluster to/from a Windows AD domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: information pertaining to the Windows AD domain</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            information pertaining to the Windows AD domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;cluster/cluster_domain&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -528,8 +531,8 @@
 <div class="viewcode-block" id="Nutanix.add_cluster_nameserver"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_cluster_nameserver">[docs]</a>    <span class="k">def</span> <span class="nf">add_cluster_nameserver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add a nameserver to the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            server: address of nameserver</span>
+<span class="sd">        :param server:</span>
+<span class="sd">            address of nameserver</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="n">server</span><span class="p">}</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;cluster/name_servers&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -537,8 +540,8 @@
 <div class="viewcode-block" id="Nutanix.delete_cluster_nameserver"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_cluster_nameserver">[docs]</a>    <span class="k">def</span> <span class="nf">delete_cluster_nameserver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete a nameserver with the specified name</span>
 <span class="sd">        </span>
-<span class="sd">        Args:</span>
-<span class="sd">            server: name of nameserver to delete</span>
+<span class="sd">        :param server:</span>
+<span class="sd">            name of nameserver to delete</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;cluster/name_servers/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server</span><span class="p">))</span>
 </div>
@@ -550,8 +553,8 @@
 <div class="viewcode-block" id="Nutanix.add_nfs_whitelist"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_nfs_whitelist">[docs]</a>    <span class="k">def</span> <span class="nf">add_nfs_whitelist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add an address to the NFS subnet whitelist</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            entry: value to add to NFS whitelist</span>
+<span class="sd">        :param entry:</span>
+<span class="sd">            value to add to NFS whitelist</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="n">entry</span><span class="p">}</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;cluster/nfs_whitelist&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -559,8 +562,8 @@
 <div class="viewcode-block" id="Nutanix.delete_nfs_whitelist"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_nfs_whitelist">[docs]</a>    <span class="k">def</span> <span class="nf">delete_nfs_whitelist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete an address from the NFS subnet whitelist</span>
 <span class="sd">        </span>
-<span class="sd">        Args:</span>
-<span class="sd">            name: NFS whitelist entry to delete</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            NFS whitelist entry to delete</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;cluster/nfs_whitelist/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
@@ -572,8 +575,8 @@
 <div class="viewcode-block" id="Nutanix.add_ntp_server"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_ntp_server">[docs]</a>    <span class="k">def</span> <span class="nf">add_ntp_server</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add NTP server to the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            server: NTP server to add to the cluster</span>
+<span class="sd">        :param server:</span>
+<span class="sd">            NTP server to add to the cluster</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="n">server</span><span class="p">}</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;cluster/ntp_servers&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -581,8 +584,8 @@
 <div class="viewcode-block" id="Nutanix.delete_ntp_server"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_ntp_server">[docs]</a>    <span class="k">def</span> <span class="nf">delete_ntp_server</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;remove NTP server from the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            server: NTP server to be removed from the cluster</span>
+<span class="sd">        :param server:</span>
+<span class="sd">            NTP server to be removed from the cluster</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;cluster/ntp_servers/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server</span><span class="p">))</span>
 </div>
@@ -594,9 +597,10 @@
 <div class="viewcode-block" id="Nutanix.add_public_key"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_public_key">[docs]</a>    <span class="k">def</span> <span class="nf">add_public_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add a public key to the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name for the public key</span>
-<span class="sd">            key: key to be added</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name for the public key</span>
+<span class="sd">        :param key:</span>
+<span class="sd">            key to be added</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="n">key</span><span class="p">}</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;cluster/public_keys/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -604,16 +608,16 @@
 <div class="viewcode-block" id="Nutanix.delete_public_key"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_public_key">[docs]</a>    <span class="k">def</span> <span class="nf">delete_public_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete a public key from the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the key to be deleted</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the key to be deleted</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;cluster/public_keys/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_public_key"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_public_key">[docs]</a>    <span class="k">def</span> <span class="nf">get_public_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get a public key by name</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of public key</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of public key</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;cluster/public_keys/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
@@ -625,16 +629,16 @@
 <div class="viewcode-block" id="Nutanix.get_rackable_unit"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_rackable_unit">[docs]</a>    <span class="k">def</span> <span class="nf">get_rackable_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get a rackable unit with the specified ID</span>
 <span class="sd">        </span>
-<span class="sd">        Args:</span>
-<span class="sd">            id: ID of a rackable unit</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            ID of a rackable unit</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;cluster/rackable_units/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.delete_rackable_unit"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_rackable_unit">[docs]</a>    <span class="k">def</span> <span class="nf">delete_rackable_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete a rackable unit with the specified ID</span>
 <span class="sd">        </span>
-<span class="sd">        Args:</span>
-<span class="sd">            id: ID of a rackable unit</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            ID of a rackable unit</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;cluster/rackable_units/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
 </div>
@@ -646,8 +650,8 @@
 <div class="viewcode-block" id="Nutanix.update_remote_support"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_remote_support">[docs]</a>    <span class="k">def</span> <span class="nf">update_remote_support</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update the remote support settings on the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: a timed bool instance</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            a timed bool instance</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;cluster/remote_support&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -655,7 +659,7 @@
         <span class="sd">&#39;&#39;&#39;perform a spotlight search on the cluster</span>
 
 <span class="sd">        Kwargs:</span>
-<span class="sd">            searchString (required): search string</span>
+<span class="sd">            searchString (str): search string</span>
 <span class="sd">            entityTypes: entity types</span>
 <span class="sd">            fieldNames: field names</span>
 <span class="sd">        &#39;&#39;&#39;</span>
@@ -664,8 +668,8 @@
 <div class="viewcode-block" id="Nutanix.send_email"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.send_email">[docs]</a>    <span class="k">def</span> <span class="nf">send_email</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;send an email using the smtp server configuration</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json email instance</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json email instance</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;cluster/send_email&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -677,8 +681,8 @@
 <div class="viewcode-block" id="Nutanix.update_smtp_config"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_smtp_config">[docs]</a>    <span class="k">def</span> <span class="nf">update_smtp_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update the cluster SMTP server configuration</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json SMTP server configuration</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json SMTP server configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;/cluster/smtp&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -749,8 +753,8 @@
 <div class="viewcode-block" id="Nutanix.get_cluster_by_id"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_cluster_by_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_cluster_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get a cluster</span>
 <span class="sd">        </span>
-<span class="sd">        Args:</span>
-<span class="sd">            id: id of the cluster</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            id of the cluster</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            projection: projections on the attributes</span>
@@ -760,8 +764,8 @@
 <div class="viewcode-block" id="Nutanix.get_cluster_alerts"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_cluster_alerts">[docs]</a>    <span class="k">def</span> <span class="nf">get_cluster_alerts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated on a specified cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: id of the cluster</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            id of the cluster</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            startTimeInUsecs: Start time in microseconds</span>
@@ -778,8 +782,8 @@
 <div class="viewcode-block" id="Nutanix.get_cluster_events"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_cluster_events">[docs]</a>    <span class="k">def</span> <span class="nf">get_cluster_events</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of events generated on a specified cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: id of the cluster</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            id of the cluster</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            startTimeInUsecs: Start time in microseconds</span>
@@ -793,8 +797,8 @@
 <div class="viewcode-block" id="Nutanix.get_cluster_stats"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_cluster_stats">[docs]</a>    <span class="k">def</span> <span class="nf">get_cluster_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the stats for a specified cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: id of the cluster</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            id of the cluster</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            metrics (required): list of metrics</span>
@@ -823,16 +827,16 @@
 <div class="viewcode-block" id="Nutanix.add_container"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_container">[docs]</a>    <span class="k">def</span> <span class="nf">add_container</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add a container to the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json container configuration</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json container configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;container/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.update_container"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_container">[docs]</a>    <span class="k">def</span> <span class="nf">update_container</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update a container&#39;s configuration</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json container configuration</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json container configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;container/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -859,16 +863,16 @@
 <div class="viewcode-block" id="Nutanix.add_datastore"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_datastore">[docs]</a>    <span class="k">def</span> <span class="nf">add_datastore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add an NFS datastore</span>
 
-<span class="sd">        Paramaters:</span>
-<span class="sd">            payload: json datastore configuration</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json datastore configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;containers/datastores/add_datastore&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.remove_datastore"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.remove_datastore">[docs]</a>    <span class="k">def</span> <span class="nf">remove_datastore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;remove an NFS datastore</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json removal request</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json removal request</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;containers/datastores/remove_datastore&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -887,8 +891,8 @@
 <div class="viewcode-block" id="Nutanix.delete_container"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_container">[docs]</a>    <span class="k">def</span> <span class="nf">delete_container</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete a container with the specified ID from the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: ID of the container</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            ID of the container</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            ignoreSmallFiles: ignore small files</span>
@@ -899,8 +903,8 @@
 <div class="viewcode-block" id="Nutanix.get_container"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_container">[docs]</a>    <span class="k">def</span> <span class="nf">get_container</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get a container with the specified ID</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: id of the container</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            id of the container</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            projection: projections on the attributes</span>
@@ -910,8 +914,8 @@
 <div class="viewcode-block" id="Nutanix.get_container_alerts"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_container_alerts">[docs]</a>    <span class="k">def</span> <span class="nf">get_container_alerts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated on any container</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: id of the container</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            id of the container</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            startTimeInUsecs: Start time in microseconds</span>
@@ -928,8 +932,8 @@
 <div class="viewcode-block" id="Nutanix.get_container_events"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_container_events">[docs]</a>    <span class="k">def</span> <span class="nf">get_container_events</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of events generated on any container</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: id of the container</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            id of the container</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            startTimeInUsecs: Start time in microseconds</span>
@@ -943,8 +947,8 @@
 <div class="viewcode-block" id="Nutanix.get_container_stats"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_container_stats">[docs]</a>    <span class="k">def</span> <span class="nf">get_container_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the stats for a specified container</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: id of the container</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            id of the container</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            metrics (required): List of metrics</span>
@@ -957,8 +961,8 @@
 <div class="viewcode-block" id="Nutanix.get_container_vdisks"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_container_vdisks">[docs]</a>    <span class="k">def</span> <span class="nf">get_container_vdisks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of vDisks of the specified container</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: id of the container</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            id of the container</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;containers/{0}/vdisks&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
 
@@ -1017,8 +1021,8 @@
 <div class="viewcode-block" id="Nutanix.get_disk"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_disk">[docs]</a>    <span class="k">def</span> <span class="nf">get_disk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get a disk with the specified id</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: ID of the disk</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            ID of the disk</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            projection: projections on the attributes</span>
@@ -1028,8 +1032,8 @@
 <div class="viewcode-block" id="Nutanix.delete_disk"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_disk">[docs]</a>    <span class="k">def</span> <span class="nf">delete_disk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;mark specified disk for removal</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: ID of the disk</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            ID of the disk</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            force: force the operation (ignores all system validations)</span>
@@ -1039,8 +1043,8 @@
 <div class="viewcode-block" id="Nutanix.get_disk_alerts"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_disk_alerts">[docs]</a>    <span class="k">def</span> <span class="nf">get_disk_alerts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated on any disk</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: id of the disk</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            id of the disk</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            startTimeInUsecs: Start time in microseconds</span>
@@ -1057,8 +1061,8 @@
     <span class="k">def</span> <span class="nf">get_disk_events</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of events generated on any disk</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: id of the disk</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            id of the disk</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            startTimeInUsecs: Start time in microseconds</span>
@@ -1072,8 +1076,8 @@
 <div class="viewcode-block" id="Nutanix.get_disk_stats"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_disk_stats">[docs]</a>    <span class="k">def</span> <span class="nf">get_disk_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the stats for a specified disk</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: id of the disk</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            id of the disk</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            metrics (required): List of metrics</span>
@@ -1095,8 +1099,8 @@
 <div class="viewcode-block" id="Nutanix.set_encryption"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.set_encryption">[docs]</a>    <span class="k">def</span> <span class="nf">set_encryption</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enable</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;enable or disable encryption on the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            enable: enable encryption</span>
+<span class="sd">        :param enable:</span>
+<span class="sd">            enable encryption</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="n">enable</span><span class="p">}</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;encryption/enable&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -1121,9 +1125,10 @@
 <div class="viewcode-block" id="Nutanix.test_encryption"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.test_encryption">[docs]</a>    <span class="k">def</span> <span class="nf">test_encryption</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node_ids</span><span class="p">,</span> <span class="n">kms_names</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;test encryption configuration of the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            node_ids: list of node IDs</span>
-<span class="sd">            kms_names: list of key management server names</span>
+<span class="sd">        :param node_ids:</span>
+<span class="sd">            list of node IDs</span>
+<span class="sd">        :param kms_names:</span>
+<span class="sd">            list of key management server names</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;serverList&quot;</span><span class="p">:</span> <span class="n">kms_names</span><span class="p">,</span> <span class="s">&quot;nodeIdList&quot;</span><span class="p">:</span> <span class="n">node_ids</span><span class="p">}</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;encryption/test&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -1183,8 +1188,8 @@
 <div class="viewcode-block" id="Nutanix.acknowledge_event"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.acknowledge_event">[docs]</a>    <span class="k">def</span> <span class="nf">acknowledge_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;acknowledge event with the specified ID</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: Event ID</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            Event ID</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;events/{0}/acknowledge&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
 
@@ -1199,16 +1204,16 @@
 <div class="viewcode-block" id="Nutanix.update_health_checks"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_health_checks">[docs]</a>    <span class="k">def</span> <span class="nf">update_health_checks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update health check details</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json health check instance</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json health check instance</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;health_checks/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_health_check"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_health_check">[docs]</a>    <span class="k">def</span> <span class="nf">get_health_check</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the health check with the specified ID</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            id: ID of the health check</span>
+<span class="sd">        :param id:</span>
+<span class="sd">            ID of the health check</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;health_checks/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
 
@@ -1267,8 +1272,8 @@
 <div class="viewcode-block" id="Nutanix.get_host_alerts"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_host_alerts">[docs]</a>    <span class="k">def</span> <span class="nf">get_host_alerts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">svm_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated on any host</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            svm_id: service VM ID</span>
+<span class="sd">        :param svm_id:</span>
+<span class="sd">            service VM ID</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            startTimeInUsecs: Start time in microseconds</span>
@@ -1285,8 +1290,8 @@
 <div class="viewcode-block" id="Nutanix.get_disk_events"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_disk_events">[docs]</a>    <span class="k">def</span> <span class="nf">get_disk_events</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">svm_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of events generated on any host</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            svm_id: service VM ID</span>
+<span class="sd">        :param svm_id:</span>
+<span class="sd">            service VM ID</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            startTimeInUsecs: Start time in microseconds</span>
@@ -1300,8 +1305,8 @@
 <div class="viewcode-block" id="Nutanix.get_host_stats"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_host_stats">[docs]</a>    <span class="k">def</span> <span class="nf">get_host_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">svm_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the stats for a specified host</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            svm_id: service VM ID</span>
+<span class="sd">        :param svm_id:</span>
+<span class="sd">            service VM ID</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            metrics (required): List of metrics</span>
@@ -1322,10 +1327,12 @@
 <div class="viewcode-block" id="Nutanix.add_http_proxy"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_http_proxy">[docs]</a>    <span class="k">def</span> <span class="nf">add_http_proxy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add an HTTP proxy to the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            address: proxy address</span>
-<span class="sd">            username: proxy username</span>
-<span class="sd">            password: proxy password</span>
+<span class="sd">        :param address:</span>
+<span class="sd">            proxy address</span>
+<span class="sd">        :param username:</span>
+<span class="sd">            proxy username</span>
+<span class="sd">        :param password:</span>
+<span class="sd">            proxy password</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;address&quot;</span><span class="p">:</span> <span class="n">address</span><span class="p">,</span>
                    <span class="s">&quot;username&quot;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
@@ -1335,24 +1342,24 @@
 <div class="viewcode-block" id="Nutanix.update_http_proxy"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_http_proxy">[docs]</a>    <span class="k">def</span> <span class="nf">update_http_proxy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update an HTTP proxy</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json HTTP proxy configuration</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json HTTP proxy configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;http_proxies/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_http_proxy"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_http_proxy">[docs]</a>    <span class="k">def</span> <span class="nf">get_http_proxy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get an HTTP proxy with the specified name</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of an HTTP proxy</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of an HTTP proxy</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;http_proxies/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.delete_http_proxy"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_http_proxy">[docs]</a>    <span class="k">def</span> <span class="nf">delete_http_proxy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete an HTTP proxy with the specified name</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of an HTTP proxy</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of an HTTP proxy</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;http_proxies/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
@@ -1367,32 +1374,32 @@
 <div class="viewcode-block" id="Nutanix.add_kms"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_kms">[docs]</a>    <span class="k">def</span> <span class="nf">add_kms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add key management server to the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json key management server configuration</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json key management server configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;key_management_servers/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.update_kms"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_kms">[docs]</a>    <span class="k">def</span> <span class="nf">update_kms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update the key management server configuration</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json key management server configuration</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json key management server configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;key_management_server/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_kms"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_kms">[docs]</a>    <span class="k">def</span> <span class="nf">get_kms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get key management server with the specified name</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: key management server name</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            key management server name</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;key_management_server/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.delete_kms"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_kms">[docs]</a>    <span class="k">def</span> <span class="nf">delete_kms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete key management server with the specified name</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: key management server name</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            key management server name</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;key_management_server/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
@@ -1407,8 +1414,8 @@
 <div class="viewcode-block" id="Nutanix.add_license"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_license">[docs]</a>    <span class="k">def</span> <span class="nf">add_license</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">license_file</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;apply license file to the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            license_file: license file</span>
+<span class="sd">        :param license_file:</span>
+<span class="sd">            license file</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="c">#TODO: handle license file upload</span>
         <span class="k">pass</span>
@@ -1438,8 +1445,8 @@
 <div class="viewcode-block" id="Nutanix.get_license_feature"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_license_feature">[docs]</a>    <span class="k">def</span> <span class="nf">get_license_feature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feature_name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;show allowances for a particular feature</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            feature_name: name of the feature</span>
+<span class="sd">        :param feature_name:</span>
+<span class="sd">            name of the feature</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;license/allowances/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">feature_name</span><span class="p">))</span>
 </div>
@@ -1484,8 +1491,8 @@
 <div class="viewcode-block" id="Nutanix.add_protection_domain"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_protection_domain">[docs]</a>    <span class="k">def</span> <span class="nf">add_protection_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add a protection domain to be used for disaster recovery and backups</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json protection domain configuration</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json protection domain configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -1600,8 +1607,8 @@
 <div class="viewcode-block" id="Nutanix.get_protection_domain"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_protection_domain">[docs]</a>    <span class="k">def</span> <span class="nf">get_protection_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get a protection domain with the specified name</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            metroAvail: whether to include only metro availability related protection domains</span>
@@ -1616,8 +1623,8 @@
 <span class="sd">        Protection domain will be removed from the cluster when all outstanding</span>
 <span class="sd">        operations on it are cancelled</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            skipRemoteCheck: skip checking remote protection domain</span>
@@ -1627,16 +1634,16 @@
 <div class="viewcode-block" id="Nutanix.activate_protection_domain"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.activate_protection_domain">[docs]</a>    <span class="k">def</span> <span class="nf">activate_protection_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;activate a protection domain with the specified name</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/activate&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_protection_domain_alerts"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_protection_domain_alerts">[docs]</a>    <span class="k">def</span> <span class="nf">get_protection_domain_alerts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated on a specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            startTimeInUsecs: Start time in microseconds</span>
@@ -1655,24 +1662,24 @@
 <div class="viewcode-block" id="Nutanix.get_consistency_groups"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_consistency_groups">[docs]</a>    <span class="k">def</span> <span class="nf">get_consistency_groups</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get list of consistency groups in a specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/consistency_groups/&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.deactivate_protection_domain"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.deactivate_protection_domain">[docs]</a>    <span class="k">def</span> <span class="nf">deactivate_protection_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;deactivate a protection domain with the specified name</span>
 <span class="sd">        </span>
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/deactivate&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_dr_snapshots"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_dr_snapshots">[docs]</a>    <span class="k">def</span> <span class="nf">get_dr_snapshots</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of snapshots created in a specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            count: number of DR snapshots to retrieve</span>
@@ -1685,8 +1692,8 @@
 <div class="viewcode-block" id="Nutanix.get_protection_domain_events"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_protection_domain_events">[docs]</a>    <span class="k">def</span> <span class="nf">get_protection_domain_events</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of events generated on a specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            startTimeInUsecs: Start time in microseconds</span>
@@ -1700,50 +1707,52 @@
 <div class="viewcode-block" id="Nutanix.migrate_protection_domain"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.migrate_protection_domain">[docs]</a>    <span class="k">def</span> <span class="nf">migrate_protection_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;mark the specified protection domain as inactive and failover to the given remote site</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/migrate&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.add_oob_schedule"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_oob_schedule">[docs]</a>    <span class="k">def</span> <span class="nf">add_oob_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add an out of band snapshot schedule in the specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
-<span class="sd">            payload: json out of band snapshot schedule configuration</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json out of band snapshot schedule configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/oob_schedules&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_oob_schedules"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_oob_schedules">[docs]</a>    <span class="k">def</span> <span class="nf">get_oob_schedules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of out of band schedules in the specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/oob_schedules&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.delete_oob_schedule"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_oob_schedule">[docs]</a>    <span class="k">def</span> <span class="nf">delete_oob_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pd_name</span><span class="p">,</span> <span class="n">shedule_id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete an out of band schedule</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            pd_name: name of the protection domain</span>
-<span class="sd">            schedule_id: ID of the out of band schedule</span>
+<span class="sd">        :param pd_name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param schedule_id:</span>
+<span class="sd">            ID of the out of band schedule</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/oob_schedules/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pd_name</span><span class="p">,</span> <span class="n">schedule_id</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_pending_actions"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_pending_actions">[docs]</a>    <span class="k">def</span> <span class="nf">get_pending_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get list of pending actions in the specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/pending_actions/&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_pending_replications"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_pending_replications">[docs]</a>    <span class="k">def</span> <span class="nf">get_pending_replications</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get list of pending replications in the specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            remoteSiteNames: names of remote sites</span>
@@ -1753,35 +1762,38 @@
 <div class="viewcode-block" id="Nutanix.protect_vms"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.protect_vms">[docs]</a>    <span class="k">def</span> <span class="nf">protect_vms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add VMs to a protection domain to enable backup and disaster recovery</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
-<span class="sd">            payload: json vm protection configuration</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json vm protection configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/protect_vms&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_replications"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_replications">[docs]</a>    <span class="k">def</span> <span class="nf">get_replications</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get list of replications in a protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of protection domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/replications/&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.restore_entities"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.restore_entities">[docs]</a>    <span class="k">def</span> <span class="nf">restore_entities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;rollback VMs and/or NFS files in a protection domain to a given snapshot</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
-<span class="sd">            payload: json restore configuration</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json restore configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/restore_entities&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.rollback"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.rollback">[docs]</a>    <span class="k">def</span> <span class="nf">rollback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pd_name</span><span class="p">,</span> <span class="n">snapshot_id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;rollback the specified protection domain to a given snapshot</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            pd_name: name of the protection domain</span>
-<span class="sd">            snapshot_id: ID of the snapshot</span>
+<span class="sd">        :param pd_name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param snapshot_id:</span>
+<span class="sd">            ID of the snapshot</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="n">snapshot_id</span><span class="p">}</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/rollback&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -1789,9 +1801,10 @@
 <div class="viewcode-block" id="Nutanix.add_snapshot_schedule"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_snapshot_schedule">[docs]</a>    <span class="k">def</span> <span class="nf">add_snapshot_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add a snapshot schedule to the specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domains</span>
-<span class="sd">            payload: json snapshot schedule configuration</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domains</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json snapshot schedule configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/schedules&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -1806,8 +1819,8 @@
 <span class="sd">        then historical stats are retrieved. Otherwise, the latest</span>
 <span class="sd">        stats are retrieved.</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            metrics (required): list of metrics</span>
@@ -1820,8 +1833,8 @@
 <div class="viewcode-block" id="Nutanix.unprotect_vms"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.unprotect_vms">[docs]</a>    <span class="k">def</span> <span class="nf">unprotect_vms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;remove VMs from a protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            array (required): list of VMs</span>
@@ -1831,17 +1844,17 @@
 <div class="viewcode-block" id="Nutanix.update_replication_timeout"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_replication_timeout">[docs]</a>    <span class="k">def</span> <span class="nf">update_replication_timeout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update metro availability timeout for a specific protection domain</span>
 
-<span class="sd">        Args:</span>
 <span class="sd">            name: name of the protection domain</span>
-<span class="sd">            payload: json replication timeout configuration</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json replication timeout configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/break_replication_timeout&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.demote_protection_domain"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.demote_protection_domain">[docs]</a>    <span class="k">def</span> <span class="nf">demote_protection_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;demotes to standby metro availability role for a specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            skipRemoteCheck: skip checking remote protection domain</span>
@@ -1851,8 +1864,8 @@
 <div class="viewcode-block" id="Nutanix.disable_metro_availability"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.disable_metro_availability">[docs]</a>    <span class="k">def</span> <span class="nf">disable_metro_availability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;disable metro availability for a specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            skipRemoteCheck: skip checking remote protection domain</span>
@@ -1862,9 +1875,10 @@
 <div class="viewcode-block" id="Nutanix.enable_metro_availability"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.enable_metro_availability">[docs]</a>    <span class="k">def</span> <span class="nf">enable_metro_availability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;enable metro availability for a specific protection domain based on vStore and remote site</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
-<span class="sd">            payload: vStore and remote site configuration</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            vStore and remote site configuration</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            reEnable: re-enable operation</span>
@@ -1876,8 +1890,8 @@
 <div class="viewcode-block" id="Nutanix.promote_protection_domain"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.promote_protection_domain">[docs]</a>    <span class="k">def</span> <span class="nf">promote_protection_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;promotes to active metro availability role for a specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            skipRemoteCheck: skip checking remote protection domain</span>
@@ -1887,65 +1901,74 @@
 <div class="viewcode-block" id="Nutanix.delete_snapshot_schedules"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_snapshot_schedules">[docs]</a>    <span class="k">def</span> <span class="nf">delete_snapshot_schedules</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;remove all snapshot schedules from the specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the protection domain</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the protection domain</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/schedules&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.delete_snapshot_schedule"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_snapshot_schedule">[docs]</a>    <span class="k">def</span> <span class="nf">delete_snapshot_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pd_name</span><span class="p">,</span> <span class="n">schedule_id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;remove a snapshot schedule from the specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            pd_name: name of the protection domain</span>
-<span class="sd">        schedule-id: ID of the snapshot schedule</span>
+<span class="sd">        :param pd_name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param schedule_id:</span>
+<span class="sd">            ID of the snapshot schedule</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/schedules/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pd_name</span><span class="p">,</span> <span class="n">schedule_id</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.update_snapshot_schedule"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_snapshot_schedule">[docs]</a>    <span class="k">def</span> <span class="nf">update_snapshot_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pd_name</span><span class="p">,</span> <span class="n">schedule_id</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;replace a snapshot schedule from the specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            pd_name: name of the protection domain</span>
-<span class="sd">        schedule-id: ID of the snapshot schedule</span>
-<span class="sd">            payload: json snapshot schedule configuration</span>
+<span class="sd">        :param pd_name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param schedule_id:</span>
+<span class="sd">            ID of the snapshot schedule</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json snapshot schedule configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/schedules/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pd_name</span><span class="p">,</span> <span class="n">schedule_id</span><span class="p">),</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.set_retention_policies"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.set_retention_policies">[docs]</a>    <span class="k">def</span> <span class="nf">set_retention_policies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pd_name</span><span class="p">,</span> <span class="n">schedule_id</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;set retention policies of specified snapshot schedule from the specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            pd_name: name of the protection domain</span>
-<span class="sd">        schedule-id: ID of the snapshot schedule</span>
-<span class="sd">            payload: json snapshot schedule configuration</span>
+<span class="sd">        :param pd_name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param schedule_id:</span>
+<span class="sd">            ID of the snapshot schedule</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json snapshot schedule configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/schedules/{1}/retention_policies&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pd_name</span><span class="p">,</span> <span class="n">schedule_id</span><span class="p">),</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.clear_retention_policies"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.clear_retention_policies">[docs]</a>    <span class="k">def</span> <span class="nf">clear_retention_policies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pd_name</span><span class="p">,</span> <span class="n">schedule_id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;clear retention policies of specified snapshot schedule from the specified protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            pd_name: name of the protection domain</span>
-<span class="sd">        schedule-id: ID of the snapshot schedule</span>
+<span class="sd">        :param pd_name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param schedule_id:</span>
+<span class="sd">            ID of the snapshot schedule</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/schedules/{1}/retention_policies&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pd_name</span><span class="p">,</span> <span class="n">schedule_id</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.delete_snapshot"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_snapshot">[docs]</a>    <span class="k">def</span> <span class="nf">delete_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pd_name</span><span class="p">,</span> <span class="n">snapshot_id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete a snapshot of a protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            pd_name: name of the protection domain</span>
-<span class="sd">            snapshot_id: ID of the snapshot</span>
+<span class="sd">        :param pd_name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param snapshot_id:</span>
+<span class="sd">            ID of the snapshot</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/dr_snapshots/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pd_name</span><span class="p">,</span> <span class="n">snapshot_id</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.retain_snapshot"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.retain_snapshot">[docs]</a>    <span class="k">def</span> <span class="nf">retain_snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pd_name</span><span class="p">,</span> <span class="n">snapshot_id</span><span class="p">,</span> <span class="n">retention_time</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;retain a snapshot of a protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            pd_name: name of the protection domain</span>
-<span class="sd">            snapshot_id: ID of the snapshot</span>
-<span class="sd">            retention_time: retention time in microseconds</span>
+<span class="sd">        :param pd_name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param snapshot_id:</span>
+<span class="sd">            ID of the snapshot</span>
+<span class="sd">        :param retention_time:</span>
+<span class="sd">            retention time in microseconds</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="n">retention_time</span><span class="p">}</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/dr_snapshots/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pd_name</span><span class="p">,</span> <span class="n">snapshot_id</span><span class="p">),</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -1953,19 +1976,24 @@
 <div class="viewcode-block" id="Nutanix.update_replication_status"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_replication_status">[docs]</a>    <span class="k">def</span> <span class="nf">update_replication_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pd_name</span><span class="p">,</span> <span class="n">replication_id</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update the state of the replication in a protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            pd_name: name of the protection domain</span>
-<span class="sd">            replication_id: ID of the replication</span>
-<span class="sd">            payload: json of updated replication status (pause, resume, abort)</span>
+<span class="sd">        :param pd_name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :param replication_id:</span>
+<span class="sd">            ID of the replication</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json of updated replication status (pause, resume, abort)</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/replications/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pd_name</span><span class="p">,</span> <span class="n">replication_id</span><span class="p">),</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.abort_replication"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.abort_replication">[docs]</a>    <span class="k">def</span> <span class="nf">abort_replication</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pd_name</span><span class="p">,</span> <span class="n">replication_id</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;abort a replication in a protection domain</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            pd_name: name of the protection domain</span>
-<span class="sd">            replication_id: ID of the replication</span>
+<span class="sd">        :param pd_name:</span>
+<span class="sd">            name of the protection domain</span>
+<span class="sd">        :type pd_name: ``str``</span>
+<span class="sd">        :param replication_id:</span>
+<span class="sd">            ID of the replication</span>
+<span class="sd">        :type replication_id: ``str``</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;protection_domains/{0}/replications/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pd_name</span><span class="p">,</span> <span class="n">replication_id</span><span class="p">))</span>
 
@@ -1992,16 +2020,16 @@
 <div class="viewcode-block" id="Nutanix.add_remote_site"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.add_remote_site">[docs]</a>    <span class="k">def</span> <span class="nf">add_remote_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;add a remote site</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json remote site configuration</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json remote site configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post</span><span class="p">(</span><span class="s">&#39;remote_sites/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
 <div class="viewcode-block" id="Nutanix.update_remote_site"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.update_remote_site">[docs]</a>    <span class="k">def</span> <span class="nf">update_remote_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;update a remote site</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            payload: json remote site configuration</span>
+<span class="sd">        :param payload:</span>
+<span class="sd">            json remote site configuration</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="s">&#39;remote_sites/&#39;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
 </div>
@@ -2066,8 +2094,8 @@
 <div class="viewcode-block" id="Nutanix.get_remote_site"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_remote_site">[docs]</a>    <span class="k">def</span> <span class="nf">get_remote_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get a remote site with the specified name</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the remote site</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the remote site</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            projection: projections on the attributes</span>
@@ -2077,16 +2105,16 @@
 <div class="viewcode-block" id="Nutanix.delete_remote_site"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.delete_remote_site">[docs]</a>    <span class="k">def</span> <span class="nf">delete_remote_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;delete a remote site with the specified name from the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the remote site</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the remote site</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">(</span><span class="s">&#39;remote_sites/{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </div>
 <div class="viewcode-block" id="Nutanix.get_remote_site_alerts"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_remote_site_alerts">[docs]</a>    <span class="k">def</span> <span class="nf">get_remote_site_alerts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of alerts generated on a specified remote site</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the remote site</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the remote site</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            startTimeInUsecs: Start time in microseconds</span>
@@ -2105,8 +2133,8 @@
 <div class="viewcode-block" id="Nutanix.get_remote_site_snapshots"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_remote_site_snapshots">[docs]</a>    <span class="k">def</span> <span class="nf">get_remote_site_snapshots</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of snapshots created in a particular remote site</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the remote site</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the remote site</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            count: maximum number of DR snapshots to retrieve</span>
@@ -2119,8 +2147,8 @@
 <div class="viewcode-block" id="Nutanix.get_remote_site_events"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_remote_site_events">[docs]</a>    <span class="k">def</span> <span class="nf">get_remote_site_events</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get the list of events generated on a specified remote site</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the remote site</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the remote site</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            startTimeInUsecs: Start time in microseconds</span>
@@ -2134,8 +2162,8 @@
 <div class="viewcode-block" id="Nutanix.get_pending_remote_replications"><a class="viewcode-back" href="../../pytanix/pytanix.html#pytanix.client.Nutanix.get_pending_remote_replications">[docs]</a>    <span class="k">def</span> <span class="nf">get_pending_remote_replications</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;get all pending replications on the cluster</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the remote site</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the remote site</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            protectionDomainNames: protection domain names</span>
@@ -2149,8 +2177,8 @@
 <span class="sd">        then historical stats are retrieved. Otherwise, the latest</span>
 <span class="sd">        stats are retrieved.</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            name: name of the remote site</span>
+<span class="sd">        :param name:</span>
+<span class="sd">            name of the remote site</span>
 
 <span class="sd">        Kwargs:</span>
 <span class="sd">            metrics (required): list of metrics</span>
