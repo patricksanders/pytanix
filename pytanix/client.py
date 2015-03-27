@@ -2626,6 +2626,129 @@ class Nutanix(object):
     ############################################################
     # SNMP
     ############################################################
+    def get_snmp_config(self):
+        '''get the complete SNMP configuration including users,
+        transports, and traps configured in the cluster
+        '''
+        return self._get('snmp/')
+
+    def add_snmp_transports(self, **kwargs):
+        '''add SNMP transports to the existing SNMP transports
+
+        Kwargs:
+
+        :param transports:
+            list of SNMP transports
+        '''
+        return self._post('snmp/add_transports', kwargs)
+
+    def remove_snmp_transports(self, **kwargs):
+        '''remove SNMP transports to the existing SNMP transports
+
+        Kwargs:
+
+        :param transports:
+            list of SNMP transports
+        '''
+        return self._post('snmp/remove_transports', kwargs)
+
+    def enable_snmp(self, enable):
+        '''enable/disable SNMP configuration in the cluster
+
+        :param enable:
+            enable/disable SNMP
+        :type enable: ``boolean``
+        '''
+        payload = {"value": enable}
+        return self._put('snmp/status', payload=payload)
+
+    def get_snmp_status(self):
+        '''get the SNMP status
+        '''
+        return self._get('snmp/status')
+
+    def get_snmp_transports(self):
+        '''get the list of SNMP transports configured in the cluster
+        '''
+        return self._get('snmp/transports')
+
+    def get_snmp_traps(self):
+        '''get the list of SNMP traps configured in the cluster
+        '''
+        return self._get('snmp/traps')
+
+    def update_snmp_trap(self, payload):
+        '''edit the specified SNMP trap
+
+        :param payload:
+            json snmp trap configuration
+        '''
+        return self._put('snmp/traps', payload=payload)
+
+    def add_snmp_trap(self, payload):
+        '''add SNMP trap to the cluster
+
+        :param payload:
+            json snmp trap configuration
+        '''
+        return self._post('snmp/traps', payload=payload)
+
+    def delete_snmp_trap(self, address):
+        '''delete SNMP trap with the specified address
+
+        :param address:
+            address of SNMP trap
+        :type address: ``str``
+        '''
+        return self._delete('snmp/traps/{0}'.format(address))
+
+    def get_snmp_trap(self, address):
+        '''get SNMP trap with the specified address
+
+        :param address:
+            address of SNMP trap
+        :type address: ``str``
+        '''
+        return self._get('snmp/traps/{0}'.format(address))
+
+    def add_snmp_user(self, payload):
+        '''add SNMP user to the cluster
+
+        :param payload:
+            json snmp user configuration
+        '''
+        return self._post('snmp/users', payload=payload)
+
+    def update_snmp_user(self, payload):
+        '''edit SNMP user to the cluster
+
+        :param payload:
+            json snmp user configuration
+        '''
+        return self._put('snmp/users', payload=payload)
+
+    def get_snmp_user(self):
+        '''get the list of SNMP users configured in the cluster
+        '''
+        return self._get('snmp/users')
+
+    def delete_snmp_user(self, address):
+        '''delete SNMP user with the specified username
+
+        :param username:
+            name of SNMP user
+        :type username: ``str``
+        '''
+        return self._delete('snmp/users/{0}'.format(username))
+
+    def get_snmp_user(self, address):
+        '''get SNMP user with the specified username
+
+        :param username:
+            name of SNMP user
+        :type username: ``str``
+        '''
+        return self._get('snmp/users/{0}'.format(username))
 
     ############################################################
     # Storage Pools
