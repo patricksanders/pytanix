@@ -134,24 +134,34 @@ class Nutanix(object):
 
         :param startTimeInUsecs:
             Start time in microseconds
+        :type pd_name: ``int``
         :param endTimeInUsecs:
             End time in microseconds
+        :type pd_name: ``int``
         :param count:
             Maximum number of alerts
+        :type pd_name: ``int``
         :param resolved:
             Alerts which have been resolved
+        :type pd_name: ``boolean``
         :param acknowledged:
             Alerts which have been acknowledged
+        :type pd_name: ``boolean``
         :param severity:
             Alert severities
+        :type pd_name: ``list``
         :param alertTypeUuid:
             Alert type ids
+        :type pd_name: ``list``
         :param page:
             Page number
+        :type pd_name: ``int``
         :param entityType:
             Entity type
+        :type pd_name: ``str``
         :param entityIds:
             Entity ids
+        :type pd_name: ``list``
         '''
         return self._get('alerts', kwargs)
 
