@@ -3455,4 +3455,44 @@ class Nutanix(object):
     ############################################################
     # vStores
     ############################################################
+    def get_vstores(self, **kwargs):
+        '''get the list of vStores configured in the cluster
+
+        Kwargs:
+
+        :param ids:
+            vStore IDs
+        :param names:
+            vStore names
+        :param includeDeleted:
+            include deleted vStores
+        '''
+        return self._get('vstores/', kwargs)
+
+    def get_vstore(self, id):
+        '''get a vStore with the specified ID
+
+        :param id:
+            ID of the vStore
+        :type id: ``str``
+        '''
+        return self._get('vstores/{0}'.format(id))
+
+    def protect_vstore(self, id):
+        '''protect a vStore with the specified ID
+
+        :param id:
+            ID of the vStore
+        :type id: ``str``
+        '''
+        return self._post('vstores/{0}/protect')
+
+    def unprotect_vstore(self, id):
+        '''unprotect a vStore with the specified ID
+
+        :param id:
+            ID of the vStore
+        :type id: ``str``
+        '''
+        return self._post('vstores/{0}/unprotect')
 
