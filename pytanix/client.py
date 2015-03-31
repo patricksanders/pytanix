@@ -3178,6 +3178,7 @@ class Nutanix(object):
 
         :param name:
             name of the vDisk
+        :type name: ``str``
 
         Kwargs:
 
@@ -3195,6 +3196,62 @@ class Nutanix(object):
     ############################################################
     # Virtual Disks
     ############################################################
+    def get_virtual_disks(self, **kwargs):
+        '''get the list of VirtualDisks configured in the cluster
+
+        Kwargs:
+
+        :param count:
+            number of clusters to retrieve
+        :param filterCriteria:
+            filter criteria
+        :param sortCriteria:
+            sort criteria
+        :param searchString:
+            search string
+        :param page:
+            page number
+        :param projection:
+            projections on the attributes
+        '''
+        return self._get('virtual_disks/', kwargs)
+
+    def get_virtual_disk(self, id, **kwargs):
+        '''get the VirtualDisk with the specified ID
+
+        :param id:
+            id of the vDisk
+        :type name: ``str``
+
+        Kwargs:
+
+        :param projection:
+            projections on the attributes
+        '''
+        return self._get('virtual_disks/{0}'.format(name), kwargs)
+
+    def get_virtual_disk_stats(self, id, **kwargs):
+        '''get the VirtualDisk with the specified ID
+
+        :param id:
+            id of the vDisk
+        :type name: ``str``
+
+        Kwargs:
+
+        :param metrics:
+            (required) list of metrics
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param intervalInSecs:
+            sampling interval of stats
+        '''
+        return self._get('virtual_disks/{0}'.format(name), kwargs)
+
+
+
 
     ############################################################
     # VMs
