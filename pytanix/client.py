@@ -2975,6 +2975,222 @@ class Nutanix(object):
     ############################################################
     # vDisks
     ############################################################
+    def add_vdisk(self, payload):
+        '''add a vDisk to the cluster
+
+        :param payload:
+            json vDisk configuration
+        '''
+        return self._post('vdisks/', payload=payload)
+
+    def update_vdisk(self, payload):
+        '''update a vDisk
+
+        :param payload:
+            json vDisk configuration
+        '''
+        return self._put('vdisks/', payload=payload)
+
+    def get_vdisks(self, **kwargs):
+        '''get the list of vDisks configured in the cluster
+
+        Kwargs:
+
+        :param includedeleted:
+            include deleted vDisks
+        :type includedeleted: ``boolean``
+        :param vdiskNames:
+            vDisk names
+        :param projection:
+            projections on the attributes
+        '''
+        return self._get('vdisks/', kwargs)
+
+    def get_vdisk_alerts(self, **kwargs):
+        '''get the list of alerts generated on any vDisk
+
+        Kwargs:
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :type startTimeInUsecs: ``int``
+        :param endTimeInUsecs:
+            End time in microseconds
+        :type endTimeInUsecs: ``int``
+        :param count:
+            Maximum number of alerts
+        :type count: ``int``
+        :param resolved:
+            Alerts which have been resolved
+        :type resolved: ``boolean``
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :type acknowledged: ``boolean``
+        :param severity:
+            Alert severities
+        :type severity: ``list``
+        :param alertTypeUuid:
+            Alert type ids
+        :type alertTypeUuid: ``list``
+        :param page:
+            Page number
+        :type page: ``int``
+        '''
+        return self._get('vdisks/alerts', kwargs)
+
+    def get_vdisk_events(self, **kwargs):
+        '''get the list of events generated on any vDisk
+
+        Kwargs:
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
+        '''
+        return self._get('vdisk/events', kwargs)
+
+    def get_snapshots(self):
+        '''get the complete list of snapshots in the cluster
+        '''
+        return self._get('vdisk/snapshots/')
+
+    def get_snapshots(self, name):
+        '''get a snapshot with the specified name
+
+        :param name:
+            name of the snapshot
+        :type name: ``str``
+        '''
+        return self._get('vdisks/snapshots/{0}/'.format(name))
+
+    def get_vdisk(self, name, **kwargs):
+        '''get a vdisk with the specified name
+
+        :param name:
+            name of the snapshot
+        :type name: ``str``
+
+        Kwargs:
+
+        :param projection:
+            projections on the attributes
+        '''
+        return self._get('vdisks/{0}'.format(name))
+
+    def delete_vdisk(self, name):
+        '''delete a vdisk with the specified name
+
+        :param name:
+            name of the snapshot
+        :type name: ``str``
+        '''
+        return self._delete('vdisks/{0}'.format(name))
+
+    def get_vdisk_alerts(self, name, **kwargs):
+        '''get the list of alerts generated on any vDisk
+
+        :param name:
+            name of the vdisk
+        :type name: ``str``
+
+        Kwargs:
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :type startTimeInUsecs: ``int``
+        :param endTimeInUsecs:
+            End time in microseconds
+        :type endTimeInUsecs: ``int``
+        :param count:
+            Maximum number of alerts
+        :type count: ``int``
+        :param resolved:
+            Alerts which have been resolved
+        :type resolved: ``boolean``
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :type acknowledged: ``boolean``
+        :param severity:
+            Alert severities
+        :type severity: ``list``
+        :param alertTypeUuid:
+            Alert type ids
+        :type alertTypeUuid: ``list``
+        :param page:
+            Page number
+        :type page: ``int``
+        '''
+        return self._get('vdisks/{0}/alerts'.format(name), kwargs)
+
+    def get_vdisk_events(self, name, **kwargs):
+        '''get the list of events generated on any vDisk
+
+        :param name:
+            name of the vdisk
+        :type name: ``str``
+
+        Kwargs:
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
+        '''
+        return self._get('vdisk/{0}/events'.format(name), kwargs)
+
+    def create_snapshot(self, vdisk_name, snapshot_name):
+        '''create a snapshot for the specified vDisk
+
+        :param vdisk_name:
+            name of the vdisk
+        :type vdisk_name: ``str``
+        :param snapshot_name:
+            name of the snapshot
+        :type snapshot_name: ``str``
+        '''
+        payload = {"value": snapshot_name}
+        return self._post('vdisks/{0}/snapshots'.format(name), payload=payload)
+
+    def get_snapshots(self, name):
+        '''get the list of snapshots for the specified vDisk
+
+        :param name:
+            name of the vdisk
+        :type name: ``str``
+        '''
+        return self._get('vdisks/{0}/snapshots/'.format(name))
+
+    def get_vdisk_stats(self, name, **kwargs):
+        '''get the stats for a specified vDisk
+
+        :param name:
+            name of the vDisk
+
+        Kwargs:
+
+        :param metrics:
+            (required) list of metrics
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param intervalInSecs:
+            sampling interval of stats
+        '''
+        return self._get('vdisks/{0}/stats/'.format(name), kwargs)
 
     ############################################################
     # Virtual Disks
