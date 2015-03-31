@@ -3054,12 +3054,12 @@ class Nutanix(object):
         :param page:
             Page number
         '''
-        return self._get('vdisk/events', kwargs)
+        return self._get('vdisks/events', kwargs)
 
     def get_snapshots(self):
         '''get the complete list of snapshots in the cluster
         '''
-        return self._get('vdisk/snapshots/')
+        return self._get('vdisks/snapshots/')
 
     def get_snapshots(self, name):
         '''get a snapshot with the specified name
@@ -3149,7 +3149,7 @@ class Nutanix(object):
         :param page:
             Page number
         '''
-        return self._get('vdisk/{0}/events'.format(name), kwargs)
+        return self._get('vdisks/{0}/events'.format(name), kwargs)
 
     def create_snapshot(self, vdisk_name, snapshot_name):
         '''create a snapshot for the specified vDisk
@@ -3231,7 +3231,7 @@ class Nutanix(object):
         return self._get('virtual_disks/{0}'.format(name), kwargs)
 
     def get_virtual_disk_stats(self, id, **kwargs):
-        '''get the VirtualDisk with the specified ID
+        '''get the stats for the specified VirtualDisk
 
         :param id:
             id of the vDisk
@@ -3248,14 +3248,209 @@ class Nutanix(object):
         :param intervalInSecs:
             sampling interval of stats
         '''
-        return self._get('virtual_disks/{0}'.format(name), kwargs)
-
-
-
+        return self._get('virtual_disks/{0}/stats'.format(name), kwargs)
 
     ############################################################
     # VMs
     ############################################################
+    def get_vms(self, **kwargs):
+        '''get the list of VMs configured in the cluster
+
+        Kwargs:
+
+        :param count:
+            number of clusters to retrieve
+        :param filterCriteria:
+            filter criteria
+        :param sortCriteria:
+            sort criteria
+        :param searchString:
+            search string
+        :param page:
+            page number
+        :param projection:
+            projections on the attributes
+        '''
+        return self._get('vms/', kwargs)
+
+    def get_vm_alerts(self, **kwargs):
+        '''get the list of alerts generated on any VM
+
+        Kwargs:
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :type startTimeInUsecs: ``int``
+        :param endTimeInUsecs:
+            End time in microseconds
+        :type endTimeInUsecs: ``int``
+        :param count:
+            Maximum number of alerts
+        :type count: ``int``
+        :param resolved:
+            Alerts which have been resolved
+        :type resolved: ``boolean``
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :type acknowledged: ``boolean``
+        :param severity:
+            Alert severities
+        :type severity: ``list``
+        :param alertTypeUuid:
+            Alert type ids
+        :type alertTypeUuid: ``list``
+        :param page:
+            Page number
+        :type page: ``int``
+        '''
+        return self._get('vms/alerts', kwargs)
+
+    def get_vm_events(self, **kwargs):
+        '''get the list of events generated on any VM
+
+        Kwargs:
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
+        '''
+        return self._get('vms/events', kwargs)
+
+    def get_vm_health_check(self, **kwargs):
+        '''get the health check summary for VMs
+
+        Kwargs:
+
+        :param filterCriteria:
+            filter criteria
+        :param detailedSummary:
+            detailed summary
+        '''
+        return self._get('vms/health_check_summary', kwargs)
+
+    def get_vm(self, id, **kwargs):
+        '''get VM with the specified ID
+
+        :param id:
+            id of the vDisk
+        :type name: ``str``
+
+        Kwargs:
+
+        :param projection:
+            projections on the attributes
+        '''
+        return self._get('vms/{0}'.format(id), kwargs)
+
+    def get_vm_alerts(self, id, **kwargs):
+        '''get the list of alerts generated on any VM
+
+        :param id:
+            ID of the VM
+        :type name: ``str``
+
+        Kwargs:
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :type startTimeInUsecs: ``int``
+        :param endTimeInUsecs:
+            End time in microseconds
+        :type endTimeInUsecs: ``int``
+        :param count:
+            Maximum number of alerts
+        :type count: ``int``
+        :param resolved:
+            Alerts which have been resolved
+        :type resolved: ``boolean``
+        :param acknowledged:
+            Alerts which have been acknowledged
+        :type acknowledged: ``boolean``
+        :param severity:
+            Alert severities
+        :type severity: ``list``
+        :param alertTypeUuid:
+            Alert type ids
+        :type alertTypeUuid: ``list``
+        :param page:
+            Page number
+        :type page: ``int``
+        '''
+        return self._get('vms/{0}/alerts'.format(id), kwargs)
+
+    def get_vm_events(self, id, **kwargs):
+        '''get the list of events generated on any VM
+
+        :param id:
+            ID of the VM
+        :type name: ``str``
+
+        Kwargs:
+
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param count:
+            Maximum number of events
+        :param acknowledged:
+            Events which have been acknowledged
+        :param page:
+            Page number
+        '''
+        return self._get('vms/{0}/events'.format(id), kwargs)
+
+    def get_vm_stats(self, id, **kwargs):
+        '''get the stats for a specified VM
+
+        :param id:
+            id of the vDisk
+        :type name: ``str``
+
+        Kwargs:
+
+        :param metrics:
+            (required) list of metrics
+        :param startTimeInUsecs:
+            Start time in microseconds
+        :param endTimeInUsecs:
+            End time in microseconds
+        :param intervalInSecs:
+            sampling interval of stats
+        '''
+        return self._get('vms/{0}/stats/'.format(id), kwargs)
+
+    def get_vm_vdisks(self, vm_id):
+        '''get the list of vDisks attached to the specified VM
+
+        :param id:
+            id of the vDisk
+        :type name: ``str``
+        '''
+        return self._get('vms/{0}/vdisks'.format(vm_id))
+
+    def get_vm_virtual_disks(self, vm_id, **kwargs):
+        '''get the list of VirtualDisks attached to the specified VM
+
+        :param vm_id:
+            ID of the VM
+        :type vm_id: ``str``
+
+        Kwargs:
+
+        :param sortCriteria:
+            sort criteria
+        :param projection:
+            projections on the attributes
+        '''
+        return self._get('vms/{0}/virtual_disks'.format(vm_id), kwargs)
 
     ############################################################
     # vStores
