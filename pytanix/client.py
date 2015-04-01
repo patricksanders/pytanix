@@ -44,7 +44,6 @@ class Nutanix(object):
             A Requests session object of a truthy value to create one.
             A falsy value disables sessions.
         '''
-        # TODO: let user set base IP
         self.ip = ip
         self.prefix = 'https://' + ip + ':9440/PrismGateway/services/rest/v1/'
         self._auth = auth
@@ -61,7 +60,7 @@ class Nutanix(object):
         else:
             return {}
 
-    def _internal_call(self, method, url, payload, params):
+    def _internal_call(self, method, url, payload, files, params):
         # put params in args
         args = dict(params=params)
         if not url.startswith('http'):
@@ -78,7 +77,7 @@ class Nutanix(object):
         if payload:
             args['data'] = json.dumps(payload)
 
-        r = self._session.request(method, url, headers=headers, verify=self.verify_ssl, **args)
+        r = self._session.request(method, url, headers=headers, files=files, verify=self.verify_ssl, **args)
 
         if self.trace:
             print()
@@ -101,22 +100,22 @@ class Nutanix(object):
         else:
             return None
 
-    def _get(self, url, args=None, payload=None, **kwargs):
+    def _get(self, url, args=None, payload=None, files=None, **kwargs):
         if args:
             kwargs.update(args)
         return self._internal_call('GET', url, payload, kwargs)
 
-    def _post(self, url, args=None, payload=None, **kwargs):
+    def _post(self, url, args=None, payload=None, files=None, **kwargs):
         if args:
             kwargs.update(args)
         return self._internal_call('POST', url, payload, kwargs)
 
-    def _delete(self, url, args=None, payload=None, **kwargs):
+    def _delete(self, url, args=None, payload=None, files=None, **kwargs):
         if args:
             kwargs.update(args)
         return self._internal_call('DELETE', url, payload, kwargs)
 
-    def _put(self, url, args=None, payload=None, **kwargs):
+    def _put(self, url, args=None, payload=None, files=None, **kwargs):
         if args:
             kwargs.update(args)
         return self._internal_call('PUT', url, payload, kwargs)
@@ -443,11 +442,21 @@ class Nutanix(object):
         '''
         return self._get('certificates/ca_certificates/')
 
-    def add_ca_cert(self, name, cert):
+    def add_ca_cert(self, cert, **kwargs):
         '''add trusted CA certificate to the cluster
+
+        :param cert:
+            file object of certificate, rb mode
+        :type cert: ``file``
+
+        Kwargs:
+
+        :param name:
+            cert name
+        :type name: ``str``
         '''
-        #TODO: Handle this. (need to accept cert file)
-        pass
+        files = {'file': cert}
+        return self._post('certificates/ca_certificates/', kwargs, files=files)
 
     def delete_ca_cert(self, name):
         '''delete a CA certificate from the cluster
@@ -502,12 +511,30 @@ class Nutanix(object):
         '''
         return self._delete('certificate/svm_certificate/', kwargs)
     
-    def add_svm_cert(self, kms_name, cert):
+    def add_svm_cert(self, cert, **kwargs):
         '''add certificate to the cluster
+
+        :param cert:
+            file object of certificate, rb mode
+        :type cert: ``file``
+
+        Kwargs:
+
+        :param keyManagementServerName:
+            key management server name
+        :type keyManagementServerName: ``str``
         '''
-        #TODO: Handle this. (need to accept cert file)
-        #TODO: Also handle multi-cert upload
-        pass
+        files = {'file': cert}
+        return self._post('certificates/svm_certificates/', kwargs, files=files)
+
+    def add_svm_certs(self, certs, **kwargs):
+        '''add multiple certificates to the cluster
+
+        :param certs:
+            file objects of certificate, rb mode
+        :type cert: ``[file]``
+        '''
+        return self._post('certificates/svm_certificates/', kwargs, files=certs)
 
     ############################################################
     # Cloud
@@ -1651,11 +1678,13 @@ class Nutanix(object):
     def add_license(self, license_file):
         '''apply license file to the cluster
 
-        :param license_file:
-            license file
+        :param cert:
+            file object of license, rb mode
+        :type cert: ``file``
+
         '''
-        #TODO: handle license file upload
-        pass
+        files = {'file': license}
+        return self._post('license/', files=files)
 
     def get_license_alerts(self, **kwargs):
         '''get the list of alerts generated for any license
