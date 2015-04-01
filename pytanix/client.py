@@ -103,22 +103,22 @@ class Nutanix(object):
     def _get(self, url, args=None, payload=None, files=None, **kwargs):
         if args:
             kwargs.update(args)
-        return self._internal_call('GET', url, payload, kwargs)
+        return self._internal_call('GET', url, payload, files, kwargs)
 
     def _post(self, url, args=None, payload=None, files=None, **kwargs):
         if args:
             kwargs.update(args)
-        return self._internal_call('POST', url, payload, kwargs)
+        return self._internal_call('POST', url, payload, files, kwargs)
 
     def _delete(self, url, args=None, payload=None, files=None, **kwargs):
         if args:
             kwargs.update(args)
-        return self._internal_call('DELETE', url, payload, kwargs)
+        return self._internal_call('DELETE', url, payload, files, kwargs)
 
     def _put(self, url, args=None, payload=None, files=None, **kwargs):
         if args:
             kwargs.update(args)
-        return self._internal_call('PUT', url, payload, kwargs)
+        return self._internal_call('PUT', url, payload, files, kwargs)
 
     def _warn(self, msg):
         print('warning:' + msg, file=sys.stderr)
